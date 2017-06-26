@@ -1,4 +1,4 @@
-<section id="listPro" class="property-details padding">
+<section id="listPro" class="property-details padding-180">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

@@ -43,11 +43,11 @@
 
     
 
-<!--===== Header =====-->
-<header class="layout_fifth">
-    @include('partials.navbar')
+<!--===== Header =====
+<header class="layout_fifth">-->
+<header id="header-top_2">
+    @include('partials.navbarContactHeader')
 </header>
-<!-- Header Top End -->
 
 
     @yield('content')

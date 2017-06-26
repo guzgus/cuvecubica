@@ -15,7 +15,7 @@
           <!-- End Header Navigation -->
           <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
-              <li><a href="about.html">Sobre nosotros</a></li>
+              <li><a href="/about">Sobre nosotros</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Propiedades </a>
                 <ul class="dropdown-menu">

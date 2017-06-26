@@ -1,5 +1,5 @@
 <!-- LISTING STYLE-->
-<section id="listPro" class="padding">
+<section id="listPro" class="padding-180">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
