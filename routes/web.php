@@ -14,3 +14,4 @@
 Route::get('/', 'HomeController@index');
 Route::get('/propiedades', 'PropiedadesController@index')->name('propiedades');
 Route::get('/detail', 'PropiedadesController@detail')->name('detail');
+Route::get('/about', 'HomeController@about')->name('about');

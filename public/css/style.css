@@ -185,7 +185,7 @@ i{ font-size:20px;
 }
 
 .padding-180{
- padding:180px 0;
+ padding:180px 0px 10px ;
 }
 .bottom40{
  margin-bottom:40px;
@@ -1008,16 +1008,16 @@ nav.navbar.bootsnav ul.nav .dropdown-menu  li.dropdown.on .dropdown-toggle{
 
 /********** RBGA COLORS ************/
 .right_box{
-  background:rgba(237,42,40,.9);
+  background:rgba(231, 175, 18, 0.9);
 }
 .wpf-demo-gallery:hover .view-caption {
-  background-color: rgba(237, 40, 42, 0.9);
+  background-color: rgba(231, 175, 18, 0.9);
 }
 .inner-page-gallery-two-columns-dimension-detail .image_description, .inner-page-gallery-three-columns-dimension-detail .image_description {
-  background: rgba(237, 42, 40, 0.9);
+  background: rgba(231, 175, 18, 0.9);
 }
 #team {
-  background-color: rgba(237, 40, 42, 0.9);
+  background-color: rgba(231, 175, 18, 0.9);
 }
 
 
@@ -3112,7 +3112,7 @@ nav.navbar.bootsnav.sticked .social-icons {
 /*- PARALLAX BACKGROUNDS & CONTENTS -*/
 /* ================================= -*/
 .info_section{
- background:url(../images/paralax-half.jpg) no-repeat;
+ background:url(../images/sliders/about/paralax-half.jpg) no-repeat;
 }
 .page-main-section, .info_section{
  background-size:cover;
@@ -6251,4 +6251,9 @@ footer .text-right{
   text-align: center;
   margin-top: 15px;
 }
+}
+
+
+.text-white{
+  color: #fff;
 }
