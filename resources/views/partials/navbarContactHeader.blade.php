@@ -44,16 +44,44 @@
       <div class="collapse navbar-collapse nav_bor_bot" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right nav_3" data-in="fadeInDown" data-out="fadeOutUp">
               <li><a href="/about">Sobre nosotros</a></li>
-              <li class="dropdown">
+              {{-- <li class="dropdown"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Propiedades </a>
                 <ul class="dropdown-menu">
-                  <li><a href="/propiedades">En desarrollo</a></li>
+                  <li><a href="/propiedades">Dearrollos</a></li>
                   <li><a href="/propiedades">Terminados</a></li>
                   <li><a href="/propiedades">Amueblados</a></li>
                 </ul>
+              </li>--}}
+              <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Desarrollos </a>
+                <ul class="dropdown-menu">
+                  @forelse ($desarrollos as $desarrollo)
+                      <li><a href="/desarrollo/{{$desarrollo->id}}">{{$desarrollo->title}}</a></li>
+                  @empty
+                      <p>Sin desarrollos</p>
+                  @endforelse                
+                </ul>
               </li>
-              <li><a href="contact_us.html">login / Registrarse</a></li>
               <li><a href="contact_us.html">Contáctanos</a></li>
+            @if (Auth::guest())
+              <li><a href="/login">login / Registrarse</a></li>
+            @else
+              @if(Auth::user()->status=="1")
+              <li><a href="/panel">Panel de gestión</a></li>
+              @else
+              <li><a href="#"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>Validando cuenta</a></li>
+              @endif
+                <li>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                        Cerrar Sesión
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            @endif                            
         </ul>
       </div>
     </div>

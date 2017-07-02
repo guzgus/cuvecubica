@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Desarrollos;
+
 
 class PropiedadesController extends Controller
 {
@@ -19,6 +21,17 @@ class PropiedadesController extends Controller
     public function detail()
     {
         return view('propiedades.detail');
+    }
+
+    public function desarrollo($desarrollo_id)
+    {
+
+        return view('desarrollos.desarrollo')->with([ 
+                'desarrolloDetails' => Desarrollos::where('id', $desarrollo_id)->get(),
+                'desarrollos' => Desarrollos::all(),
+                 ]);
+
+
     }
 
     /**

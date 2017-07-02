@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
 Route::get('/propiedades', 'PropiedadesController@index')->name('propiedades');
 Route::get('/detail', 'PropiedadesController@detail')->name('detail');
+Route::get('/desarrollo/{desarrollo_id}', 'PropiedadesController@desarrollo')->name('desarrollo');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
 Route::get('/about', 'HomeController@about')->name('about');
+
+Route::get('/homelaravel', 'HomeController@homelaravel')->name('homelaravel');

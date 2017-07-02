@@ -128,7 +128,7 @@ i{ font-size:20px;
  background:#fff;
 }
 .bg_light {
-  background: #edf3f8;
+  background: #f8f8f8;
 }
 .top {
   top: 51.8%;
@@ -3295,7 +3295,7 @@ nav.navbar.bootsnav.sticked .social-icons {
   box-shadow:0 0 5px 1px rgba(0,0,0,.15);
 }
 .bg_light{
-  background: #edf3f8;
+  background: #f8f8f8;
 }
 .default_clr > h3, .default_clr > p{
   color: #fff;
@@ -4311,7 +4311,7 @@ a.close-overlay.hidden {
 }
 /* ------- OUR AGENTS - 1 -------- */
 #our-agent {
-  background:#edf3f8;
+  background:#f8f8f8;
 }
 #our-agent-slider .item {
   margin:0 15px;
@@ -4713,7 +4713,7 @@ a.close-overlay.hidden {
   padding: 20px 20px 20px;
 }
 .bg-color-gray{
-  background:#edf3f8;
+  background:#f8f8f8;
 }
 .list-t-border {
   border: 1px solid #e5e5e5;
@@ -4833,7 +4833,7 @@ a.close-overlay.hidden {
 /* ------------ PROFILE  ----------- */
 /* ================================= */
 .container-3{
-  background: #edf3f8;
+  background: #f8f8f8;
   border-radius: 0;
   margin: auto;
   padding: 30px;
@@ -5390,6 +5390,7 @@ a.close-overlay.hidden {
     color: #FFF;
     border-radius: 0;
     text-align: center;
+    max-height: 900px;
 }
 #property-d-1 .item > img {
     width: 100%;
@@ -5743,7 +5744,7 @@ a.close-overlay.hidden {
   top:42%;
 }
 #news-section-1 .form-search {
-  background: #edf3f8;
+  background: #f8f8f8;
   display: block;
   height: 100px;
   padding: 25px 20px;
