@@ -64,7 +64,7 @@
               </li>
               <li><a href="contact_us.html">Contáctanos</a></li>
             @if (Auth::guest())
-              <li><a href="/login">login / Registrarse</a></li>
+              <li><a href="/log">login / Registrarse</a></li>
             @else
               @if(Auth::user()->status=="1")
               <li><a href="/panel">Panel de gestión</a></li>

@@ -6258,3 +6258,15 @@ footer .text-right{
 .text-white{
   color: #fff;
 }
+
+.slide-general-desarrollos{
+  max-width: 550px;
+}
+
+.slide-planos-desarrollos{
+  max-width: 300px;
+}
+
+.slide-map-desarrollos{
+  max-width: 250px !important;
+}

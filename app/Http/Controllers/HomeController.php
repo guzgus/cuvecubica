@@ -40,6 +40,14 @@ class HomeController extends Controller
     }
 
 
+    public function log()
+    {
+        return view('auth.login')->with([ 
+                 'desarrollos' => Desarrollos::all(),
+            ]);
+    }
+
+
     public function homelaravel()
     {
         return view('home');

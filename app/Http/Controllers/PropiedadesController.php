@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Desarrollos;
+use App\Sliders;
 
 
 class PropiedadesController extends Controller
@@ -28,6 +29,8 @@ class PropiedadesController extends Controller
 
         return view('desarrollos.desarrollo')->with([ 
                 'desarrolloDetails' => Desarrollos::where('id', $desarrollo_id)->get(),
+                'desarrolloSlidesGenerales' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-general')->get(),
+                'desarrolloSlidesPlanos' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-planos')->get(),
                 'desarrollos' => Desarrollos::all(),
                  ]);
 

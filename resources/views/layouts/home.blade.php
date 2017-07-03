@@ -15,6 +15,8 @@
 <link rel="stylesheet" type="text/css" href="/css/bootsnav.css">
 <link rel="stylesheet" type="text/css" href="/css/range-Slider.min.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css?{{rand()}}">
+<link rel="stylesheet" href="/css/easyzoom.css" />
+
     @stack('styles')
 
 <link rel="shortcut icon" href="images/short_icon.png">
@@ -65,6 +67,8 @@
 
 
 <script src="/js/jquery.2.2.3.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U"></script>
+<script src="/js/custom-map.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.appear.js"></script>
 <script src="/js/modernizr.js"></script>
@@ -85,5 +89,39 @@
 <script src="/js/themepunch/revolution.extension.video.min.js"></script>
 <script src="/js/functions.js"></script>
 <script src="/js/form.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="/js/easyzoom.js"></script>
+	<script>
+		// Instantiate EasyZoom instances
+		var $easyzoom = $('.easyzoom').easyZoom();
+
+		// Setup thumbnails example
+		var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+
+		$('.thumbnails').on('click', 'a', function(e) {
+			var $this = $(this);
+
+			e.preventDefault();
+
+			// Use EasyZoom's `swap` method
+			api1.swap($this.data('standard'), $this.attr('href'));
+		});
+
+		// Setup toggles example
+		var api2 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
+
+		$('.toggle').on('click', function() {
+			var $this = $(this);
+
+			if ($this.data("active") === true) {
+				$this.text("Switch on").data("active", false);
+				api2.teardown();
+			} else {
+				$this.text("Switch off").data("active", true);
+				api2._init();
+			}
+		});
+	</script>
+
 </body>
 </html>

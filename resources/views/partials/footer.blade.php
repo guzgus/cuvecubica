@@ -2,7 +2,7 @@
     <div class="row border-bottom">
       <div class="col-sm-6 col-md-3">
         <div class="widget dark">
-          <img class="mt-5 mb-20" alt="" src="images/short_icon.png">
+          <img class="mt-5 mb-20" alt="" src="/images/short_icon.png">
           <p>Av. Santa Fe 546, Col. Cruz Manca, Del. Cuajimalpa, CDMX.</p>
           <ul class="list-inline mt-5">
             <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#">(55) 5292 1767 y (55) 5292 1768</a> </li>
