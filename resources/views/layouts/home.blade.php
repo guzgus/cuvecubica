@@ -89,7 +89,6 @@
 <script src="/js/themepunch/revolution.extension.video.min.js"></script>
 <script src="/js/functions.js"></script>
 <script src="/js/form.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="/js/easyzoom.js"></script>
 	<script>
 		// Instantiate EasyZoom instances
