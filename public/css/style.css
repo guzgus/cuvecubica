@@ -6263,6 +6263,11 @@ footer .text-right{
   max-width: 550px;
 }
 
+.slide-avances-desarrollos{
+  max-width: 100% !important;
+  max-height: 700px !important;
+}
+
 .slide-planos-desarrollos{
   max-width: 300px;
 }

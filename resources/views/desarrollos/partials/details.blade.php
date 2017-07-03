@@ -2,13 +2,13 @@
 @forelse ($desarrolloDetails as $desarrollo)
 
 <div id="listPro">
-<!--===== ABOUT US =====-->
+<!--===== DECRIPCION GENERAL DEL DESARROLLO =====-->
 <section class="padding-180">
   <div class="container">
     <div class="row">
       <div class="history-section">
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <h2 class="text-uppercase"><span class="color_red">{{$desarrollo->title}}</span></h2>
+          <h2 class="text-uppercase text-white"><span class="color_red">{{$desarrollo->title}}</span></h2>
           <div class="line_1"></div>
           <div class="line_2"></div>
           <div class="line_3"></div>
@@ -35,7 +35,44 @@
     </div>
   </div>
 </section>
-<!--===== #/ABOUT US =====-->
+<!--===== #/DECRIPCION GENERAL DEL DESARROLLO =====-->
+
+
+<!--===== AMENIDADES =====-->
+<section id="we_are">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="text-uppercase text-white"><span class="color_red">Amenidades</span></h3>
+        <div class="line_1"></div>
+        <div class="line_2"></div>
+        <div class="line_3"></div>        
+        <div class="row">
+          <div class="col-md-12">
+            <div id="agent-2-slider" class="owl-carousel">
+        @forelse($desarrolloSlidesAmenidades as $slidesAmenidades)
+              <div class="item">
+                <div class="property_item heading_space">
+                  <div class="image">
+                    <a href="#."><img src="/images/sliders/desarrollos/{{$slidesAmenidades->file}}" alt="listin" class="slide-avances-desarrollos"></a>
+                    <div class="feature"><span class="tag-2 text-big">Paradox</span></div>                    
+                  </div>
+                </div>
+              </div>
+        @empty
+            <p>Sin desarrollos</p>
+        @endforelse     
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--===== #/AMENIDADES =====-->
+
+
+<!--===== PLANTAS Y UBICACION =====-->
 
 <section id="news-section-1" class="property-details">
   <div class="container">
@@ -75,9 +112,97 @@
 
   </div>
 </section>
+<!--===== #/PLANTAS Y UBICACION =====-->
+
+
+<!--===== AVANCES Y ETAPAS DE OBRA =====-->
+<section id="we_are">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h3 class="text-uppercase text-white">Avances de <span class="color_red">Obra</span></h3>
+        <div class="line_1"></div>
+        <div class="line_2"></div>
+        <div class="line_3"></div>
+
+        
+        <div class="row">
+          <div class="col-md-12">
+            <div id="agent-2-slider" class="owl-carousel">
+        @forelse($desarrolloSlidesAvances as $slidesAvances)
+              <div class="item">
+                <div class="property_item heading_space">
+                  <div class="image">
+                    <a href="#."><img src="/images/sliders/desarrollos/{{$slidesAvances->file}}" alt="listin" class="slide-avances-desarrollos"></a>
+                    <div class="feature"><span class="tag-2">Paradox</span></div>                    
+                  </div>
+                </div>
+              </div>
+        @empty
+            <p>Sin desarrollos</p>
+        @endforelse     
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12 skills margin_bottom text-white">
+        <h3 class="text-uppercase text-white">Etapas de <span class="color_red">construcción</span></h3>
+        <div class="line_1"></div>
+        <div class="line_2"></div>
+        <div class="line_3"></div>
+
+        <ul>
+          <li>
+            <p class="pull-left">Fase previa</p>
+            <p class="pull-right"> 100%</p>
+            <div class="clearfix"></div>
+          </li>
+          <li class="progress bottom30 top10">
+            <div class="progress-bar" data-width="100"> </div>
+          </li>
+          <li>
+            <p class="pull-left">Cimientos</p>
+            <p class="pull-right"> 100%</p>
+            <div class="clearfix"></div>
+          </li>
+          <li class="progress bottom30 top10">
+            <div class="progress-bar" data-width="100"> </div>
+          </li>
+          <li>
+            <p class="pull-left">Estructura</p>
+            <p class="pull-right"> 90%</p>
+            <div class="clearfix"></div>
+          </li>
+          <li class="progress bottom30 top10">
+            <div class="progress-bar" data-width="90"> </div>
+          </li>
+          <li>
+            <p class="pull-left">Fontanería, Mecánica, Eléctrica</p>
+            <p class="pull-right"> 70%</p>
+            <div class="clearfix"></div>
+          </li>
+          <li class="progress top10">
+            <div class="progress-bar" data-width="70"> </div>
+          </li>
+          <li>
+            <p class="pull-left">Finalización</p>
+            <p class="pull-right"> 40%</p>
+            <div class="clearfix"></div>
+          </li>
+          <li class="progress top10">
+            <div class="progress-bar" data-width="40"> </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--===== #/AVANCES Y ETAPAS DE OBRA =====-->
+
 
 </div>
 
 @empty
     <p>Sin desarrollos</p>
 @endforelse     
+
