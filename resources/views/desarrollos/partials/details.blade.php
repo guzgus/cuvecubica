@@ -119,7 +119,7 @@
 <section id="we_are">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-12">
+      {{-- <div class="col-md-6 col-sm-6 col-xs-12">
         <h3 class="text-uppercase text-white">Avances de <span class="color_red">Obra</span></h3>
         <div class="line_1"></div>
         <div class="line_2"></div>
@@ -144,9 +144,9 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 col-sm-6 col-xs-12 skills margin_bottom text-white">
-        <h3 class="text-uppercase text-white">Etapas de <span class="color_red">construcción</span></h3>
+      </div> --}}
+      <div class="col-md-12 col-sm-12 col-xs-12 skills margin_bottom text-white">
+        <h3 class="text-uppercase text-white">Etapas de <span class="color_red">construcción</span> <small class="text-white">   (Avances de Obra)</small></h3>
         <div class="line_1"></div>
         <div class="line_2"></div>
         <div class="line_3"></div>
