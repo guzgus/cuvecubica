@@ -9,7 +9,7 @@
       <div class="history-section">
         <div class="col-md-6 col-sm-6 col-xs-12">
         @if (session('status'))        
-          <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gracias por contactarnos!</strong> En breve uno de nuestros ejecutivos se pondrá en contacto contigo. </div>
+          <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gracias por contactarnos!</strong> En breve uno de nuestros agentes se pondrá en contacto contigo. </div>
         @endif
           <h2 class="text-uppercase text-white"><span class="color_red">{{$desarrollo->title}}</span></h2>
           <div class="line_1"></div>

@@ -7,7 +7,9 @@ use App\Desarrollos;
 use App\Sliders;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\solicitarinfo;
+use App\Mail\confirmarsolicitudinfo;
 use Illuminate\Support\Facades\Redirect;
+
 
 
 
@@ -58,6 +60,8 @@ class PropiedadesController extends Controller
         $emails = ['gguzman@forcemsystems.com', 'guzman.gustavo@hotmail.com'];
 
         Mail::to($emails)->queue(new solicitarinfo($titleDesarrollo, $name, $msj_send, $phone, $email));
+
+        Mail::to($email)->queue(new confirmarsolicitudinfo($titleDesarrollo, $name, $msj_send, $phone, $email));
 
         return Redirect::to('desarrollo/'.$desarrollo_id.'')->with('status', 'ok_send_mensaje_info');  
     }
