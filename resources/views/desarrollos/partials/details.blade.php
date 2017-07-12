@@ -200,6 +200,84 @@
 <!--===== #/AVANCES Y ETAPAS DE OBRA =====-->
 
 
+<!--===== CONTACT US =====-->
+<section id="contact-us">
+	<div class="container">
+      <div class="row padding">
+      	
+        <div class="col-md-8">
+        	<div class="bottom40">
+                <h2 class="text-uppercase text-white">Solicitar información de  <span class="color_red"> {{$desarrollo->title}} </span></h2>
+                <div class="line_1"></div>
+                <div class="line_2"></div>
+                <div class="line_3"></div>
+              </div>
+        	<div class="agent-p-form p-t-10">
+            
+            <div class="row">
+            	<form class="callus padding-bottom" method="post" id="contact-form" action="/solicitarinfo">
+                    {{ csrf_field() }}    
+                    <input type="hidden" class ="keyword-input" placeholder="Nombre" name="desarrollo_contacto_title" id="desarrollo_contacto_title" value="{{$desarrollo->title}}">
+            	<div class="col-md-12">
+                    <div class="single-query">
+                        <input type="text" class ="keyword-input" placeholder="Nombre" name="name" id="name">
+                    </div>
+                </div>
+               <div class="col-md-12">    
+                    <div class="single-query">
+                        <input type="text" class ="keyword-input" placeholder="Teléfono(s)" name="phone" id="phone">
+                    </div>
+               </div>
+               <div class="col-md-12">     
+                    <div class="single-query">
+                        <input type="email" class ="keyword-input" placeholder="E - mail" name="email" id="email">
+                    </div>
+               </div>
+               <div class="col-md-12">
+                    <div class="single-query">
+                        <textarea name="message" placeholder="Mensaje" id="message"></textarea>
+                    </div>
+               </div>
+                 <div class="col-md-12">   
+                      <button type="submit" class="btn_fill" id="btn_submit" name="btn_submit">Enviar</button>
+                 </div>     
+                    </form>
+        
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 text-white">
+        	<div class="agent-p-contact p-t-30 ">
+            <div class="agetn-contact-2">
+              <p class="text-white"><i class="icon-telephone114"></i> (55) 5292 1767 y (55) 5292 1768</p>
+                <p><i class=" icon-icons142"></i> contacto@cuvecubica.mx</p>
+              <a href="http://www.cuvecubica.mx">
+                <p><i class="icon-browser2"></i>www.cuvecubica.mx</p>
+              </a>
+              <p><i class="icon-icons74"></i> Av. Santa Fe 546, Col. Cruz Manca, Del. Cuajimalpa, CDMX.</p>
+            </div>
+            {{-- <ul class="socials">
+              <li><a href="#."><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#."><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#."><i class="fa fa-youtube"></i></a></li>
+              <li><a href="#."><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#."><i class="fa fa-pinterest"></i></a></li>
+            </ul> --}}
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    
+    <div class="contact">
+      <div id="map"></div>
+    </div>
+</section>
+<!--===== #/CONTACT US =====-->
+
+
+
 </div>
 
 @empty

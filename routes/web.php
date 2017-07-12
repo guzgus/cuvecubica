@@ -21,5 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/log', 'HomeController@log')->name('log');
-
 Route::get('/homelaravel', 'HomeController@homelaravel')->name('homelaravel');
+
+
+Route::post('/solicitarinfo', 'propiedadesController@solicitarinfo')->name('solicitarinfo');
