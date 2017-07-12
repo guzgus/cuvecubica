@@ -7,6 +7,7 @@ use App\Desarrollos;
 use App\Sliders;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\solicitarinfo;
+use Illuminate\Support\Facades\Redirect;
 
 
 
@@ -47,17 +48,18 @@ class PropiedadesController extends Controller
     public function solicitarinfo(Request $request)
     {
 
+        $desarrollo_id = $request->input('desarrollo_id');
         $titleDesarrollo = $request->input('desarrollo_contacto_title');
         $name = $request->input('name');
-       echo $msj_send = $request->input('message');
+        $msj_send = $request->input('message');
         $phone = $request->input('phone');
         $email = $request->input('email');
 
+        $emails = ['gguzman@forcemsystems.com', 'guzman.gustavo@hotmail.com'];
 
+        Mail::to($emails)->queue(new solicitarinfo($titleDesarrollo, $name, $msj_send, $phone, $email));
 
-        Mail::to('guzman.gustavo@hotmail.com')->queue(new solicitarinfo($titleDesarrollo, $name, $msj_send, $phone, $email));
-
-        // return Redirect::to('panelturnos')->with('status', 'ok_send_mensaje_ticket');  
+        return Redirect::to('desarrollo/'.$desarrollo_id.'')->with('status', 'ok_send_mensaje_info');  
     }
 
 

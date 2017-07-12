@@ -8,6 +8,9 @@
     <div class="row">
       <div class="history-section">
         <div class="col-md-6 col-sm-6 col-xs-12">
+        @if (session('status'))        
+          <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gracias por contactarnos!</strong> En breve uno de nuestros ejecutivos se pondrá en contacto contigo. </div>
+        @endif
           <h2 class="text-uppercase text-white"><span class="color_red">{{$desarrollo->title}}</span></h2>
           <div class="line_1"></div>
           <div class="line_2"></div>
@@ -217,25 +220,26 @@
             <div class="row">
             	<form class="callus padding-bottom" method="post" id="contact-form" action="/solicitarinfo">
                     {{ csrf_field() }}    
-                    <input type="hidden" class ="keyword-input" placeholder="Nombre" name="desarrollo_contacto_title" id="desarrollo_contacto_title" value="{{$desarrollo->title}}">
+                    <input type="hidden" class ="keyword-input"  name="desarrollo_contacto_title" id="desarrollo_contacto_title" value="{{$desarrollo->title}}">
+                    <input type="hidden" class ="keyword-input"  name="desarrollo_id" id="desarrollo_id" value="{{$desarrollo->id}}">
             	<div class="col-md-12">
                     <div class="single-query">
-                        <input type="text" class ="keyword-input" placeholder="Nombre" name="name" id="name">
+                        <input required type="text" class ="keyword-input" placeholder="Nombre" name="name" id="name">
                     </div>
                 </div>
                <div class="col-md-12">    
                     <div class="single-query">
-                        <input type="text" class ="keyword-input" placeholder="Teléfono(s)" name="phone" id="phone">
+                        <input required type="text" class ="keyword-input" placeholder="Teléfono(s)" name="phone" id="phone">
                     </div>
                </div>
                <div class="col-md-12">     
                     <div class="single-query">
-                        <input type="email" class ="keyword-input" placeholder="E - mail" name="email" id="email">
+                        <input required type="email" class ="keyword-input" placeholder="E - mail" name="email" id="email">
                     </div>
                </div>
                <div class="col-md-12">
                     <div class="single-query">
-                        <textarea name="message" placeholder="Mensaje" id="message"></textarea>
+                        <textarea name="message" placeholder="Mensaje" id="message" required></textarea>
                     </div>
                </div>
                  <div class="col-md-12">   

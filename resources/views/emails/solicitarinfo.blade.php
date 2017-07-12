@@ -184,7 +184,7 @@
               <td height="40" class="em_height">&nbsp;</td>
             </tr>
             <tr>
-              <td align="center"><a href="#" target="_blank" style="text-decoration:none;"><img src="http://cuvecubica.forcemsystems.com/images/logo_center.png" width="230" style="display:block;font-family: Arial, sans-serif; font-size:15px; line-height:18px; color:#30373b;  font-weight:bold;" border="0" alt="LoGo Here" /></a></td>
+              <td align="center"><a href="#" target="_blank" style="text-decoration:none;"><img src="http://cuvecubica.forcemsystems.com/images/logo_center.png" width="300" style="display:block;font-family: Arial, sans-serif; font-size:15px; line-height:18px; color:#30373b;  font-weight:bold;" border="0" alt="LoGo Here" /></a></td>
             </tr>
             <tr>
               <td height="30" class="em_height">&nbsp;</td>
@@ -223,14 +223,14 @@
                                 <td height="35" class="em_height">&nbsp;</td>
                               </tr>
                               <tr>
-                                <td align="center" valign="top" style="font-family:'Open Sans', Arial, sans-serif; font-size:20pxl; line-height:22px; color:#30373b; text-transform:uppercase;">Solicitud de información</td>
+                                <td align="center" valign="top" style="font-family:'Open Sans', Arial, sans-serif; font-size:20pxl; line-height:22px; color:#30373b; text-transform:uppercase;">Solicitud de información sobre:</td>
                               </tr>
                               <tr>
                                 <td height="12" style="line-height:1px; font-size:1px;">&nbsp;</td>
                               </tr>
                               <tr>
                                 <td align="center" valign="top">
-                                    <h2 style="color:#feae39;">{{$titleDesarrollo}}</h2>
+                                    <h1 style="color:#feae39;">{{$titleDesarrollo}}</h1>
                                 </td>
                               </tr>
                             </table>
@@ -343,7 +343,7 @@
             </tr>
             <tr>
               <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:12px; line-height:18px; color:#848789;text-transform:uppercase;">
-                &copy;2&zwnj;016 CuveCubica. All Rights Reserved.
+                &copy;2&zwnj;017 CuveCubica. Todos los derechos reservados.
               </td>
             </tr>
             <tr>
