@@ -24,4 +24,4 @@ Route::get('/log', 'HomeController@log')->name('log');
 Route::get('/homelaravel', 'HomeController@homelaravel')->name('homelaravel');
 
 
-Route::post('/solicitarinfo', 'propiedadesController@solicitarinfo')->name('solicitarinfo');
+Route::post('/solicitarinfo', 'PropiedadesController@solicitarinfo')->name('solicitarinfo');
