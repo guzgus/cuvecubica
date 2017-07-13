@@ -5,7 +5,7 @@
     <ul>
       <!-- SLIDE  -->
       <li data-transition="fade">
-        <img src="images/sliders/home/demo4.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+        <img src="images/sliders/home/paradox_slide.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
           data-y="['240','200','140','140']" data-voffset="['0','0','0','0']"
@@ -46,7 +46,7 @@
         
       </li>
       <li data-transition="fade">
-        <img src="images/sliders/home/demo5.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+        <img src="images/sliders/home/tower300_slide.jpeg"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
           data-y="['240','200','140','140']" data-voffset="['0','0','0','0']"
@@ -86,7 +86,7 @@
         </div>
       </li>
       <li data-transition="fade">
-        <img src="images/sliders/home/demo10.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+        <img src="images/sliders/home/tower300_slide2.jpeg"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
           data-y="['240','200','140','140']" data-voffset="['0','0','0','0']"
