@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\solicitarinfo;
 use App\Mail\confirmarsolicitudinfo;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -42,6 +43,15 @@ class PropiedadesController extends Controller
                 'desarrollos' => Desarrollos::all(),
                  ]);
 
+
+    }
+
+    public function registrarDesarrollo()
+    {
+
+        return view('desarrollos.registrarDesarrollo')->with([
+                'desarrollos' => Desarrollos::all(),
+                 ]);
 
     }
 
@@ -84,9 +94,53 @@ class PropiedadesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeDesarrollo(Request $request)
     {
-        //
+
+            $request->logo->store('public/logos');
+
+            $desarrollo = new Desarrollos;
+            $desarrollo->fill($request->all());
+            $desarrollo->logo=$request->logo->hashName();
+            $desarrollo->save();        
+            $desarrollo_id = $desarrollo->id;
+            
+            return Redirect::to('desarrollo/'.$desarrollo_id.'')->with('status', 'ok_create_desarrollo');  
+            
+    }
+
+    public function storeSlides(Request $request)
+    {
+        
+            $slides =  $request->file('slides');
+
+            foreach ($slides as $slide) {
+
+                $slide->store('public/slides');
+                $sliders = new Sliders;
+                $sliders->fill($request->all());
+                $sliders->file=$slide->hashName();
+                $sliders->extension=$slide->extension();
+                $sliders->save();        
+                $sliders_id = $sliders->id;
+            }
+            
+            return Redirect::to('desarrollo/'.$request->input('desarrollo_id').'')->with('status', 'ok_create_slide');  
+            
+    }
+
+    public function deleteSlides(Request $request)
+    {
+            $file_delete =  $request->input('file_delete');
+            $slide_id =  $request->input('slide_id');
+
+            $deletes = Sliders::find($slide_id);
+            $deletes->delete();
+
+            Storage::delete('public/slides/'.$file_delete.'');
+                
+            return Redirect::to('desarrollo/'.$request->input('desarrollo_id').'')->with('status', 'ok_delete_slide');  
+            
     }
 
     /**

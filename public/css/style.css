@@ -35,8 +35,7 @@ body{
  font-family: 'Roboto', sans-serif;
  position: relative;
  background: #fff;
- font-size:15px;
- color: #676767;
+ font-size:18px;
  overflow-x:hidden;
 }
 html, body{ 
@@ -4926,6 +4925,16 @@ a.close-overlay.hidden {
   padding-top: 80px;
   width: 500px;
 }
+
+#formTab .formBg {
+  background:#222222;
+  border-radius: 5px;
+  margin: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
+  padding-top: 80px;
+}
+
 .tab-pane > h2 {
   color: #fff;
   margin-bottom: 50px;
@@ -4935,6 +4944,12 @@ a.close-overlay.hidden {
   background:transparent;
   margin: auto;
   width: 442px;
+}
+
+.formRegister {
+  background:transparent;
+  margin: auto;
+  width: 80%;
 }
 #login .profile-login ul li{
   display:inline-block;
@@ -6256,7 +6271,7 @@ footer .text-right{
 
 
 .text-white{
-  color: #fff;
+  color: #fff !important;
 }
 
 .slide-general-desarrollos{
@@ -6274,4 +6289,10 @@ footer .text-right{
 
 .slide-map-desarrollos{
   max-width: 250px !important;
+}
+
+.logo-desarrollos {
+ padding: 1em 3em;
+ margin: 1em 25%;
+ max-width: 300px;
 }

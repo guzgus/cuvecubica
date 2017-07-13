@@ -18,7 +18,8 @@ class CreateDesarrollosTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('logo')->nullable();
-            $table->string('ubicacion')->nullable();
+            $table->string('latitud');
+            $table->string('longitud');
             $table->timestamps();
         });
     }

@@ -14,6 +14,10 @@
 Route::get('/propiedades', 'PropiedadesController@index')->name('propiedades');
 Route::get('/detail', 'PropiedadesController@detail')->name('detail');
 Route::get('/desarrollo/{desarrollo_id}', 'PropiedadesController@desarrollo')->name('desarrollo');
+Route::get('/registrarDesarrollo', 'PropiedadesController@registrarDesarrollo')->name('registrarDesarrollo');
+Route::post('/createDesarrollo', 'PropiedadesController@storeDesarrollo')->name('createDesarrollo');
+Route::post('/storeSlides', 'PropiedadesController@storeSlides')->name('storeSlides');
+Route::post('/deleteSlides', 'PropiedadesController@deleteSlides')->name('deleteSlides');
 
 Auth::routes();
 

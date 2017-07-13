@@ -8,31 +8,51 @@
     <div class="row">
       <div class="history-section">
         <div class="col-md-6 col-sm-6 col-xs-12">
-        @if (session('status'))        
-          <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gracias por contactarnos!</strong> En breve uno de nuestros agentes se pondrá en contacto contigo. </div>
+        @if (session('status'))
+            @if(session('status')=="ok_send_mensaje_info")       
+              <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gracias por contactarnos!</strong> En breve uno de nuestros agentes se pondrá en contacto contigo. </div>
+            @endif
+            @if(session('status')=="ok_create_desarrollo")       
+              <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Registro correcto!</strong> Ahora puedes cargar las imágenes correspondientes al desarrollo, planos y amenidades. </div>
+            @endif
+            @if(session('status')=="ok_create_slide")       
+              <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Registro correcto!</strong> Se han guardado las imágenes correctamente, puedes seguir cargando más. </div>
+            @endif
+            @if(session('status')=="ok_delete_slide")       
+              <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Eliminado!</strong> Se ha eliminado correctamente la imagen. </div>
+            @endif
         @endif
-          <h2 class="text-uppercase text-white"><span class="color_red">{{$desarrollo->title}}</span></h2>
-          <div class="line_1"></div>
-          <div class="line_2"></div>
-          <div class="line_3"></div>
+          <h3 class="text-uppercase text-white text-center"><span class="color_red">{{$desarrollo->title}}</span></h3>
+           <img src="/storage/logos/{{$desarrollo->logo}}" class="logo-desarrollos" alt=""/>
+
           <h3 class="text-uppercase bottom30 text-white"><span class="color_red">Descripción</span> del proyecto</h3>
-          <p class="top20 bottom40 text-justify text-white">{!!$desarrollo->description!!}</p>
+          <div class="top20 bottom40 text-justify text-white">{!!$desarrollo->description!!}</div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div id="about_single" class="owl-carousel">
           @forelse($desarrolloSlidesGenerales as $slidesGenerales)
             <div class="item">
               <div class="content-right-md">
-                <figure class="effect-layla">
-                  <img class="slide-general-desarrollos" src="/images/sliders/desarrollos/{{$slidesGenerales->file}}" alt="img"/>
-                  <figcaption> </figcaption>
+                    <figure class="effect-layla">
+                      <img class="slide-general-desarrollos" src="/storage/slides/{{$slidesGenerales->file}}" alt="img"/>
+                      <figcaption>   
+                      @php
+                        $slide_id=$slidesGenerales->id;
+                        $file_delete=$slidesGenerales->file;
+                      @endphp
+                      @include('includes.formDeleteSlide')         
+                    </figcaption>
                 </figure>
               </div>
             </div>
           @empty
-              <p>Sin desarrollos</p>
-          @endforelse     
+              <p class="text-white">Sin Imágenes</p>
+          @endforelse 
           </div>
+              @php 
+                  $section_update="desarrollos-general";
+              @endphp
+              @include('includes.formAltaSlide')
         </div>
       </div>
     </div>
@@ -57,15 +77,25 @@
               <div class="item">
                 <div class="property_item heading_space">
                   <div class="image">
-                    <a href="#."><img src="/images/sliders/desarrollos/{{$slidesAmenidades->file}}" alt="listin" class="slide-avances-desarrollos"></a>
+                    <a href="#."><img src="/storage/slides/{{$slidesAmenidades->file}}" alt="listin" class="slide-avances-desarrollos"></a>
                     <div class="feature"><span class="tag-2 text-big">Paradox</span></div>                    
                   </div>
                 </div>
+                      @php
+                        $slide_id=$slidesAmenidades->id;
+                        $file_delete=$slidesAmenidades->file;
+                      @endphp
+                      @include('includes.formDeleteSlide')         
               </div>
         @empty
-            <p>Sin desarrollos</p>
+              <p class="text-white">Sin Imágenes</p>
         @endforelse     
             </div>
+              @php 
+                  $section_update="desarrollos-amenidades";
+              @endphp
+              @include('includes.formAltaSlide')
+
           </div>
         </div>
       </div>
@@ -90,14 +120,23 @@
           @forelse($desarrolloSlidesPlanos as $slidesPlanos)
               <div class="col-md-4 col-sm-4 col-xs-12 top10">
                   <div class="easyzoom easyzoom--overlay">
-                    <a href="/images/sliders/desarrollos/{{$slidesPlanos->file}}">
-                      <img src="/images/sliders/desarrollos/{{$slidesPlanos->file}}" class="slide-planos-desarrollos" alt=""/>
+                    <a href="/storage/slides/{{$slidesPlanos->file}}">
+                      <img src="/storage/slides/{{$slidesPlanos->file}}" class="slide-planos-desarrollos" alt=""/>
                     </a>
                   </div>
+                      @php
+                        $slide_id=$slidesPlanos->id;
+                        $file_delete=$slidesPlanos->file;
+                      @endphp
+                      @include('includes.formDeleteSlide')         
               </div>
           @empty
-              <p>Sin Planos</p>
-          @endforelse     
+              <p class="text-white">Sin Imágenes</p>
+          @endforelse 
+              @php 
+                  $section_update="desarrollos-planos";
+              @endphp
+              @include('includes.formAltaSlide')
             </div>
 
             <div class="row margin_bottom">
@@ -105,18 +144,43 @@
                 <h3 class="text-uppercase bottom30"><span class="color_red">Ubicación</span></h3>
               </div>
               <div class="col-md-12">
-                <div id="map_canvas" style="height: 550px;"></div>
+                {{--  <div id="map_canvas" style="height: 550px;"></div>  --}}
+                  <div id="map"></div>
               </div>
             </div>
 
           </div>
         </div>
-
-
   </div>
 </section>
 <!--===== #/PLANTAS Y UBICACION =====-->
 
+  <script>
+
+      function initMap() {
+        var uluru = {lat: {{$desarrollo->latitud}}, lng: {{$desarrollo->longitud}} };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: uluru,
+          styles:[{"stylers":[{"saturation":-100},{"gamma":1}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"saturation":50},{"gamma":0},{"hue":"#50a5d1"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#c5c5c5"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"weight":0.5},{"color":"#e7af12"}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"gamma":1},{"saturation":50}]}]
+        });
+
+        var contentString = '<div class"info-window"><div class="image-label"><img class="slide-map-desarrollos" src="/images/sliders/desarrollos/paradox2.jpg" alt="featured-properties-5" ><label>Desarrollo</label></div><div class="map-detail"><a href="#"><h4>{{$desarrollo->title}}</h4></a><p> </p></div></div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          title: 'Uluru (Ayers Rock)'
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+    </script>
 
 <!--===== AVANCES Y ETAPAS DE OBRA =====-->
 <section id="we_are">
@@ -157,43 +221,43 @@
         <ul>
           <li>
             <p class="pull-left">Fase previa</p>
-            <p class="pull-right"> 100%</p>
+            <p class="pull-right"> {{$desarrollo->fase_previa}}%</p>
             <div class="clearfix"></div>
           </li>
           <li class="progress bottom30 top10">
-            <div class="progress-bar" data-width="100"> </div>
+            <div class="progress-bar" data-width="{{$desarrollo->fase_previa}}"> </div>
           </li>
           <li>
             <p class="pull-left">Cimientos</p>
-            <p class="pull-right"> 100%</p>
+            <p class="pull-right"> {{$desarrollo->cimientos}}%</p>
             <div class="clearfix"></div>
           </li>
           <li class="progress bottom30 top10">
-            <div class="progress-bar" data-width="100"> </div>
+            <div class="progress-bar" data-width="{{$desarrollo->cimientos}}"> </div>
           </li>
           <li>
             <p class="pull-left">Estructura</p>
-            <p class="pull-right"> 90%</p>
+            <p class="pull-right"> {{$desarrollo->estructura}}%</p>
             <div class="clearfix"></div>
           </li>
           <li class="progress bottom30 top10">
-            <div class="progress-bar" data-width="90"> </div>
+            <div class="progress-bar" data-width="{{$desarrollo->estructura}}"> </div>
           </li>
           <li>
             <p class="pull-left">Fontanería, Mecánica, Eléctrica</p>
-            <p class="pull-right"> 70%</p>
+            <p class="pull-right"> {{$desarrollo->fme}}%</p>
             <div class="clearfix"></div>
           </li>
           <li class="progress top10">
-            <div class="progress-bar" data-width="70"> </div>
+            <div class="progress-bar" data-width="{{$desarrollo->fme}}"> </div>
           </li>
           <li>
             <p class="pull-left">Finalización</p>
-            <p class="pull-right"> 40%</p>
+            <p class="pull-right"> {{$desarrollo->finalizacion}}%</p>
             <div class="clearfix"></div>
           </li>
           <li class="progress top10">
-            <div class="progress-bar" data-width="40"> </div>
+            <div class="progress-bar" data-width="{{$desarrollo->finalizacion}}"> </div>
           </li>
         </ul>
       </div>

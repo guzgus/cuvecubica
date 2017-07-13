@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Desarrollos extends Model
 {
     protected $fillable = [
-        'titulo',
+        'title',
         'description',
-        'logo',
-        'ubicacion',
+        'latitud',
+        'longitud',
+        'fase_previa',
+        'cimientos',
+        'estructura',
+        'fme',
+        'finalizacion',
     ];
-    
+
+
 }

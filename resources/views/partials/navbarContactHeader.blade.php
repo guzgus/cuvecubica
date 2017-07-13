@@ -44,14 +44,7 @@
       <div class="collapse navbar-collapse nav_bor_bot" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right nav_3" data-in="fadeInDown" data-out="fadeOutUp">
               <li><a href="/about">Sobre nosotros</a></li>
-              {{-- <li class="dropdown"> 
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Propiedades </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/propiedades">Dearrollos</a></li>
-                  <li><a href="/propiedades">Terminados</a></li>
-                  <li><a href="/propiedades">Amueblados</a></li>
-                </ul>
-              </li>--}}
+              {{-- --}}
               <li class="dropdown"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Desarrollos </a>
                 <ul class="dropdown-menu">
@@ -67,8 +60,33 @@
               <li><a href="/log">login / Registrarse</a></li>
             @else
               @if(Auth::user()->status=="1")
-              <li><a href="/panel">Panel de gestión</a></li>
-              @else
+              <li class="dropdown">
+                <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Panel de gestión</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown">
+                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Desarrollos</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/registrarDesarrollo">Registrar</a></li>
+                      <li><a href="/gestionarDesarrollo">Gestionar</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Propiedades</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="agent_profile_1.html">Registrar</a></li>
+                      <li><a href="agent_profile_2.html">Gestionar</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Usuarios</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="gallery_1.html">Gestión</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+               @else
               <li><a href="#"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>Validando cuenta</a></li>
               @endif
                 <li>

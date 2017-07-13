@@ -16,6 +16,7 @@
 <link rel="stylesheet" type="text/css" href="/css/range-Slider.min.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css?{{rand()}}">
 <link rel="stylesheet" href="/css/easyzoom.css" />
+<link rel="stylesheet" href="/assets/html5-editor/bootstrap-wysihtml5.css" />
 
     @stack('styles')
 
@@ -67,8 +68,7 @@
 
 
 <script src="/js/jquery.2.2.3.min.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U"></script>
-<script src="/js/custom-map.js"></script>
+{{--  <script src="/js/custom-map.js"></script>  --}}
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.appear.js"></script>
 <script src="/js/modernizr.js"></script>
@@ -121,6 +121,31 @@
 			}
 		});
 	</script>
+    <!-- wysuhtml5 Plugin JavaScript -->
+    <script src="/assets/tinymce/tinymce.min.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        if ($("#mymce").length > 0) {
+            tinymce.init({
+                selector: "textarea#mymce",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+				language : "es",
+            });
+        }
+    });
+    </script>
+
+
+    @stack('scripts')
+
 
 </body>
 </html>
