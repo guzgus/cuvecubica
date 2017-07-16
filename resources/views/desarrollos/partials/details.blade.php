@@ -22,10 +22,13 @@
               <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Eliminado!</strong> Se ha eliminado correctamente la imagen. </div>
             @endif
         @endif
-          <h3 class="text-uppercase text-white text-center"><span class="color_red">{{$desarrollo->title}}</span></h3>
-           <img src="/storage/logos/{{$desarrollo->logo}}" class="logo-desarrollos" alt=""/>
 
-          <h3 class="text-uppercase bottom30 text-white"><span class="color_red">Descripción</span> del proyecto</h3>
+          <h3 class="text-uppercase text-white text-center"><span class="color_red">{{$desarrollo->title}}</span></h3>
+          @if (!Auth::guest())
+              <a href="/editarDesarrollo/{{$desarrollo->id}}" type="button" class="btn btn-warning btn-xs pull-right">Editar datos generales</a>
+          @endif          
+           <img src="/storage/logos/{{$desarrollo->logo}}" class="logo-desarrollos" alt=""/>
+<h3 class="text-uppercase bottom30 text-white"><span class="color_red">Descripción</span> del proyecto</h3>
           <div class="top20 bottom40 text-justify text-white">{!!$desarrollo->description!!}</div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">

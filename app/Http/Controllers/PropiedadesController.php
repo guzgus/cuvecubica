@@ -23,12 +23,16 @@ class PropiedadesController extends Controller
      */
     public function index()
     {
-        return view('propiedades.list');
+        return view('propiedades.list')->with([             
+                'desarrollos' => Desarrollos::all()
+                 ]);
     }
 
     public function detail()
     {
-        return view('propiedades.detail');
+        return view('propiedades.detail')->with([             
+                'desarrollos' => Desarrollos::all()
+                 ]);
     }
 
     public function desarrollo($desarrollo_id)
@@ -40,6 +44,17 @@ class PropiedadesController extends Controller
                 'desarrolloSlidesPlanos' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-planos')->get(),
                 'desarrolloSlidesAvances' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-avances')->get(),
                 'desarrolloSlidesAmenidades' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-amenidades')->get(),
+                'desarrollos' => Desarrollos::all(),
+                 ]);
+
+
+    }
+
+    public function editarDesarrollo($desarrollo_id)
+    {
+
+        return view('desarrollos.editarDesarrollo')->with([ 
+                'desarrolloDetails' => Desarrollos::where('id', $desarrollo_id)->get(),
                 'desarrollos' => Desarrollos::all(),
                  ]);
 
@@ -106,6 +121,22 @@ class PropiedadesController extends Controller
             $desarrollo_id = $desarrollo->id;
             
             return Redirect::to('desarrollo/'.$desarrollo_id.'')->with('status', 'ok_create_desarrollo');  
+            
+    }
+
+
+    public function editDesarrollo(Request $request)
+    {
+
+        if($request->logo){ $request->logo->store('public/logos'); }
+
+            $desarrollo = Desarrollos::find($request->desarrollo_id);;
+            $desarrollo->fill($request->all());
+            if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
+            $desarrollo->save();        
+            $desarrollo_id = $desarrollo->id;
+            
+            return Redirect::to('desarrollo/'.$desarrollo_id.'')->with('status', 'ok_edit_desarrollo');  
             
     }
 
