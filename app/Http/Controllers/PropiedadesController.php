@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Desarrollos;
+use App\Propiedades;
+use App\CaracteristicasPropiedades;
 use App\Sliders;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\solicitarinfo;
@@ -227,6 +229,27 @@ class PropiedadesController extends Controller
                  ]);
 
     }
+
+        public function storePropiedad(Request $request)
+    {
+
+            $propiedad = new Propiedades;
+            $propiedad->fill($request->all());
+            $propiedad->save();        
+            $propiedad_id = $propiedad->id;
+
+            $CaracteristicasPropiedades = new CaracteristicasPropiedades;
+            $CaracteristicasPropiedades->fill($request->all());
+            $CaracteristicasPropiedades->propiedad_id=$propiedad_id;
+            $CaracteristicasPropiedades->save();        
+            $CaracteristicasPropiedades_id = $CaracteristicasPropiedades->id;
+
+            exit;
+            
+            return Redirect::to('propiedad/'.$propiedad_id.'')->with('status', 'ok_create_propiedad');  
+            
+    }
+
 
 }
 

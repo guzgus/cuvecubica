@@ -19,6 +19,8 @@ class CreatePropiedadesTable extends Migration
             $table->longText('description');
             $table->longText('domicilio');
             $table->string('status');
+            $table->string('precio');
+            $table->string('moneda');
             $table->string('categoria');
             $table->string('latitud');
             $table->string('longitud');

@@ -17,24 +17,24 @@
                 <h2>Datos generales</h2>
                 <div class="agent-p-form">
                   <div class="row">
-                    <form class="callus"  action="/createDesarrollo" method="post" enctype="multipart/form-data">
+                    <form id="formRegistroPropiedad" class="callus"  action="/createPropiedad" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}
                       <div class="col-md-12">
                         <h5 class="text-white text-left">Tipo de propiedad:</h5>
                         <div class="single-query">
                           <select class="keyword-input" name="categoria" id="categoria" required>
                               <option value="">Selecciona categoría</option>
-                              <option>Casas</option>
-                              <option>Cuartos</option>
-                              <option>Departamentos</option>
-                              <option>Edificios</option>
-                              <option>Haciendas</option>
-                              <option>Locales comerciales</option>
-                              <option>Bodegas</option>
-                              <option>Oficinas</option>
-                              <option>Ranchos</option>
-                              <option>Terrenos</option>
-                              <option>Otros inmuebles</option>
+                              <option value="Casas">Casas</option>
+                              <option value="Cuartos">Cuartos</option>
+                              <option value="Departamentos">Departamentos</option>
+                              <option value="Edificios">Edificios</option>
+                              <option value="Haciendas">Haciendas</option>
+                              <option value="Locales">Locales comerciales</option>
+                              <option value="Bodegas">Bodegas</option>
+                              <option value="Oficinas">Oficinas</option>
+                              <option value="Ranchos">Ranchos</option>
+                              <option value="Terrenos">Terrenos</option>
+                              <option value="Otros">Otros inmuebles</option>
                           </select>
                         </div>
                         <h5 class="text-white text-left">Propiedad en:</h5>
@@ -53,7 +53,7 @@
                         </div>
                         <h5 class="text-white text-left">Descripción:</h5>
                         <div class="single-query">
-                            <textarea id="mymce" name="description" required></textarea>
+                            <textarea id="mymce" name="description"></textarea>
                         </div>
                         <h5 class="text-white text-left">Domicilio:</h5>
                         <div class="single-query">
@@ -244,12 +244,30 @@
                       <div class="col-md-12">
                         <h5 class="text-white text-left">¿Propiedad relacionada a un desarrollo?:</h5>
                         <div class="single-query">
-                          <select class="keyword-input" name="categoria" id="categoria" required>
+                          <select class="keyword-input" name="desarrollo_id" id="desarrollo_id" required>
                               <option value="">Selecciona una opción</option>
                               @foreach($desarrollos as $desarrollo)
                               <option value="{{$desarrollo->id}}">{{$desarrollo->title}}</option>
                               @endforeach
                               <option value="">La propiedad no se relaciona con ningún desarrollo</option>
+                          </select>
+                        </div>
+                      </div>
+                      <h3 class="text-white ">Precio y Moneda:</h3> <br>
+                      <div class="col-md-6">
+                        <h5 class="text-white text-left">Precio:</h5>
+                        <div class="single-query">
+                            <input type="num" min="1" max="100000000" class="keyword-input"  name="precio" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <h5 class="text-white text-left">Moneda:</h5>
+                        <div class="single-query">
+                          <select class="keyword-input" name="moneda" id="moneda" required>
+                              <option value="">Selecciona una opción</option>
+                              <option>MXN</option>
+                              <option>USD</option>
+                              <option>EUR</option>
                           </select>
                         </div>
                       </div>

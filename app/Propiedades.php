@@ -11,6 +11,8 @@ class Propiedades extends Model
         'description',
         'domicilio',
         'status',
+        'precio',
+        'moneda',
         'categoria',
         'latitud',
         'longitud',
