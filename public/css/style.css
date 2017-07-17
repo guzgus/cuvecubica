@@ -2562,6 +2562,14 @@ nav.navbar.bootsnav.sticked .social-icons {
   width: 100%;
   background: #fff;
 }
+.single-query .keyword-checkbox{
+  border:1px solid rgba(229, 229, 229, 1);
+  height: 20px;
+  border-radius:0;
+  padding-left: 10px;
+  width: 100%;
+  background: #fff;
+}
 .single-query input, .single-query select {
   text-transform: capitalize;
   background: transparent;
@@ -4927,7 +4935,7 @@ a.close-overlay.hidden {
 }
 
 #formTab .formBg {
-  background:#222222;
+  background-color: rgba(0, 0, 0, 0.55);
   border-radius: 5px;
   margin: auto;
   max-width: 100%;

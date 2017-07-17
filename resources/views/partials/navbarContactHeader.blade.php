@@ -67,14 +67,12 @@
                     <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Desarrollos</a>
                     <ul class="dropdown-menu">
                       <li><a href="/registrarDesarrollo">Registrar</a></li>
-                      <li><a href="/gestionarDesarrollo">Gestionar</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                     <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Propiedades</a>
                     <ul class="dropdown-menu">
-                      <li><a href="agent_profile_1.html">Registrar</a></li>
-                      <li><a href="agent_profile_2.html">Gestionar</a></li>
+                      <li><a href="/registrarPropiedad">Registrar</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">

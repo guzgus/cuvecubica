@@ -218,4 +218,18 @@ class PropiedadesController extends Controller
     {
         //
     }
+ 
+    public function registrarPropiedad()
+    {
+
+        return view('propiedades.registrarPropiedades')->with([
+                'desarrollos' => Desarrollos::all(),
+                 ]);
+
+    }
+
 }
+
+
+
+

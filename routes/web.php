@@ -13,6 +13,8 @@
 
 Route::get('/propiedades', 'PropiedadesController@index')->name('propiedades');
 Route::get('/detail', 'PropiedadesController@detail')->name('detail');
+
+// Rutas para desarrollos
 Route::get('/desarrollo/{desarrollo_id}', 'PropiedadesController@desarrollo')->name('desarrollo');
 Route::get('/registrarDesarrollo', 'PropiedadesController@registrarDesarrollo')->name('registrarDesarrollo');
 Route::get('/editarDesarrollo/{desarrollo_id}', 'PropiedadesController@editarDesarrollo')->name('editarDesarrollo');
@@ -20,6 +22,16 @@ Route::post('/createDesarrollo', 'PropiedadesController@storeDesarrollo')->name(
 Route::post('/editDesarrollo', 'PropiedadesController@editDesarrollo')->name('editDesarrollo');
 Route::post('/storeSlides', 'PropiedadesController@storeSlides')->name('storeSlides');
 Route::post('/deleteSlides', 'PropiedadesController@deleteSlides')->name('deleteSlides');
+
+// Rutas para propiedades
+// Route::get('/desarrollo/{desarrollo_id}', 'PropiedadesController@desarrollo')->name('desarrollo');
+Route::get('/registrarPropiedad', 'PropiedadesController@registrarPropiedad')->name('registrarPropiedades');
+// Route::get('/editarDesarrollo/{desarrollo_id}', 'PropiedadesController@editarDesarrollo')->name('editarDesarrollo');
+// Route::post('/createDesarrollo', 'PropiedadesController@storeDesarrollo')->name('createDesarrollo');
+// Route::post('/editDesarrollo', 'PropiedadesController@editDesarrollo')->name('editDesarrollo');
+// Route::post('/storeSlides', 'PropiedadesController@storeSlides')->name('storeSlides');
+// Route::post('/deleteSlides', 'PropiedadesController@deleteSlides')->name('deleteSlides');
+
 
 Auth::routes();
 

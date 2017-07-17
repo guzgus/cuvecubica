@@ -29,7 +29,7 @@
 	      }
 	      else
 	      {
-	         var latLng = new google.maps.LatLng(37.6735925,-1.6968357);
+	         var latLng = new google.maps.LatLng(19.3568331,-99.2745372);
 	      }
 	      //Definimos algunas opciones del mapa a crear
 	       var myOptions = {
