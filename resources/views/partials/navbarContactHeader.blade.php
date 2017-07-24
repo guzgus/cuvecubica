@@ -44,7 +44,7 @@
       <div class="collapse navbar-collapse nav_bor_bot" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right nav_3" data-in="fadeInDown" data-out="fadeOutUp">
               <li><a href="/about">Sobre nosotros</a></li>
-              {{-- --}}
+              <li><a href="/propiedades">Propiedades</a></li>
               <li class="dropdown"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Desarrollos </a>
                 <ul class="dropdown-menu">
@@ -55,7 +55,7 @@
                   @endforelse                
                 </ul>
               </li>
-              <li><a href="contact_us.html">Contáctanos</a></li>
+              {{--  <li><a href="contact_us.html">Contáctanos</a></li>  --}}
             @if (Auth::guest())
               <li><a href="/log">login / Registrarse</a></li>
             @else

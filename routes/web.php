@@ -24,13 +24,11 @@ Route::post('/storeSlides', 'PropiedadesController@storeSlides')->name('storeSli
 Route::post('/deleteSlides', 'PropiedadesController@deleteSlides')->name('deleteSlides');
 
 // Rutas para propiedades
-// Route::get('/desarrollo/{desarrollo_id}', 'PropiedadesController@desarrollo')->name('desarrollo');
+Route::get('/propiedad/{propiedad_id}', 'PropiedadesController@propiedad')->name('propiedad');
 Route::get('/registrarPropiedad', 'PropiedadesController@registrarPropiedad')->name('registrarPropiedades');
-// Route::get('/editarDesarrollo/{desarrollo_id}', 'PropiedadesController@editarDesarrollo')->name('editarDesarrollo');
+Route::get('/editarPropiedad/{propiedad_id}', 'PropiedadesController@editarPropiedad')->name('editarPropiedad');
 Route::post('/createPropiedad', 'PropiedadesController@storePropiedad')->name('createPropiedad');
-// Route::post('/editDesarrollo', 'PropiedadesController@editDesarrollo')->name('editDesarrollo');
-// Route::post('/storeSlides', 'PropiedadesController@storeSlides')->name('storeSlides');
-// Route::post('/deleteSlides', 'PropiedadesController@deleteSlides')->name('deleteSlides');
+Route::post('/editPropiedad', 'PropiedadesController@editPropiedad')->name('editPropiedad');
 
 
 Auth::routes();

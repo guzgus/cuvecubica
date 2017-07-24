@@ -90,7 +90,7 @@ class PropiedadesController extends Controller
 
         Mail::to($email)->queue(new confirmarsolicitudinfo($titleDesarrollo, $name, $msj_send, $phone, $email));
 
-        return Redirect::to('desarrollo/'.$desarrollo_id.'')->with('status', 'ok_send_mensaje_info');  
+        return Redirect::to($request->input('tipo_inmueble').'/'.$desarrollo_id.'')->with('status', 'ok_send_mensaje_info');  
     }
 
 
@@ -158,7 +158,7 @@ class PropiedadesController extends Controller
                 $sliders_id = $sliders->id;
             }
             
-            return Redirect::to('desarrollo/'.$request->input('desarrollo_id').'')->with('status', 'ok_create_slide');  
+            return Redirect::to($request->input('tipo_inmueble').'/'.$request->input('inmueble_id').'')->with('status', 'ok_create_slide');  
             
     }
 
@@ -172,7 +172,7 @@ class PropiedadesController extends Controller
 
             Storage::delete('public/slides/'.$file_delete.'');
                 
-            return Redirect::to('desarrollo/'.$request->input('desarrollo_id').'')->with('status', 'ok_delete_slide');  
+            return Redirect::to($request->input('tipo_inmueble').'/'.$request->input('inmueble_id').'')->with('status', 'ok_delete_slide');  
             
     }
 
@@ -243,13 +243,54 @@ class PropiedadesController extends Controller
             $CaracteristicasPropiedades->propiedad_id=$propiedad_id;
             $CaracteristicasPropiedades->save();        
             $CaracteristicasPropiedades_id = $CaracteristicasPropiedades->id;
-
-            exit;
             
             return Redirect::to('propiedad/'.$propiedad_id.'')->with('status', 'ok_create_propiedad');  
             
     }
 
+    public function propiedad($propiedad_id)
+    {
+
+        return view('propiedades.detail')->with([ 
+                'propiedadesAmenidades' => Sliders::where('propiedad_id', $propiedad_id)->where('section', 'propiedad-amenidades')->get(),
+                'propiedadesPlanos' => Sliders::where('propiedad_id', $propiedad_id)->where('section', 'propiedad-planos')->get(),
+                'propiedadDetails' => Propiedades::where('id', $propiedad_id)->get(),
+                'caracteristicas' => CaracteristicasPropiedades::where('propiedad_id', $propiedad_id)->get(),
+                'desarrollos' => Desarrollos::all(),
+                 ]);
+
+
+    }
+
+    public function editarPropiedad($propiedad_id)
+    {
+
+        return view('propiedades.editarPropiedad')->with([ 
+                'propiedadDetails' => Propiedades::where('id', $propiedad_id)->get(),
+                'caracteristicas' => CaracteristicasPropiedades::where('propiedad_id', $propiedad_id)->get(),
+                'desarrollos' => Desarrollos::all(),
+                 ]);
+
+
+    }
+
+        public function editPropiedad(Request $request)
+    {
+
+            $propiedad = Propiedades::find($request->propiedad_id);
+            $propiedad->fill($request->all());
+            $propiedad->save();        
+            $propiedad_id = $propiedad->id;
+
+            $CaracteristicasPropiedades = CaracteristicasPropiedades::find($request->caracteristicas_id);
+            $CaracteristicasPropiedades->fill($request->all());
+            $CaracteristicasPropiedades->propiedad_id=$propiedad_id;
+            $CaracteristicasPropiedades->save();        
+            $CaracteristicasPropiedades_id = $CaracteristicasPropiedades->id;
+            
+            return Redirect::to('propiedad/'.$propiedad_id.'')->with('status', 'ok_edit_propiedad');  
+            
+    }
 
 }
 

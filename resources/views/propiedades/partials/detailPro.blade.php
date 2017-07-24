@@ -1,34 +1,54 @@
 <section id="listPro" class="property-details padding-180">
   <div class="container">
+    @foreach($propiedadDetails as $propiedad)
     <div class="row">
       <div class="col-md-12">
-        <h2 class="text-uppercase title_listPro">987 Cantebury Drive</h2>
-        <p class="bottom20 title_listPro">45 Regent Street, London, UK</p>
+        <h2 class="text-uppercase title_listPro">{{$propiedad->title}}</h2>
+        <p class="bottom20 title_listPro">{{$propiedad->domicilio}}</p>
+          @if (!Auth::guest())
+              <a href="/editarPropiedad/{{$propiedad->id}}" type="button" class="btn btn-warning btn-xs pull-left">Editar datos generales</a>
+          @endif          
+          @include('includes.status')
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="row">
           <div class="col-md-12">
-            <div id="property-d-1" class="owl-carousel">
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/1.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/2.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/3.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/4.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/5.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/6.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/7.jpg" alt="image" /></div>
-            </div>
-            <div id="property-d-1-2" class="owl-carousel">
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/1_mini.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/2_mini.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/3_mini.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/4_mini.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/5_mini.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/6_mini.jpg" alt="image" /></div>
-              <div class="item"><img src="/images/propiedades/propiedad_demo/departamento/sliders/7_mini.jpg" alt="image" /></div>
-            </div>
+              <div id="agent-2-slider" class="owl-carousel">
+                @forelse($propiedadesAmenidades as $slidesAmenidades)
+                <div class="item">
+                  <div class="property_item heading_space">
+                    <div class="image">
+                      <a href="#."><img class="side-amenidades-propiedades" src="/storage/slides/{{$slidesAmenidades->file}}" alt="listin" class="img-responsive"></a>
+                      <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
+                      <div class="property_meta">
+                        <h4>${{ number_format($propiedad->precio,2)}} {{$propiedad->moneda}}</h4> <br>  
+                        <h4>{{$propiedad->categoria}}</h4>
+                        @php
+                            $slide_id=$slidesAmenidades->id;
+                            $file_delete=$slidesAmenidades->file;
+                            $tipo_inmueble = "propiedad";
+                            $desarrollo_id = 0;
+                            $inmueble_id = $propiedad->id;
+                            $propiedad_id = $propiedad->id;
+                          @endphp
+                          @include('includes.formDeleteSlide')        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                @endforeach            
+              </div>            
           </div>
+              @php 
+                  $section_update="propiedad-amenidades";
+                  $desarrollo_id = 0;
+                  $inmueble_id = $propiedad->id;
+                  $propiedad_id = $propiedad->id;
+                  $tipo_inmueble = "propiedad";
+              @endphp
+              @include('includes.formAltaSlide')
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -36,7 +56,6 @@
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Descripción</a></li>
-                <li role="presentation"><a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">Resumen</a></li>
                 <li role="presentation"><a href="#features" aria-controls="features" role="tab" data-toggle="tab">Características</a></li>
                 <li role="presentation"><a href="#plan" aria-controls="plan" role="tab" data-toggle="tab">Planos</a></li>
                 <li role="presentation"><a href="#tab_contact" aria-controls="tab_contact" role="tab" data-toggle="tab">Contacto</a></li>
@@ -45,141 +64,191 @@
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active bg_light" id="description">
                   <h3 class="text-uppercase  bottom20 top10">Descripción de <span class="color_red">Propiedad</span></h3>
-                  <p class="p-font-15">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum, bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt. Duis euismod placerat rhoncus. Phasellus mollis imperdiet placerat. Sed ac turpis nisl. Mauris at ante mauris. Aliquam posuere fermentum lorem, a aliquam mauris rutrum a. Curabitur sit amet pretium lectus, nec consequat orci.</p>
-                  <p class="p-font-15 top30 bottom30">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis et metus in libero sollicitudin venenatis eu sed enim. Nam felis lorem, suscipit ac nisl ac, iaculis dapibus tellus. Cras ante justo, aliquet quis placerat nec, molestie id turpis.</p>
+                 <p class="p-font-15">{!!$propiedad->description!!}</p>
                   <div class="property_meta bottom40">
-                    <span><i class="fa fa-object-group"></i>5,500 m2 </span>
-                    <span><i class="fa fa-bed"></i>2 Habitaciones</span>
-                    <span><i class="fa fa-bath"></i>3 Baños</span>
-                    <span><i class="fa fa-car"></i>1 Garage</span>
+                    <span><i class="fa fa-map-o"></i>{{$propiedad->superficie_construccion}} m2 de terreno </span>
+                    <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
+                    <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
+                    <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
+                    <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento</span>
+                    <span><i class="fa fa-clock-o"></i>{{$propiedad->antiguedad}} Años de antigüedad</span>
                   </div>
-                  <a class="link_arrow" href="#.">Leer más</a>
-                </div>
-                <div role="tabpanel" class="tab-pane bg_light" id="summary">
-                  <div class="row property-d-table">
-                    <div class="col-md-12">
-                      <h3 class="text-uppercase  bottom30 top10">Resumen <span class="color_red">Rápido</span></h3>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <table class="table table-striped table-responsive">
-                        <tbody>
-                          <tr>
-                            <td><b>Id</b></td>
-                            <td class="text-right">5456</td>
-                          </tr>
-                          <tr>
-                            <td><b>Precio</b></td>
-                            <td class="text-right">$10,600 / mensual</td>
-                          </tr>
-                          <tr>
-                            <td><b>Tamaño</b></td>
-                            <td class="text-right">5,500 m2</td>
-                          </tr>
-                          <tr>
-                            <td><b>Habitaciones</b></td>
-                            <td class="text-right">5</td>
-                          </tr>
-                          <tr>
-                            <td><b>Baños</b></td>
-                            <td class="text-right">3</td>
-                          </tr>
-                          <tr>
-                            <td><b>Fecha de registro</b></td>
-                            <td class="text-right">22-04-2017</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <table class="table table-striped table-responsive">
-                        <tbody>
-                          <tr>
-                            <td><b>Status</b></td>
-                            <td class="text-right">Renta</td>
-                          </tr>
-                          <tr>
-                            <td><b>Año de construcción</b></td>
-                            <td class="text-right">1991</td>
-                          </tr>
-                          <tr>
-                            <td><b>Garages</b></td>
-                            <td class="text-right">1</td>
-                          </tr>
-                          <tr>
-                            <td><b>Cross Streets</b></td>
-                            <td class="text-right">Nordoff</td>
-                          </tr>
-                          <tr>
-                            <td><b>Pisos</b></td>
-                            <td class="text-right">Carpet - Ceramic Tile</td>
-                          </tr>
-                          <tr>
-                            <td><b>Plomería</b></td>
-                            <td class="text-right">Plomería completa de cobre</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                  {{--  <a class="link_arrow" href="#.">Leer más</a>  --}}
                 </div>
                 <div role="tabpanel" class="tab-pane bg_light" id="features">
                   <div class="row">
                     <div class="col-md-12">
                       <h3 class="text-uppercase  bottom30 top10">Características de la <span class="color_red">Propiedad</span></h3>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                       <ul class="pro-list">
-                        <li>
+                        @foreach($caracteristicas as $caracteristica)
+                        @if($caracteristica->internet=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Acceso a Internet
+                        </li>
+                        @endif
+                        @if($caracteristica->aire_acondicionado=="on")
+                        <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Aire acondicionado
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Barbeque
+                        @endif
+                        @if($caracteristica->alarma=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Alarma
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Secadora
+                        @endif
+                        @if($caracteristica->alberca=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Alberca
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Lavadora
+                        @endif
+                        @if($caracteristica->altillo=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Altillo
                         </li>
-                      </ul>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <ul class="pro-list">
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Microondas
+                        @endif
+                        @if($caracteristica->amoblado=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Amoblado
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Ducha al aire libre
+                        @endif
+                        @if($caracteristica->juegos_infantiles=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Área de juegos infantiles
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Refrigerador
+                        @endif
+                        @if($caracteristica->ascensor=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Ascensor
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Alberca
+                        @endif
+                        @if($caracteristica->asador=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Asador
                         </li>
-                      </ul>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <ul class="pro-list">
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Barrio tranquilo
+                        @endif
+                        @if($caracteristica->balcon=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Balcón
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          TV Cable & WIFI
+                        @endif
+                        @if($caracteristica->calefaccion=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Calefacción
                         </li>
-                        <li>
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                          Persianas
+                        @endif
+                        @if($caracteristica->cisterna=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cisterna
                         </li>
+                        @endif
+                        @if($caracteristica->closets=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Closets
+                        </li>
+                        @endif
+                        @if($caracteristica->cocina=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cocina
+                        </li>
+                        @endif
+                        @if($caracteristica->cuarto_servicio=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cuarto de servicio
+                        </li>
+                        @endif
+                        @if($caracteristica->dormitorio_suite=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Dormitorio en suite
+                        </li>
+                        @endif
+                        @if($caracteristica->estudio=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Estudio
+                        </li>
+                        @endif
+                        @if($caracteristica->gas_natural=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Gas natural
+                        </li>
+                        @endif
+                        @if($caracteristica->jacuzzi=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Jacuzzi
+                        </li>
+                        @endif
+                        @if($caracteristica->jardin=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Jardín
+                        </li>
+                        @endif
+                        @if($caracteristica->linea_telefonica=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Línea telefónica
+                        </li>
+                        @endif
+                        @if($caracteristica->living=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Living
+                        </li>
+                        @endif
+                        @if($caracteristica->medio_banio=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Medio baño
+                        </li>
+                        @endif
+                        @if($caracteristica->patio=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Patio
+                        </li>
+                        @endif
+                        @if($caracteristica->playroom=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Playroom
+                        </li>
+                        @endif
+                        @if($caracteristica->porton_electrico=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Porton Electrico
+                        </li>
+                        @endif
+                        @if($caracteristica->sala_comedor=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Sala comedor
+                        </li>
+                        @endif
+                        @if($caracteristica->salon_usos_multiples=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Salón de usos múltiples
+                        </li>
+                        @endif
+                        @if($caracteristica->seguridad=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Seguridad
+                        </li>
+                        @endif
+                        @if($caracteristica->solo_familias=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Sólo Familias
+                        </li>
+                        @endif
+                        @if($caracteristica->terraza=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Terraza
+                        </li>
+                        @endif
+                        @if($caracteristica->uso_de_suelo=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Uso de suelo
+                        </li>
+                        @endif
+                        @if($caracteristica->vestidor=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Vestidor
+                        </li>
+                        @endif
+                        @endforeach
                       </ul>
                     </div>
                   </div>
@@ -189,21 +258,38 @@
                     <div class="col-md-12">
                       <h3 class="text-uppercase bottom20 top10"> <span class="color_red">Planos</span></h3>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12 top10">
-                      <div class="image">
-                        <img src="/images/propiedades/propiedad_demo/departamento/sliders/plano1.jpg" alt="image" />
-                        <div class="overlay border_radius">
-                          <a class="fancybox centered" href="/images/propiedades/propiedad_demo/departamento/sliders/plano1.jpg" data-fancybox-group="gallery"><i class="icon-focus"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12 top10">
-                      <div class="image">
-                        <img src="/images/propiedades/propiedad_demo/departamento/sliders/plano2.jpg" alt="image" />
-                        <div class="overlay border_radius">
-                          <a class="fancybox centered" href="/images/propiedades/propiedad_demo/departamento/sliders/plano2.jpg" data-fancybox-group="gallery"><i class="icon-focus"></i></a>
-                        </div>
-                      </div>
+                    <div class="col-md-12"> 
+                          <div class="row margin_bottom">
+                            @forelse($propiedadesPlanos as $slidesPlanos)
+                            <div class="col-md-6 col-sm-6 col-xs-12 top10">
+                                <div class="easyzoom easyzoom--overlay">
+                                  <a href="/storage/slides/{{$slidesPlanos->file}}">
+                                    <img src="/storage/slides/{{$slidesPlanos->file}}" class="slide-planos-desarrollos" alt=""/>
+                                  </a>
+                                </div>
+                                    @php
+                                      $slide_id=$slidesPlanos->id;
+                                      $file_delete=$slidesPlanos->file;
+                                      $tipo_inmueble = "propiedad";
+                                      $desarrollo_id = 0;
+                                      $inmueble_id = $propiedad->id;
+                                      $propiedad_id = $propiedad->id;
+                                    @endphp
+                                    @include('includes.formDeleteSlide')         
+                            </div>
+                            @empty
+                            <p class="text-white">Sin Imágenes</p>
+                            @endforelse 
+                            @php 
+                                $section_update="propiedad-planos";
+                                $desarrollo_id = 0;
+                                $inmueble_id = $propiedad->id;
+                                $tipo_inmueble = "propiedad";
+                                $propiedad_id = $propiedad->id;
+                            @endphp
+                            @include('includes.formAltaSlide')
+                          </div>
+
                     </div>
                   </div>
                 </div>
@@ -218,210 +304,99 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="agent-p-contact">
                         <div class="our-agent-box">
-                          <h3 class="bottom10">Cuvecubica</h3>
-                          <p class="bottom30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option congue nihil imperdiet doming…</p>
-                        </div>
-                        <div class="agetn-contact">
-                          <h6>Tel:</h6>
-                          <h6>Celular:</h6>
-                          <h6>Email:</h6>
-                          <h6>Skype:</h6>
-                        </div>
-                        <div class="agetn-contact-2">
-                          <p>(+01) 34 56 7890</p>
-                          <p>(+033) 34 56 7890</p>
-                          <p>contacto@cuvecubica.com.mx</p>
-                          <p>contacto.Cuvecubica</p>
+                            <div class="agetn-contact-2">
+                              <p>(55) 5292 1767 y (55) 5292 1768 <i class="icon-telephone114"></i></p>
+                              <p>contacto@cuvecubica.mx <i class=" icon-icons142"></i></p>
+                              <a href="http://www.cuvecubica.mx">
+                              <p>www.cuvecubica.mx <i class="icon-browser2"></i></p>
+                              </a>
+                              <p>Av. Santa Fe 546, Col. Cruz Manca, Del. Cuajimalpa, CDMX. <i class="icon-icons74"></i></p>
+                            </div>
                         </div>
                       </div>
-                      <ul class="socials">
-                        <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#."><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#."><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#."><i class="fa fa-pinterest"></i></a></li>
-                      </ul>
                     </div>
                   </div>
                   <div class="row top30">
-                    <div class="col-xs-12">
-                      <form class="findus">
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="single-query">
-                              <input type="text" placeholder="Tu nombre" class="keyword-input">
+                    <form class="callus padding-bottom" method="post" id="contact-form" action="/solicitarinfo">
+                          {{ csrf_field() }}    
+                          <input type="hidden" class ="keyword-input"  name="desarrollo_contacto_title" id="desarrollo_contacto_title" value="{{$propiedad->title}}">
+                          <input type="hidden" class ="keyword-input"  name="desarrollo_id" id="desarrollo_id" value="{{$propiedad->id}}">
+                          <input type="hidden" class ="keyword-input"  name="tipo_inmueble" id="tipo_inmueble" value="propiedad">
+                            <div class="col-md-12">
+                                  <div class="single-query">
+                                      <input required type="text" class ="keyword-input" placeholder="Nombre" name="name" id="name">
+                                  </div>
+                              </div>
+                            <div class="col-md-12">    
+                                  <div class="single-query">
+                                      <input required type="text" class ="keyword-input" placeholder="Teléfono(s)" name="phone" id="phone">
+                                  </div>
                             </div>
-                            <div class="single-query">
-                              <input type="text" placeholder="Número telefónico" class="keyword-input">
+                            <div class="col-md-12">     
+                                  <div class="single-query">
+                                      <input required type="email" class ="keyword-input" placeholder="E - mail" name="email" id="email">
+                                  </div>
                             </div>
-                            <div class="single-query">
-                              <input type="text" placeholder="Email" class="keyword-input">
+                            <div class="col-md-12">
+                                  <div class="single-query">
+                                      <textarea name="message" placeholder="Mensaje" id="message" required></textarea>
+                                  </div>
                             </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="single-query">
-                              <textarea placeholder="Mensaje"></textarea>
-                            </div>
-                          </div>
-                          <div class="col-sm-12">
-                            <input type="submit" value="Enviar mensaje" class="btn_fill">
-                          </div>
-                        </div>
-                      </form>
-                    </div>
+                              <div class="col-md-12">   
+                                    <button type="submit" class="btn_fill" id="btn_submit" name="btn_submit">Enviar</button>
+                              </div>     
+                    </form>
+              
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 colsm-4 col-xs-12">
-        <div class="property-query-area padding-all20">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="text-uppercase  bottom40 top10 title_listPro">Búsqueda <span class="color_red">Avanzada</span></h3>
-            </div>
-          </div>
-          <div class="row">
-              <form class="findus">
-                <div class="row">
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <input class="keyword-input" placeholder="Busco... (Ejem. 'Oficina')" type="text">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <div class="intro">
-                      <select>
-                        <option selected="" value="any">Localidad</option>
-                        <option>Ciudad de México</option>
-                        <option>Querétaro</option>
-                        <option>Estado de México</option>
-                        <option>Otra...</option>
-                      </select>
+              <div class="row">
+                    <div class="col-md-12"> 
+
+                    <h3 class="text-uppercase  bottom30 top10 text-white">Ubicación de <span class="color_red">Inmueble</span></h3>
+ 
+                   <div id="map"></div>
+
+                    <script>
+
+                        function initMap() {
+                          var uluru = {lat: {{$propiedad->latitud}}, lng: {{$propiedad->longitud}} };
+                          var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 14,
+                            center: uluru,
+                            styles:[{"stylers":[{"saturation":-100},{"gamma":1}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"saturation":50},{"gamma":0},{"hue":"#50a5d1"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#c5c5c5"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"weight":0.5},{"color":"#e7af12"}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"gamma":1},{"saturation":50}]}]
+                          });
+
+                          var contentString = 'Hola';
+
+                          var infowindow = new google.maps.InfoWindow({
+                            content: contentString
+                          });
+
+                          var marker = new google.maps.Marker({
+                            position: uluru,
+                            map: map,
+                            title: 'Uluru (Ayers Rock)'
+                          });
+                          marker.addListener('click', function() {
+                            infowindow.open(map, marker);
+                          });
+                        }
+                        
+                      </script>
+                    
                     </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <div class="intro">
-                      <select>
-                        <option class="active">Tipo de propiedad</option>
-                        <option>Oficina</option>
-                        <option>Casa</option>
-                        <option>Departamento</option>
-                        <option>Penthouse</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <div class="intro">
-                      <select>
-                        <option class="active">Estatus de propiedad</option>
-                        <option>En desarrollo</option>
-                        <option>Totalmente construido</option>
-                        <option>Amueblado</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                    <div class="col-md-6 col-sm-6">
-                      <div class="single-query">
-                        <div class="intro">
-                          <select>
-                            <option class="active">Mín. de Hab.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                      <div class="single-query">
-                        <div class="intro">
-                          <select>
-                            <option class="active">Máx. de Hab.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              </form>
-          </div>
-          <div class="row">
-            <div class="col-md-6 text-center">
-              <div class="query-submit-button top30">
-                <a href="#." class="btn_fill">Buscar</a>
               </div>
-            </div>
-          </div>
-        </div>
-        <h3 class="text-uppercase  bottom40 top40 title_listPro">Propiedades <span class="color_red">Recientes</span></h3>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-1.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-2.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-3.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-1.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        </div>
+        
       </div>
+
     </div>
+    @endforeach
   </div>
   </div>
 </section>
+
+

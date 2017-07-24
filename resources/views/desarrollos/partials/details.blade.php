@@ -8,21 +8,7 @@
     <div class="row">
       <div class="history-section">
         <div class="col-md-6 col-sm-6 col-xs-12">
-        @if (session('status'))
-            @if(session('status')=="ok_send_mensaje_info")       
-              <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gracias por contactarnos!</strong> En breve uno de nuestros agentes se pondrá en contacto contigo. </div>
-            @endif
-            @if(session('status')=="ok_create_desarrollo")       
-              <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Registro correcto!</strong> Ahora puedes cargar las imágenes correspondientes al desarrollo, planos y amenidades. </div>
-            @endif
-            @if(session('status')=="ok_create_slide")       
-              <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Registro correcto!</strong> Se han guardado las imágenes correctamente, puedes seguir cargando más. </div>
-            @endif
-            @if(session('status')=="ok_delete_slide")       
-              <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Eliminado!</strong> Se ha eliminado correctamente la imagen. </div>
-            @endif
-        @endif
-
+          @include('includes.status')
           <h3 class="text-uppercase text-white text-center"><span class="color_red">{{$desarrollo->title}}</span></h3>
           @if (!Auth::guest())
               <a href="/editarDesarrollo/{{$desarrollo->id}}" type="button" class="btn btn-warning btn-xs pull-right">Editar datos generales</a>
@@ -42,6 +28,10 @@
                       @php
                         $slide_id=$slidesGenerales->id;
                         $file_delete=$slidesGenerales->file;
+                        $tipo_inmueble = "desarrollo";
+                        $desarrollo_id = $desarrollo->id;
+                        $inmueble_id = $desarrollo->id;
+                        $propiedad_id = "0";
                       @endphp
                       @include('includes.formDeleteSlide')         
                     </figcaption>
@@ -54,6 +44,10 @@
           </div>
               @php 
                   $section_update="desarrollos-general";
+                  $tipo_inmueble = "desarrollo";
+                  $desarrollo_id = $desarrollo->id;
+                  $inmueble_id = $desarrollo->id;
+                  $propiedad_id = "0";
               @endphp
               @include('includes.formAltaSlide')
         </div>
@@ -87,6 +81,10 @@
                       @php
                         $slide_id=$slidesAmenidades->id;
                         $file_delete=$slidesAmenidades->file;
+                        $tipo_inmueble = "desarrollo";
+                        $desarrollo_id = $desarrollo->id;
+                        $inmueble_id = $desarrollo->id;
+                        $propiedad_id = "0";
                       @endphp
                       @include('includes.formDeleteSlide')         
               </div>
@@ -95,7 +93,11 @@
         @endforelse     
             </div>
               @php 
-                  $section_update="desarrollos-amenidades";
+                  $section_update="desarrollos-amenidades";                 
+                  $desarrollo_id = $desarrollo->id;
+                   $inmueble_id = $desarrollo->id;
+                  $tipo_inmueble = "desarrollo";
+                  $propiedad_id = "0";
               @endphp
               @include('includes.formAltaSlide')
 
@@ -120,7 +122,7 @@
               <div class="col-xs-12">
                 <h3 class="text-uppercase bottom20"><span class="color_red">Plantas</span></h3>
               </div>
-          @forelse($desarrolloSlidesPlanos as $slidesPlanos)
+              @forelse($desarrolloSlidesPlanos as $slidesPlanos)
               <div class="col-md-4 col-sm-4 col-xs-12 top10">
                   <div class="easyzoom easyzoom--overlay">
                     <a href="/storage/slides/{{$slidesPlanos->file}}">
@@ -130,14 +132,22 @@
                       @php
                         $slide_id=$slidesPlanos->id;
                         $file_delete=$slidesPlanos->file;
+                        $tipo_inmueble = "desarrollo";
+                        $desarrollo_id = $desarrollo->id;
+                        $inmueble_id = $desarrollo->id;
+                        $propiedad_id = "0";
                       @endphp
                       @include('includes.formDeleteSlide')         
               </div>
-          @empty
+              @empty
               <p class="text-white">Sin Imágenes</p>
-          @endforelse 
+              @endforelse 
               @php 
                   $section_update="desarrollos-planos";
+                  $desarrollo_id = $desarrollo->id;
+                   $inmueble_id = $desarrollo->id;
+                  $tipo_inmueble = "desarrollo";
+                  $propiedad_id = "0";
               @endphp
               @include('includes.formAltaSlide')
             </div>
@@ -289,30 +299,31 @@
                     {{ csrf_field() }}    
                     <input type="hidden" class ="keyword-input"  name="desarrollo_contacto_title" id="desarrollo_contacto_title" value="{{$desarrollo->title}}">
                     <input type="hidden" class ="keyword-input"  name="desarrollo_id" id="desarrollo_id" value="{{$desarrollo->id}}">
-            	<div class="col-md-12">
-                    <div class="single-query">
-                        <input required type="text" class ="keyword-input" placeholder="Nombre" name="name" id="name">
-                    </div>
-                </div>
-               <div class="col-md-12">    
-                    <div class="single-query">
-                        <input required type="text" class ="keyword-input" placeholder="Teléfono(s)" name="phone" id="phone">
-                    </div>
-               </div>
-               <div class="col-md-12">     
-                    <div class="single-query">
-                        <input required type="email" class ="keyword-input" placeholder="E - mail" name="email" id="email">
-                    </div>
-               </div>
-               <div class="col-md-12">
-                    <div class="single-query">
-                        <textarea name="message" placeholder="Mensaje" id="message" required></textarea>
-                    </div>
-               </div>
-                 <div class="col-md-12">   
-                      <button type="submit" class="btn_fill" id="btn_submit" name="btn_submit">Enviar</button>
-                 </div>     
-                    </form>
+                    <input type="hidden" class ="keyword-input"  name="tipo_inmueble" id="tipo_inmueble" value="desarrollo">
+                      <div class="col-md-12">
+                            <div class="single-query">
+                                <input required type="text" class ="keyword-input" placeholder="Nombre" name="name" id="name">
+                            </div>
+                        </div>
+                      <div class="col-md-12">    
+                            <div class="single-query">
+                                <input required type="text" class ="keyword-input" placeholder="Teléfono(s)" name="phone" id="phone">
+                            </div>
+                      </div>
+                      <div class="col-md-12">     
+                            <div class="single-query">
+                                <input required type="email" class ="keyword-input" placeholder="E - mail" name="email" id="email">
+                            </div>
+                      </div>
+                      <div class="col-md-12">
+                            <div class="single-query">
+                                <textarea name="message" placeholder="Mensaje" id="message" required></textarea>
+                            </div>
+                      </div>
+                        <div class="col-md-12">   
+                              <button type="submit" class="btn_fill" id="btn_submit" name="btn_submit">Enviar</button>
+                        </div>     
+              </form>
         
             </div>
           </div>

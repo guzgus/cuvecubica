@@ -2571,7 +2571,7 @@ nav.navbar.bootsnav.sticked .social-icons {
   background: #fff;
 }
 .single-query input, .single-query select {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   background: transparent;
 }
 .search-2 .intro .zelect, .intro .zelect, .single-query input, .single-query select{
@@ -6297,6 +6297,18 @@ footer .text-right{
 
 .slide-map-desarrollos{
   max-width: 250px !important;
+}
+
+.side-amenidades-propiedades{
+    max-width: 100% !important;
+  max-height: 400px !important;
+
+}
+
+.side-amenidades-propiedades-mini{
+    max-width: 100% !important;
+  max-height: 100px !important;
+
 }
 
 .logo-desarrollos {
