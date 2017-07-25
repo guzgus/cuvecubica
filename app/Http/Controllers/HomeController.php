@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Desarrollos;
+use App\Propiedades;
 
 
 class HomeController extends Controller
@@ -25,7 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+            $propiedades = Propiedades::all();
+            $propiedadesSlides = new Propiedades();
+            $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
+        
         return view('home.index')->with([ 
+                'propiedades' => $propiedades,
                  'desarrollos' => Desarrollos::all(),
             ]);
 

@@ -15,174 +15,37 @@
     <div class="col-md-12">
       <div class="row">
         <div id="property-2-slider" class="owl-carousel">
+          @foreach($propiedades as $propiedad)
           <div class="item">
             <div class="property_item bottom40">
               <div class="image">
-                <img src="/images/propiedades/propiedad_demo/casa/portada.jpg" alt="listin" class="img-responsive">
+                <img class="side-amenidades-propiedades-mini" src="/storage/slides/{{$propiedad->slide_default}}">
                 <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i>530 m2 </span>
-                  <span><i class="fa fa-bed"></i>4</span>
-                  <span><i class="fa fa-bath"></i>6 Baños</span>
+                    <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
+                    <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
+                    <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
+                    <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento</span>
                 </div>
-                <div class="price"><span class="tag">En venta</span></div>
+                <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
                 <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/detail">Ver detalle</a></div>
+                  <div class="centered"><a class="link_arrow white_border" href="/propiedad/{{$propiedad->id}}">Ver detalle</a></div>
                 </div>
               </div>
               <div class="proerty_content">
                 <div class="proerty_text">
-                  <h3><a href="/detail">Casa en venta en Yucatán</a></h3>
-                  <span class="bottom10">123 123, México Norte, Mérida, Yucatán</span>
-                  <p><strong>$ 8,900,000 MXN</strong></p>
+                  <h3><a href="/propiedad/{{$propiedad->id}}">{{$propiedad->title}}</a></h3>
+                  <span class="bottom10">{{$propiedad->domicilio}}</span>
+                  <p><strong>${{ number_format($propiedad->precio,2)}} {{$propiedad->moneda}}</strong></p>
                 </div>
                 <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i> Hace 3 días</p>
+                  <p class="pull-left"><i class="icon-calendar2"></i> {{$propiedad->updated_at}}</p>
                   <ul class="pull-right">
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="property_item bottom40">
-              <div class="image">
-                <img src="/images/propiedades/propiedad_demo/departamento/portada.jpg" alt="listin" class="img-responsive">
-                <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i>75 - 125 m2 </span>
-                  <span><i class="fa fa-bed"></i>2-3</span>
-                  <span><i class="fa fa-bath"></i>2-3 Baños</span>
-                </div>
-                <div class="price"><span class="tag">En venta</span></div>
-                <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/detail">Ver detalle</a></div>
-                </div>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3><a href="/detail">Departamentos en Venta en Boulevard Europa No. 14</a></h3>
-                  <span class="bottom10">Boulevard Europa No. 14, Lomas De Angelópolis, San Andrés Cholula, Puebla</span>
-                  <p><strong>$ 3,001,000</strong></p>
-                </div>
-                <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i>Hace 3 días</p>
-                  <ul class="pull-right">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="property_item bottom40">
-              <div class="image">
-                <img src="/images/propiedades/propiedad_demo/oficina/portada.jpg" alt="listin" class="img-responsive">
-                <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i> 418 m² </span>
-                  <span><i class="fa fa-car"></i>5</span>
-                  <span><i class="fa fa-bath"></i>5 Baños</span>
-                </div>
-                <div class="price"><span class="tag">En renta</span></div>
-                <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/detail">Ver detalle</a></div>
-                </div>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3><a href="property_details_1.html">Oficinas en Renta en Calle 15 X 18 Y 22 503</a></h3>
-                  <span class="bottom10">Calle 15 X 18 Y 22 503, Altabrisa, Mérida, Yucatán</span>
-                  <p><strong>$50,600 por Mes</strong></p>
-                </div>
-                <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i> Hace 5 Days ago</p>
-                  <ul class="pull-right">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="property_item bottom40">
-              <div class="image">
-                <img src="/images/propiedades/propiedad_demo/casa/portada.jpg" alt="listin" class="img-responsive">
-                <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i>530 m2 </span>
-                  <span><i class="fa fa-bed"></i>4</span>
-                  <span><i class="fa fa-bath"></i>6 Baños</span>
-                </div>
-                <div class="price"><span class="tag">En venta</span></div>
-                <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/detail">Ver detalle</a></div>
-                </div>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3><a href="/detail">Casa en venta en Yucatán</a></h3>
-                  <span class="bottom10">123 123, México Norte, Mérida, Yucatán</span>
-                  <p><strong>$ 8,900,000 MXN</strong></p>
-                </div>
-                <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i> Hace 3 días</p>
-                  <ul class="pull-right">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="property_item bottom40">
-              <div class="image">
-                <img src="/images/propiedades/propiedad_demo/departamento/portada.jpg" alt="listin" class="img-responsive">
-                <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i>75 - 125 m2 </span>
-                  <span><i class="fa fa-bed"></i>2-3</span>
-                  <span><i class="fa fa-bath"></i>2-3 Baños</span>
-                </div>
-                <div class="price"><span class="tag">En venta</span></div>
-                <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/detail">Ver detalle</a></div>
-                </div>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3><a href="/detail">Departamentos en Venta en Boulevard Europa No. 14</a></h3>
-                  <span class="bottom10">Boulevard Europa No. 14, Lomas De Angelópolis, San Andrés Cholula, Puebla</span>
-                  <p><strong>$ 3,001,000</strong></p>
-                </div>
-                <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i>Hace 3 días</p>
-                  <ul class="pull-right">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="property_item bottom40">
-              <div class="image">
-                <img src="/images/propiedades/propiedad_demo/oficina/portada.jpg" alt="listin" class="img-responsive">
-                <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i> 418 m² </span>
-                  <span><i class="fa fa-car"></i>5</span>
-                  <span><i class="fa fa-bath"></i>5 Baños</span>
-                </div>
-                <div class="price"><span class="tag">En renta</span></div>
-                <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/detail">Ver detalle</a></div>
-                </div>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3><a href="/detail">Oficinas en Renta en Calle 15 X 18 Y 22 503</a></h3>
-                  <span class="bottom10">Calle 15 X 18 Y 22 503, Altabrisa, Mérida, Yucatán</span>
-                  <p><strong>$50,600 por Mes</strong></p>
-                </div>
-                <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i> Hace 5 Days ago</p>
-                  <ul class="pull-right">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
