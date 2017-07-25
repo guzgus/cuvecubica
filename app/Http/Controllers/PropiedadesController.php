@@ -25,7 +25,13 @@ class PropiedadesController extends Controller
      */
     public function index()
     {
-        return view('propiedades.list')->with([             
+
+            $propiedades = Propiedades::all();
+            $propiedadesSlides = new Propiedades();
+            $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
+
+        return view('propiedades.list')->with([  
+                'propiedades' => $propiedades,
                 'desarrollos' => Desarrollos::all()
                  ]);
     }

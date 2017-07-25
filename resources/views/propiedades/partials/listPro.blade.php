@@ -2,6 +2,138 @@
 <section id="listPro" class="padding-180">
   <div class="container">
     <div class="row">
+      <div class="col-md-12 bottom40">
+        <h2 class="text-uppercase title_listPro">Búsqueda <span class="color_red">Avanzada</span></h2>
+         <div class="line_1"></div>
+         <div class="line_2"></div>
+         <div class="line_3"></div> 
+      </div>
+    </div>
+    <div class="row bottom40">
+      <form class="findus"> 
+        <div class="col-md-3 col-sm-3">
+          <div class="single-query form-group">
+            <label class="text-white">Término de Búsqueda</label>
+            <input class="keyword-input"  required type="text">
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <div class="single-query form-group">
+            <div class="intro">
+              <label class="text-white">Localidad</label>
+              <select>
+                <option selected="" >-</option>
+                <option>Localidad - 1</option>
+                <option>Localidad - 2</option>
+                <option>Localidad - 3</option>
+                <option>Localidad - 4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <div class="single-query form-group">
+            <div class="intro">
+              <label class="text-white">Tipo de propiedad</label>
+              <select>
+                <option class="active">-</option>
+                <option>Tipo de propiedad - 1</option>
+                <option>Tipo de propiedad - 2</option>
+                <option>Tipo de propiedad - 3</option>
+                <option>Tipo de propiedad - 4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <div class="single-query form-group">
+            <div class="intro">
+              <label class="text-white">Estatus de propiedad</label>
+              <select>
+                <option class="active">-</option>
+                <option>Estatus de propiedad - 1</option>
+                <option>Estatus de propiedad - 2</option>
+                <option>Estatus de propiedad - 3</option>
+                <option>Estatus de propiedad - 4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="single-query form-group">
+                <div class="intro">
+                  <label class="text-white">Habitaciones</label>
+                  <select>
+                    <option class="active">-</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="single-query form-group">
+                <div class="intro">
+                  <label class="text-white">Baños</label>
+                  <select>
+                    <option class="active">-</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="single-query form-group">
+                <label class="text-white">m2 mínimos</label>
+                <input class="keyword-input" type="text">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="single-query form-group">
+                <label class="text-white">m2 máximos</label>
+                <input class="keyword-input" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="single-query-slider top10">
+            <label class="text-white">Rango de precio:</label>
+            <div class="price text-right text-white"><span>$</span>
+              <div class="leftLabel text-white">1</div>
+              <span>a $</span>
+              <div class="rightLabel text-white">50000000</div>
+            </div>
+            <div data-range_min="0" data-range_max="50000000" data-cur_min="0" data-cur_max="50000000" class="nstSlider">
+              <div class="bar nst-animating" style="left: 1px; width: 359px;"></div>
+              <div class="leftGrip nst-animating" tabindex="0" style="left: 1px;"></div>
+              <div class="rightGrip nst-animating" tabindex="0" style="left: 340px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12 text-right">
+          <div class="query-submit-button top10">
+            <input class="btn_fill" value="Buscar" type="submit">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row bottom40">
       <div class="col-xs-12">
         <h2 class="uppercase title_listPro">LISTA DE  <span class="color_red">PROPIEDADES</span></h2>
         <div class="line_1"></div>
@@ -10,278 +142,45 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="row">
-            <div class="col-md-6 col-sm-6">
+            @foreach($propiedades as $propiedad)
+            <div class="col-md-4 col-sm-4">
               <div class="property_item heading_space">
                 <div class="image">
-                  <img src="/images/propiedades/propiedad_demo/casa/portada.jpg" alt="listin" class="img-responsive">
+                  <img class="side-amenidades-propiedades-mini" src="/storage/slides/{{$propiedad->slide_default}}">
                   <div class="overlay">
-                    <div class="centered"><a class="link_arrow white_border" href="/propiedad/1">Ver detalle</a></div>
+                    <div class="centered"><a class="link_arrow white_border" href="/propiedad/{{$propiedad->id}}">Ver detalle</a></div>
                   </div>
-                  <div class="feature"><span class="tag">Destacados</span></div>
-                  <div class="price"><span class="tag">En Venta</span></div>
+                  <div class="price"><span class="tag"> {{$propiedad->status}}</span></div>
                   <div class="property_meta">
-                    <span><i class="fa fa-object-group"></i>530 m2 </span>
-                    <span><i class="fa fa-bed"></i>2</span>
-                    <span><i class="fa fa-bath"></i>1 Baños</span>
+                    <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
+                    <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
+                    <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
+                    <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento</span>
                   </div>
                 </div>
                 <div class="proerty_content">
                   <div class="proerty_text">
-                    <h3><a href="/propiedad/1">Casa en venta en Yucatán</a></h3>
-                    <span class="bottom10">123 123, México Norte, Mérida, Yucatán</span>
-                    <p><strong>$ 8,900,000 MXN</strong></p>
+                    <h3><a href="/propiedad/1">{{$propiedad->title}}</a></h3>
+                    <span class="bottom10">{{$propiedad->domicilio}}</span>
+                    <p><strong>${{ number_format($propiedad->precio,2)}} {{$propiedad->moneda}}</strong></p>
                   </div>
                   <div class="favroute clearfix">
-                    <p class="pull-left"><i class="icon-calendar2"></i> Hace 3 días</p>
+                    <p class="pull-left"><i class="icon-calendar2"></i> {{$propiedad->updated_at}}</p>
                     <ul class="pull-right">
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-sm-6">
-            <div class="property_item bottom40">
-              <div class="image">
-                <img src="/images/propiedades/propiedad_demo/departamento/portada.jpg" alt="listin" class="img-responsive">
-                <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i>75 - 125 m2 </span>
-                  <span><i class="fa fa-bed"></i>2-3</span>
-                  <span><i class="fa fa-bath"></i>2-3 Baños</span>
-                </div>
-                <div class="price"><span class="tag">En venta</span></div>
-                <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/propiedad/1">Ver detalle</a></div>
-                </div>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3><a href="/propiedad/1">Departamentos en Venta en Boulevard Europa No. 14</a></h3>
-                  <span class="bottom10">Boulevard Europa No. 14, Lomas De Angelópolis, San Andrés Cholula, Puebla</span>
-                  <p><strong>$ 3,001,000</strong></p>
-                </div>
-                <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i> Hace 3 días</p>
-                  <ul class="pull-right">
-                  </ul>
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-            <div class="property_item bottom40">
-              <div class="image">
-                <img src="/images/propiedades/propiedad_demo/oficina/portada.jpg" alt="listin" class="img-responsive">
-                <div class="property_meta">
-                  <span><i class="fa fa-object-group"></i> 418 m² </span>
-                  <span><i class="fa fa-car"></i>5</span>
-                  <span><i class="fa fa-bath"></i>5 Baños</span>
-                </div>
-                <div class="price"><span class="tag">En renta</span></div>
-                <div class="overlay">
-                  <div class="centered"><a class="link_arrow white_border" href="/propiedad/1">Ver detalle</a></div>
-                </div>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3><a href="/propiedad/1">Oficinas en Renta en Calle 15 X 18 Y 22 503</a></h3>
-                  <span class="bottom10">Calle 15 X 18 Y 22 503, Altabrisa, Mérida, Yucatán</span>
-                  <p><strong>$50,600 por Mes</strong></p>
-                </div>
-                <div class="favroute clearfix">
-                  <p class="pull-left"><i class="icon-calendar2"></i> Hace 5 Days ago</p>
-                  <ul class="pull-right">
-                  </ul>
-                </div>
-              </div>
-            </div>
-            </div>
+            @endforeach
           </div>
           <ul class="pager top40 padding_bottom">
             <li><a href="#.">1</a></li>
             <li class="active"><a href="#.">2</a></li>
             <li><a href="#.">3</a></li>
           </ul>
-      </div>
-      <div class="col-md-4 colsm-4 col-xs-12">
-        <div class="property-query-area padding-all20">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="text-uppercase  bottom40 top10 title_listPro">Búsqueda <span class="color_red">Avanzada</span></h3>
-            </div>
-          </div>
-          <div class="row">
-              <form class="findus">
-                <div class="row">
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <input class="keyword-input" placeholder="Busco... (Ejem. 'Oficina')" type="text">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <div class="intro">
-                      <select>
-                        <option selected="" value="any">Localidad</option>
-                        <option>Ciudad de México</option>
-                        <option>Querétaro</option>
-                        <option>Estado de México</option>
-                        <option>Otra...</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <div class="intro">
-                      <select>
-                        <option class="active">Tipo de propiedad</option>
-                        <option>Oficina</option>
-                        <option>Casa</option>
-                        <option>Departamento</option>
-                        <option>Penthouse</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-query">
-                    <div class="intro">
-                      <select>
-                        <option class="active">Estatus de propiedad</option>
-                        <option>En desarrollo</option>
-                        <option>Totalmente construido</option>
-                        <option>Amueblado</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                    <div class="col-md-6 col-sm-6">
-                      <div class="single-query">
-                        <div class="intro">
-                          <select>
-                            <option class="active">Mín. de Hab.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                      <div class="single-query">
-                        <div class="intro">
-                          <select>
-                            <option class="active">Máx. de Hab.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              </form>
-          </div>
-          <div class="row">
-            <div class="col-md-6 text-center">
-              <div class="query-submit-button top30">
-                <a href="#." class="btn_fill">Buscar</a>
-              </div>
-            </div>
-            <div class="col-md-6 text-center">
-              <div class="group-button-search">
-                <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
-                  <i class="fa fa-plus text-1 bg-color-yello" aria-hidden="true"></i>
-                  <i class="fa fa-minus text-2 hide bg-color-yello" aria-hidden="true"></i>
-                  <div class="text-1">Más opciones</div>
-                  <div class="text-2 hide">Más opciones</div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="search-propertie-filters collapse">
-            <div class="container-2">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="search-form-group white">
-                    <input type="checkbox" name="check-box" />
-                    <span>Lavadora y secadora</span>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="search-form-group white">
-                    <input type="checkbox" name="check-box" />
-                    <span>Balcón</span>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="search-form-group white">
-                    <input type="checkbox" name="check-box" />
-                    <span>Almacenamiento</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3 class="text-uppercase  bottom40 top40 title_listPro">Propiedades <span class="color_red">Recientes</span></h3>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-1.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-2.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-3.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#.">
-            <img class="media-object" src="images/f-p-1.png" alt="image">
-            </a>
-          </div>
-          <div class="media-body title_listPro">
-            <h4 class="media-heading title_listPro"><a href="#.">Historic Town House</a></h4>
-            <p>45 Regent Street, London, UK</p>
-            <a href="#.">$178,600</a>
-          </div>
-        </div>
-        </div>
       </div>
     </div>
   </div>
