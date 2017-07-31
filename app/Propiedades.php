@@ -36,7 +36,7 @@ class Propiedades extends Model
                 $propiedad_id = $propiedad->id;
 
                 $SlidesPropiedad=Sliders::where('propiedad_id', $propiedad_id)->inRandomOrder()->take(1)->get();
-                
+                    $slide_default = 'no-image-available.png';
                 foreach ($SlidesPropiedad as $slide_unico) {
                     $slide_default = $slide_unico->file;
                 }
