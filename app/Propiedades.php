@@ -23,6 +23,7 @@ class Propiedades extends Model
         'superficie_terreno',
         'antiguedad',
         'desarrollo_id',
+        'localidad',
         // 'link_video',
     ];
 

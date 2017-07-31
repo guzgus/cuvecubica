@@ -56,6 +56,16 @@
                         <div class="single-query">
                             <textarea id="mymce" name="description"></textarea>
                         </div>
+                        <h3 class="text-white text-left" >Ubicación</h3>
+                        <h5 class="text-white text-left">Localidad: </h5>
+                        <div class="single-query form-group">
+                          <div class="intro text-left">
+                            <select name="localidad" required>
+                              <option selected="" value="">Localidad</option>
+                              @include('includes.localidades_options')
+                            </select>
+                          </div>
+                        </div>
                         <h5 class="text-white text-left">Domicilio:</h5>
                         <div class="single-query">
                           <input type="text"  class="keyword-input" placeholder="Domicilio de la propiedad" required name="domicilio">

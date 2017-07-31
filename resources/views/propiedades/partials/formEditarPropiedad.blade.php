@@ -22,10 +22,12 @@
                           {{ csrf_field() }}
                       <div class="col-md-12">
                         <h5 class="text-white text-left">Tipo de propiedad:</h5>
-                        <div class="single-query">
-                          <select class="keyword-input" name="categoria" id="categoria" required>
-                              <option value="">Selecciona categoría</option>
-                              <option selected value="{{$propiedad->categoria}}">{{$propiedad->categoria}}</option>
+                        <div class="single-query form-group">
+                          <div class="intro text-left">
+                            <select name="categoria" id="categoria" required>
+                              <option selected="" value="{{$categoria=$propiedad->categoria}}">
+                                      {{$categoria}}
+                              </option>
                               <option value="Casas">Casas</option>
                               <option value="Cuartos">Cuartos</option>
                               <option value="Departamentos">Departamentos</option>
@@ -37,19 +39,23 @@
                               <option value="Ranchos">Ranchos</option>
                               <option value="Terrenos">Terrenos</option>
                               <option value="Otros">Otros inmuebles</option>
-                          </select>
+                            </select>
+                          </div>
                         </div>
                         <h5 class="text-white text-left">Propiedad en:</h5>
-                        <div class="single-query">
-                          <select class="keyword-input" name="status" id="status" required>
-                              <option value="">Selecciona una opción</option>
-                              <option selected value="{{$propiedad->status}}">{{$propiedad->status}}</option>
-                              <option>Renta</option>
-                              <option>Venta</option>
-                              <option>Traspaso</option>
-                              <option>Preventa</option>    
-                              <option>Renta para corta estancia</option>    
-                          </select>
+                        <div class="single-query form-group">
+                          <div class="intro text-left">
+                            <select name="status" id="status" required>
+                              <option selected="" value="{{$status=$propiedad->status}}">
+                                      {{$status}}
+                              </option>
+                              <option value="Renta">Renta</option>
+                              <option value="Venta">Venta</option>
+                              <option value="Traspaso">Traspaso</option>
+                              <option value="Preventa">Preventa</option>    
+                              <option value="Renta para corta estancia">Renta para corta estancia</option>    
+                            </select>
+                          </div>
                         </div>
                         <h5 class="text-white text-left">Título de propiedad:</h5>
                         <div class="single-query">
@@ -59,6 +65,18 @@
                         <h5 class="text-white text-left">Descripción:</h5>
                         <div class="single-query">
                             <textarea id="mymce" name="description">{!!$propiedad->description!!}</textarea>
+                        </div>
+                        <h3 class="text-white text-left" >Ubicación</h3>
+                        <h5 class="text-white text-left">Localidad: </h5>
+                        <div class="single-query form-group">
+                          <div class="intro text-left">
+                            <select name="localidad" required>
+                              <option selected="" value="{{$localidad_id=$propiedad->localidad}}">
+                              @include('includes.localidades_title')
+                              </option>
+                              @include('includes.localidades_options')
+                            </select>
+                          </div>
                         </div>
                         <h5 class="text-white text-left">Domicilio:</h5>
                         <div class="single-query">
