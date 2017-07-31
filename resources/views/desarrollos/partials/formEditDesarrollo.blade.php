@@ -18,7 +18,7 @@
                 <div class="agent-p-form">
                   <div class="row">
                     @foreach($desarrolloDetails as $desarrollo)
-                    <form class="callus"  action="/editDesarrollo" method="post" enctype="multipart/form-data" novalidate>
+                    <form class="callus"  action="/editDesarrollo" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}
                       <div class="col-md-12">
                         <h5 class="text-white text-left">Titulo de desarrollo:</h5>

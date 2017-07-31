@@ -122,11 +122,11 @@ class PropiedadesController extends Controller
 
             $link_video = str_replace("watch?v=", "embed/", $request->link_video);
 
-            $request->logo->store('public/logos');
+           if($request->logo){ $request->logo->store('public/logos'); }
 
             $desarrollo = new Desarrollos;
             $desarrollo->fill($request->all());
-            $desarrollo->logo=$request->logo->hashName();
+            if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
             $desarrollo->link_video=$link_video;
             $desarrollo->save();        
             $desarrollo_id = $desarrollo->id;

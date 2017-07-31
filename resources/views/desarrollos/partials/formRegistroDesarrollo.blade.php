@@ -17,7 +17,7 @@
                 <h2>Datos generales</h2>
                 <div class="agent-p-form">
                   <div class="row">
-                    <form class="callus"  action="/createDesarrollo" method="post" enctype="multipart/form-data" novalidate>
+                    <form class="callus"  action="/createDesarrollo" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}
                       <div class="col-md-12">
                         <h5 class="text-white text-left">Titulo de desarrollo:</h5>
@@ -26,7 +26,7 @@
                         </div>
                         <h5 class="text-white text-left">Descripción:</h5>
                         <div class="single-query">
-                            <textarea id="mymce" name="description" required></textarea>
+                            <textarea id="mymce" name="description"></textarea>
                         </div>
                         <h3 class="text-white ">Porcentajes de avance:</h3>
                         <h5 class="text-white text-left">Fase Previa:</h5>
