@@ -39,16 +39,8 @@
           <div class="opening-hourse">
             <ul class="list-border">
               <li class="clearfix">
-                <span> Lunes - Viernes : </span>
-                <div class="value pull-right"> 09:00 am - 07:00 pm </div>
-              </li>
-              <li class="clearfix">
-                <span> Sábado: </span>
-                <div class="value pull-right">09:00 am - 04:00 pm </div>
-              </li>
-              <li class="clearfix">
-                <span> Domingo : </span>
-                <div class="value pull-right"> Cerrado </div>
+                <span> Lunes a Domingo : </span>
+                <div class="value pull-right"> 09:30 am - 07:00 pm </div>
               </li>
             </ul>
           </div>
