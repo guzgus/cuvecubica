@@ -29,16 +29,12 @@ class CreateCaracteristicasPropiedadesTable extends Migration
             $table->string('amoblado')->nullable();
             $table->string('jacuzzi')->nullable();
             $table->string('salon_usos_multiples')->nullable();
-            $table->string('linea_telefonica')->nullable();
-            $table->string('solo_familias')->nullable();
             $table->string('uso_de_suelo')->nullable();
             $table->string('gas_natural')->nullable();
-            $table->string('altillo')->nullable();
             $table->string('balcon')->nullable();
             $table->string('closets')->nullable();
             $table->string('cocina')->nullable();
             $table->string('cuarto_servicio')->nullable();
-            $table->string('dormitorio_suite')->nullable();
             $table->string('estudio')->nullable();
             $table->string('jardin')->nullable();
             $table->string('living')->nullable();

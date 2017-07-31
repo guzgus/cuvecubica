@@ -120,11 +120,14 @@ class PropiedadesController extends Controller
     public function storeDesarrollo(Request $request)
     {
 
+            $link_video = str_replace("watch?v=", "embed/", $request->link_video);
+
             $request->logo->store('public/logos');
 
             $desarrollo = new Desarrollos;
             $desarrollo->fill($request->all());
             $desarrollo->logo=$request->logo->hashName();
+            $desarrollo->link_video=$link_video;
             $desarrollo->save();        
             $desarrollo_id = $desarrollo->id;
             
@@ -136,11 +139,13 @@ class PropiedadesController extends Controller
     public function editDesarrollo(Request $request)
     {
 
-        if($request->logo){ $request->logo->store('public/logos'); }
+            if($request->logo){ $request->logo->store('public/logos'); }
+            $link_video = str_replace("watch?v=", "embed/", $request->link_video);
 
             $desarrollo = Desarrollos::find($request->desarrollo_id);;
             $desarrollo->fill($request->all());
             if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
+            $desarrollo->link_video=$link_video;
             $desarrollo->save();        
             $desarrollo_id = $desarrollo->id;
             
@@ -239,8 +244,11 @@ class PropiedadesController extends Controller
         public function storePropiedad(Request $request)
     {
 
+            $link_video = str_replace("watch?v=", "embed/", $request->link_video);
+
             $propiedad = new Propiedades;
             $propiedad->fill($request->all());
+            $propiedad->link_video=$link_video;
             $propiedad->save();        
             $propiedad_id = $propiedad->id;
 
@@ -283,8 +291,11 @@ class PropiedadesController extends Controller
         public function editPropiedad(Request $request)
     {
 
+            $link_video = str_replace("watch?v=", "embed/", $request->link_video);
+            
             $propiedad = Propiedades::find($request->propiedad_id);
             $propiedad->fill($request->all());
+            $propiedad->link_video=$link_video;
             $propiedad->save();        
             $propiedad_id = $propiedad->id;
 

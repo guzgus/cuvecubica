@@ -14,8 +14,8 @@
           <div class="get-tuch text-left">
             <i class="icon-alarmclock"></i>
             <ul>
-              <li><h4>09:00 - 19:00</h4></li>
-              <li><p class="p_14">Lunes a Viernes</p></li>
+              <li><h4>09:30 - 19:00</h4></li>
+              <li><p class="p_14">Lunes a Domingo</p></li>
             </ul>
           </div>
           <div class="get-tuch text-left">

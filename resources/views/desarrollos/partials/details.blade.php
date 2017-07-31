@@ -70,7 +70,7 @@
         <div class="row">
           <div class="col-md-12">
             <div id="agent-2-slider" class="owl-carousel">
-        @forelse($desarrolloSlidesAmenidades as $slidesAmenidades)
+            @forelse($desarrolloSlidesAmenidades as $slidesAmenidades)
               <div class="item">
                 <div class="property_item heading_space">
                   <div class="image">
@@ -88,9 +88,9 @@
                       @endphp
                       @include('includes.formDeleteSlide')         
               </div>
-        @empty
+            @empty
               <p class="text-white">Sin Imágenes</p>
-        @endforelse     
+            @endforelse     
             </div>
               @php 
                   $section_update="desarrollos-amenidades";                 
@@ -103,6 +103,17 @@
 
           </div>
         </div>
+        @if($desarrollo->link_video!="")
+        <div class="row"> 
+          <div class="col-md-12"> 
+            <h3 class="text-uppercase  bottom30 top10 text-white">Video <span class="color_red">Informativo</span></h3>
+
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item"  src="{{$desarrollo->link_video}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        @endif
       </div>
     </div>
   </div>

@@ -50,6 +50,17 @@
               @endphp
               @include('includes.formAltaSlide')
         </div>
+        @if($propiedad->link_video!="")
+        <div class="row"> 
+          <div class="col-md-12"> 
+            <h3 class="text-uppercase  bottom30 top10 text-white">Video <span class="color_red">Informativo</span></h3>
+
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item"  src="{{$propiedad->link_video}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        @endif
         <div class="row">
           <div class="col-md-12">
             <div class="property-tab">
@@ -66,7 +77,9 @@
                   <h3 class="text-uppercase  bottom20 top10">Descripción de <span class="color_red">Propiedad</span></h3>
                  <p class="p-font-15">{!!$propiedad->description!!}</p>
                   <div class="property_meta bottom40">
-                    <span><i class="fa fa-map-o"></i>{{$propiedad->superficie_construccion}} m2 de terreno </span>
+                    @if($propiedad->categoria=="Casas")
+                      <span><i class="fa fa-map-o"></i>{{$propiedad->superficie_construccion}} m2 de terreno </span>
+                    @endif
                     <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
                     <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
                     <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
@@ -103,14 +116,9 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Alberca
                         </li>
                         @endif
-                        @if($caracteristica->altillo=="on")
-                        <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Altillo
-                        </li>
-                        @endif
                         @if($caracteristica->amoblado=="on")
                         <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Amoblado
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Amueblado
                         </li>
                         @endif
                         @if($caracteristica->juegos_infantiles=="on")
@@ -120,7 +128,7 @@
                         @endif
                         @if($caracteristica->ascensor=="on")
                         <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Ascensor
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Elevador
                         </li>
                         @endif
                         @if($caracteristica->asador=="on")
@@ -133,14 +141,39 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Balcón
                         </li>
                         @endif
+                        @if($caracteristica->business_center=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Business Center
+                        </li>
+                        @endif
                         @if($caracteristica->calefaccion=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Calefacción
                         </li>
                         @endif
+                        @if($caracteristica->cancha_tenis=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cancha de tenis
+                        </li>
+                        @endif
+                        @if($caracteristica->cancha_padel=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cancha de pádel
+                        </li>
+                        @endif
+                        @if($caracteristica->cancha_multiples=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cancha de usos múltiples
+                        </li>
+                        @endif
                         @if($caracteristica->cisterna=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Cisterna
+                        </li>
+                        @endif
+                        @if($caracteristica->cine=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cine
                         </li>
                         @endif
                         @if($caracteristica->closets=="on")
@@ -153,14 +186,19 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Cocina
                         </li>
                         @endif
+                        @if($caracteristica->cuarto_choferes=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cuarto de choferes
+                        </li>
+                        @endif
                         @if($caracteristica->cuarto_servicio=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Cuarto de servicio
                         </li>
                         @endif
-                        @if($caracteristica->dormitorio_suite=="on")
+                        @if($caracteristica->cctv=="on")
                         <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Dormitorio en suite
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> CCTV
                         </li>
                         @endif
                         @if($caracteristica->estudio=="on")
@@ -168,9 +206,29 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Estudio
                         </li>
                         @endif
+                        @if($caracteristica->estacionamiento_visitas=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Estacionamiento para visitas
+                        </li>
+                        @endif
+                        @if($caracteristica->family_room=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Family room
+                        </li>
+                        @endif
                         @if($caracteristica->gas_natural=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Gas natural
+                        </li>
+                        @endif
+                        @if($caracteristica->gym=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> GYM
+                        </li>
+                        @endif
+                        @if($caracteristica->helipuerto=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Helipuerto
                         </li>
                         @endif
                         @if($caracteristica->jacuzzi=="on")
@@ -183,19 +241,24 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Jardín
                         </li>
                         @endif
-                        @if($caracteristica->linea_telefonica=="on")
-                        <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Línea telefónica
-                        </li>
-                        @endif
                         @if($caracteristica->living=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Living
                         </li>
                         @endif
+                        @if($caracteristica->ludoteca=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Ludoteca
+                        </li>
+                        @endif
                         @if($caracteristica->medio_banio=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Medio baño
+                        </li>
+                        @endif
+                        @if($caracteristica->monta_cargas=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Monta cargas
                         </li>
                         @endif
                         @if($caracteristica->patio=="on")
@@ -210,7 +273,12 @@
                         @endif
                         @if($caracteristica->porton_electrico=="on")
                         <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Porton Electrico
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Portón Eléctrico
+                        </li>
+                        @endif
+                        @if($caracteristica->roof_garden=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Roof garden
                         </li>
                         @endif
                         @if($caracteristica->sala_comedor=="on")
@@ -228,9 +296,9 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Seguridad
                         </li>
                         @endif
-                        @if($caracteristica->solo_familias=="on")
+                        @if($caracteristica->spa=="on")
                         <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Sólo Familias
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Spa
                         </li>
                         @endif
                         @if($caracteristica->terraza=="on")
@@ -240,12 +308,32 @@
                         @endif
                         @if($caracteristica->uso_de_suelo=="on")
                         <li class="col-md-4 col-xs-4">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Uso de suelo
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Uso de suelo Habitacional
+                        </li>
+                        @endif
+                        @if($caracteristica->uso_comercial=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Uso de suelo Comercial
+                        </li>
+                        @endif
+                        @if($caracteristica->mixto_habitacional=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Uso de suelo Mixto
+                        </li>
+                        @endif
+                        @if($caracteristica->valet_parking=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Valet Parking
                         </li>
                         @endif
                         @if($caracteristica->vestidor=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Vestidor
+                        </li>
+                        @endif
+                        @if($caracteristica->vigilancia=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Vigilancia
                         </li>
                         @endif
                         @endforeach

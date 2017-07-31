@@ -67,7 +67,13 @@
                           <input type="text" class="keyword-input" placeholder="Longitud" name="longitud" id="long" required>
                         </div>
                       </div>
-                      
+                      <h3 class="text-white ">Insertar video:</h3> <br>
+                      <div class="col-md-12">
+                        <h5 class="text-white text-left">URL <small class="text-white">(Youtube)</small>:</h5>
+                        <div class="single-query">
+                            <input type="url" class="keyword-input"  name="link_video">
+                        </div>
+                      </div>
                       <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                         <div class="query-submit-button">
                           <button type="submit" class="btn_fill">Registrar datos de Desarrollo</button>
