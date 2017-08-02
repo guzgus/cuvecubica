@@ -95,7 +95,7 @@
           <div class="single-query form-group">
             <div class="intro">
               <label class="text-white">Rango de precio <i class="fa fa-usd"></i></label>
-                  <input id="ex2" type="text" class="span2" value="" data-slider-min="{{$precio_min}}" data-slider-max="{{$precio_max}}" data-slider-step="{{$precio_min}}" data-slider-value="[10,{{$precio_max}}]" name="precio"/>    
+                  <input id="ex2" type="text" class="span2" value="" data-slider-min="{{$precio_min}}" data-slider-max="{{$precio_max}}" data-slider-step="5" data-slider-value="[{{$precio_min}},{{$precio_max}}]" name="precio"/>    
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@
                   <div class="overlay">
                     <div class="centered"><a class="link_arrow white_border" href="/propiedad/{{$propiedad->id}}" target="_blank">Ver detalle</a></div>
                   </div>
-                  <div class="feature"><span class="tag">Featured</span></div>
+                  {{--  <div class="feature"><span class="tag">Featured</span></div>  --}}
                   <div class="price"><span class="tag"> {{$propiedad->status}}</span></div>
                   <div class="property_meta">
                     <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
