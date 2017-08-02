@@ -29,6 +29,8 @@ Route::get('/registrarPropiedad', 'PropiedadesController@registrarPropiedad')->n
 Route::get('/editarPropiedad/{propiedad_id}', 'PropiedadesController@editarPropiedad')->name('editarPropiedad');
 Route::post('/createPropiedad', 'PropiedadesController@storePropiedad')->name('createPropiedad');
 Route::post('/editPropiedad', 'PropiedadesController@editPropiedad')->name('editPropiedad');
+// Route::post('/searchPropiedades', 'PropiedadesController@searchPropiedades')->name('searchPropiedades');
+Route::get('searchPropiedades', ['as' => 'searchPropiedades', 'uses' => 'PropiedadesController@searchPropiedades']);
 
 
 Auth::routes();

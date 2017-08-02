@@ -20,7 +20,7 @@
                     <form class="callus" role="form" method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email">E-Mail</label>
+                        <label for="email" class="text-white">E-Mail</label>
                         <div class="col-md-12">
                             <div class="single-query">                          
                                 <input id="email" type="email" class="keyword-input" name="email" value="{{ old('email') }}" required autofocus>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password">Contraseña</label>
+                        <label for="password" class="text-white">Contraseña</label>
                         <div class="col-md-12">
                             <div class="single-query">
                             <input id="password" type="password" class="keyword-input" name="password" required>

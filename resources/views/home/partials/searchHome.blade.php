@@ -4,11 +4,7 @@
         <div class="search_2 search_2_set">
           <form class="findus clearfix">
             <div class="row">
-              <div class="col-md-4 col-sm-3">
-                <div class="single-query">
-                  <input type="text" class="keyword-input" placeholder="Término de búsqueda">
-                </div>
-              </div>
+
               <div class="col-md-3 col-sm-3">
                 <div class="single-query form-group">
                   <div class="intro">

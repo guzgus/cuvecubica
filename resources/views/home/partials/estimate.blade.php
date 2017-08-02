@@ -1,5 +1,5 @@
 <!-- ESTIMATE -->
-<section id="estimate" class="padding">
+<section id="estimate" class="padding-200x2">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-12">
@@ -14,22 +14,20 @@
           <div class="line_3"></div>
           <p>Encuantra la mejor opción para ti...</p>
           <div class="property-query-area top40">
-              <form class="findus" action="/propiedades">
+              <form class="findus" action="/searchPropiedades" method="get">
+                    {{ csrf_field() }}
+                <input type="hidden" value="0" name="recamaras">
+                <input type="hidden" value="0" name="banios">
+                <input type="hidden" value="0" name="precio">
                 <div class="row">
                 <div class="col-md-12">
                   <div class="single-query">
-                    <input class="keyword-input" placeholder="Busco... (Ejem. 'Oficina')" type="text">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-query">
                     <div class="intro">
-                      <select>
+                      <select name="localidad"   required  >
                         <option selected="" value="any">Localidad</option>
-                        <option>Ciudad de México</option>
-                        <option>Querétaro</option>
-                        <option>Estado de México</option>
-                        <option>Otra...</option>
+                        @foreach($localidades as $localidad)
+                        <option value="{{$localidad_id=$localidad->localidad}}">@include('includes.localidades_title')</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -37,12 +35,11 @@
                 <div class="col-md-12">
                   <div class="single-query">
                     <div class="intro">
-                      <select>
+                      <select name="categoria">
                         <option class="active">Tipo de propiedad</option>
-                        <option>Oficina</option>
-                        <option>Casa</option>
-                        <option>Departamento</option>
-                        <option>Penthouse</option>
+                        @foreach($categorias as $categoria)
+                        <option value="{{$categoria->categoria}}">{{$categoria->categoria}}</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -50,60 +47,18 @@
                 <div class="col-md-12">
                   <div class="single-query">
                     <div class="intro">
-                      <select>
+                      <select name="status">
                         <option class="active">Estatus de propiedad</option>
-                        <option>En desarrollo</option>
-                        <option>Totalmente construido</option>
-                        <option>Amueblado</option>
+                        @foreach($status_propiedades as $status)
+                        <option value="{{$status->status}}">{{$status->status}}</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
                 </div>
                 </div>
+                 <button type="submit" class="btn btn-warning"><i class="fa fa-search"> </i> Buscar</button>
               </form>
-            <div class="row search-2">
-              <form class="findus" action="/propiedades" method="get">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                      <div class="single-query">
-                        <div class="intro">
-                          <select>
-                            <option class="active">Mínimo de Habitaciones</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                      <div class="single-query">
-                        <div class="intro">
-                          <select>
-                            <option class="active">Máximo de habitaciones</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="query-submit-button">
-                    <button type="submit" class="btn_fill">Buscar</button>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </div>

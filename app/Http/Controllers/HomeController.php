@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Desarrollos;
 use App\Propiedades;
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
@@ -29,9 +30,17 @@ class HomeController extends Controller
             $propiedades = Propiedades::all();
             $propiedadesSlides = new Propiedades();
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
-        
+
+            
+
+
+
+
         return view('home.index')->with([ 
                 'propiedades' => $propiedades,
+                'localidades' => propiedades::select('localidad')->groupBy('localidad')->get(),
+                'categorias' => propiedades::select('categoria')->groupBy('categoria')->get(),
+                'status_propiedades' => propiedades::select('status')->groupBy('status')->get(),
                  'desarrollos' => Desarrollos::all(),
             ]);
 

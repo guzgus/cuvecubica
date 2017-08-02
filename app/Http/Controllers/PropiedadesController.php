@@ -12,6 +12,8 @@ use App\Mail\solicitarinfo;
 use App\Mail\confirmarsolicitudinfo;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -26,15 +28,72 @@ class PropiedadesController extends Controller
     public function index()
     {
 
-            $propiedades = Propiedades::all();
+            $propiedades = Propiedades::paginate(10);
             $propiedadesSlides = new Propiedades();
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
 
         return view('propiedades.list')->with([  
                 'propiedades' => $propiedades,
-                'desarrollos' => Desarrollos::all()
+                'desarrollos' => Desarrollos::all(),
+                'recamaras' => propiedades::select('recamaras')->groupBy('recamaras')->get(),
+                'estacionamientos' => propiedades::select('estacionamientos')->groupBy('estacionamientos')->get(),
+                'banios' => propiedades::select('banios')->groupBy('banios')->get(),
+                'localidades' => propiedades::select('localidad')->groupBy('localidad')->get(),
+                'categorias' => propiedades::select('categoria')->groupBy('categoria')->get(),
+                'precio_max' => DB::table('propiedades')->max('precio'),
+                'precio_min' => DB::table('propiedades')->min('precio'),
+                'status_propiedades' => propiedades::select('status')->groupBy('status')->get(),
                  ]);
     }
+
+    public function searchPropiedades()
+    {
+
+        if(Input::get('precio')!=0){
+            $rango_precio = explode(",",Input::get('precio'));
+            $precio_minimo = $rango_precio[0]; 
+            $precio_maximo = $rango_precio[1];
+
+            $propiedades = Propiedades::select('*')
+                                        ->where('localidad', 'like', Input::get('localidad'))
+                                        ->Orwhere('categoria', 'like', Input::get('categoria'))
+                                        ->Orwhere('status', 'like', Input::get('status'))
+                                        ->Orwhere('recamaras', 'like', Input::get('recamaras'))
+                                        ->Orwhere('banios', 'like', Input::get('banios'))
+                                        ->orWhereBetween('precio', [$precio_minimo, $precio_maximo])
+                                        ->paginate(10);
+
+        }else{
+
+            $propiedades = Propiedades::select('*')
+                                        ->where('localidad', 'like', Input::get('localidad'))
+                                        ->Orwhere('categoria', 'like', Input::get('categoria'))
+                                        ->Orwhere('status', 'like', Input::get('status'))
+                                        ->Orwhere('recamaras', 'like', Input::get('recamaras'))
+                                        ->Orwhere('banios', 'like', Input::get('banios'))
+                                        ->paginate(10);
+
+        }
+
+
+
+            $propiedadesSlides = new Propiedades();
+            $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
+
+        return view('propiedades.list')->with([  
+                'propiedades' => $propiedades,
+                'desarrollos' => Desarrollos::all(),
+                'recamaras' => propiedades::select('recamaras')->groupBy('recamaras')->get(),
+                'estacionamientos' => propiedades::select('estacionamientos')->groupBy('estacionamientos')->get(),
+                'banios' => propiedades::select('banios')->groupBy('banios')->get(),
+                'localidades' => propiedades::select('localidad')->groupBy('localidad')->get(),
+                'categorias' => propiedades::select('categoria')->groupBy('categoria')->get(),
+                'precio_max' => DB::table('propiedades')->max('precio'),
+                'precio_min' => DB::table('propiedades')->min('precio'),
+                'status_propiedades' => propiedades::select('status')->groupBy('status')->get(),
+                 ]);
+    }
+
 
     public function detail()
     {

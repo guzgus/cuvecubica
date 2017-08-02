@@ -10,127 +10,101 @@
       </div>
     </div>
     <div class="row bottom40">
-      <form class="findus"> 
-        <div class="col-md-3 col-sm-3">
-          <div class="single-query form-group">
-            <label class="text-white">Término de Búsqueda</label>
-            <input class="keyword-input"  required type="text">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
+      <form class="findus" action="/searchPropiedades" method="get"> 
+        {{ csrf_field() }}
+        <div class="col-md-4 col-sm-4">
           <div class="single-query form-group">
             <div class="intro">
               <label class="text-white">Localidad</label>
-              <select>
-                <option selected="" >-</option>
-                <option>Localidad - 1</option>
-                <option>Localidad - 2</option>
-                <option>Localidad - 3</option>
-                <option>Localidad - 4</option>
-              </select>
+                <select name="localidad"   required  >
+                  <option selected="" value="any">Localidad</option>
+                  @foreach($localidades as $localidad)
+                  <option value="{{$localidad_id=$localidad->localidad}}">@include('includes.localidades_title')</option>
+                  @endforeach
+                </select>
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-3">
+        <div class="col-md-4 col-sm-4">
           <div class="single-query form-group">
             <div class="intro">
               <label class="text-white">Tipo de propiedad</label>
-              <select>
-                <option class="active">-</option>
-                <option>Tipo de propiedad - 1</option>
-                <option>Tipo de propiedad - 2</option>
-                <option>Tipo de propiedad - 3</option>
-                <option>Tipo de propiedad - 4</option>
-              </select>
+                <select name="categoria">
+                  <option class="active">Tipo de propiedad</option>
+                  @foreach($categorias as $categoria)
+                  <option value="{{$categoria->categoria}}">{{$categoria->categoria}}</option>
+                  @endforeach
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="single-query form-group">
+            <div class="intro">
+              <label class="text-white">Estatus de propiedad</label>
+                <select name="status">
+                  <option class="active">Estatus de propiedad</option>
+                  @foreach($status_propiedades as $status)
+                  <option value="{{$status->status}}">{{$status->status}}</option>
+                  @endforeach
+                </select>
             </div>
           </div>
         </div>
         <div class="col-md-3 col-sm-3">
           <div class="single-query form-group">
             <div class="intro">
-              <label class="text-white">Estatus de propiedad</label>
-              <select>
-                <option class="active">-</option>
-                <option>Estatus de propiedad - 1</option>
-                <option>Estatus de propiedad - 2</option>
-                <option>Estatus de propiedad - 3</option>
-                <option>Estatus de propiedad - 4</option>
-              </select>
+              <label class="text-white">Habitaciones</label>
+                <select name="recamaras">
+                  <option class="active">Habitaciones</option>
+                  @foreach($recamaras as $recamara)
+                  <option value="{{$recamara->recamaras}}">{{$recamara->recamaras}}</option>
+                  @endforeach
+                </select>
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="single-query form-group">
-                <div class="intro">
-                  <label class="text-white">Habitaciones</label>
-                  <select>
-                    <option class="active">-</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="single-query form-group">
-                <div class="intro">
-                  <label class="text-white">Baños</label>
-                  <select>
-                    <option class="active">-</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                  </select>
-                </div>
-              </div>
+        <div class="col-md-3 col-sm-3">
+          <div class="single-query form-group">
+            <div class="intro">
+              <label class="text-white">Baños</label>
+                <select name="banios">
+                  <option class="active">Baños</option>
+                  @foreach($banios as $banio)
+                  <option value="{{$banio->banios}}">{{$banio->banios}}</option>
+                  @endforeach
+                </select>
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="single-query form-group">
-                <label class="text-white">m2 mínimos</label>
-                <input class="keyword-input" type="text">
-              </div>
+        <div class="col-md-3 col-sm-3">
+          <div class="single-query form-group">
+            <div class="intro">
+              <label class="text-white">Estacionamientos</label>
+                <select name="estacionamientos">
+                  <option class="active">Estacionamientos</option>
+                  @foreach($estacionamientos as $estacionamiento)
+                  <option value="{{$estacionamiento->estacionamientos}}">{{$estacionamiento->estacionamientos}}</option>
+                  @endforeach
+                </select>
             </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="single-query form-group">
-                <label class="text-white">m2 máximos</label>
-                <input class="keyword-input" type="text">
-              </div>
+          </div>
+
+        </div>
+        <div class="col-md-3">
+          <div class="single-query form-group">
+            <div class="intro">
+              <label class="text-white">Rango de precio <i class="fa fa-usd"></i></label>
+                  <input id="ex2" type="text" class="span2" value="" data-slider-min="{{$precio_min}}" data-slider-max="{{$precio_max}}" data-slider-step="{{$precio_min}}" data-slider-value="[10,{{$precio_max}}]" name="precio"/>    
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-query-slider top10">
-            <label class="text-white">Rango de precio:</label>
-            <div class="price text-right text-white"><span>$</span>
-              <div class="leftLabel text-white">1</div>
-              <span>a $</span>
-              <div class="rightLabel text-white">50000000</div>
-            </div>
-            <div data-range_min="0" data-range_max="50000000" data-cur_min="0" data-cur_max="50000000" class="nstSlider">
-              <div class="bar nst-animating" style="left: 1px; width: 359px;"></div>
-              <div class="leftGrip nst-animating" tabindex="0" style="left: 1px;"></div>
-              <div class="rightGrip nst-animating" tabindex="0" style="left: 340px;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-12 text-right">
+        <div class="col-md-6 col-sm-6 col-xs-6">
           <div class="query-submit-button top10">
             <input class="btn_fill" value="Buscar" type="submit">
           </div>
         </div>
+
       </form>
     </div>
     <div class="row bottom40">
@@ -150,8 +124,9 @@
                 <div class="image">
                   <img class="side-amenidades-propiedades-mini" src="/storage/slides/{{$propiedad->slide_default}}">
                   <div class="overlay">
-                    <div class="centered"><a class="link_arrow white_border" href="/propiedad/{{$propiedad->id}}">Ver detalle</a></div>
+                    <div class="centered"><a class="link_arrow white_border" href="/propiedad/{{$propiedad->id}}" target="_blank">Ver detalle</a></div>
                   </div>
+                  <div class="feature"><span class="tag">Featured</span></div>
                   <div class="price"><span class="tag"> {{$propiedad->status}}</span></div>
                   <div class="property_meta">
                     <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
@@ -176,11 +151,7 @@
             </div>
             @endforeach
           </div>
-          <ul class="pager top40 padding_bottom">
-            <li><a href="#.">1</a></li>
-            <li class="active"><a href="#.">2</a></li>
-            <li><a href="#.">3</a></li>
-          </ul>
+          {{ $propiedades->appends(Request::input())->links() }}
       </div>
     </div>
   </div>
