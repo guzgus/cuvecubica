@@ -91,14 +91,14 @@
           </div>
 
         </div>
-        <div class="col-md-3">
+        {{--  <div class="col-md-3">
           <div class="single-query form-group">
             <div class="intro">
               <label class="text-white">Rango de precio <i class="fa fa-usd"></i></label>
                   <input id="ex2" type="text" class="span2" value="" data-slider-min="{{$precio_min}}" data-slider-max="{{$precio_max}}" data-slider-step="5" data-slider-value="[{{$precio_min}},{{$precio_max}}]" name="precio"/>    
             </div>
           </div>
-        </div>
+        </div>  --}}
         <div class="col-md-6 col-sm-6 col-xs-6">
           <div class="query-submit-button top10">
             <input class="btn_fill" value="Buscar" type="submit">

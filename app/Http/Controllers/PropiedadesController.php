@@ -49,10 +49,24 @@ class PropiedadesController extends Controller
     public function searchPropiedades()
     {
 
-        if(Input::get('precio')!=0){
-            $rango_precio = explode(",",Input::get('precio'));
-            $precio_minimo = $rango_precio[0]; 
-            $precio_maximo = $rango_precio[1];
+        // $precio_max= DB::table('propiedades')->max('precio');
+        // $precio_min= DB::table('propiedades')->min('precio');
+
+        // if(Input::get('precio')!=0 && Input::get('precio')!=$precio_max && Input::get('precio')!=$precio_min ){
+        //     $rango_precio = explode(",",Input::get('precio'));
+        //     $precio_minimo = $rango_precio[0]; 
+        //     $precio_maximo = $rango_precio[1];
+
+        //     $propiedades = Propiedades::select('*')
+        //                                 ->where('localidad', 'like', Input::get('localidad'))
+        //                                 ->Orwhere('categoria', 'like', Input::get('categoria'))
+        //                                 ->Orwhere('status', 'like', Input::get('status'))
+        //                                 ->Orwhere('recamaras', 'like', Input::get('recamaras'))
+        //                                 ->Orwhere('banios', 'like', Input::get('banios'))
+        //                                 ->orWhereBetween('precio', [$precio_minimo, $precio_maximo])
+        //                                 ->paginate(10);
+
+        // }else{
 
             $propiedades = Propiedades::select('*')
                                         ->where('localidad', 'like', Input::get('localidad'))
@@ -60,20 +74,9 @@ class PropiedadesController extends Controller
                                         ->Orwhere('status', 'like', Input::get('status'))
                                         ->Orwhere('recamaras', 'like', Input::get('recamaras'))
                                         ->Orwhere('banios', 'like', Input::get('banios'))
-                                        ->orWhereBetween('precio', [$precio_minimo, $precio_maximo])
                                         ->paginate(10);
 
-        }else{
-
-            $propiedades = Propiedades::select('*')
-                                        ->where('localidad', 'like', Input::get('localidad'))
-                                        ->Orwhere('categoria', 'like', Input::get('categoria'))
-                                        ->Orwhere('status', 'like', Input::get('status'))
-                                        ->Orwhere('recamaras', 'like', Input::get('recamaras'))
-                                        ->Orwhere('banios', 'like', Input::get('banios'))
-                                        ->paginate(10);
-
-        }
+        // }
 
 
 
