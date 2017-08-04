@@ -291,6 +291,23 @@
 <!--===== #/AVANCES Y ETAPAS DE OBRA =====-->
 
 
+<!-- LISTING STYLE-->
+<section id="listPro">
+  <div class="container">
+    <div class="row bottom40">
+      <div class="col-xs-12">
+        <h2 class="text-uppercase title_listPro">PROPIEDADES RELACIONADAS A <span class="color_red">{{$desarrollo->title}}</span></h2>
+        <div class="line_1"></div>
+        <div class="line_2"></div>
+        <div class="line_3"></div>
+      </div>
+    </div>
+    @include('propiedades.partials.propiedadesList')
+  </div>
+</section>
+<!-- LISTING -->
+
+
 <!--===== CONTACT US =====-->
 <section id="contact-us">
 	<div class="container">
@@ -368,8 +385,6 @@
     </div>
 </section>
 <!--===== #/CONTACT US =====-->
-
-
 
 </div>
 

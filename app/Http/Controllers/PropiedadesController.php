@@ -163,6 +163,13 @@ class PropiedadesController extends Controller
     public function desarrollo($desarrollo_id)
     {
 
+        $propiedades=Propiedades::select('*')->where('desarrollo_id', '=', $desarrollo_id)->get();
+        $propiedadesSlides = new Propiedades();
+        $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
+
+
+
+
         return view('desarrollos.desarrollo')->with([ 
                 'desarrolloDetails' => Desarrollos::where('id', $desarrollo_id)->get(),
                 'desarrolloSlidesGenerales' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-general')->get(),
@@ -170,6 +177,8 @@ class PropiedadesController extends Controller
                 'desarrolloSlidesAvances' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-avances')->get(),
                 'desarrolloSlidesAmenidades' => Sliders::where('desarrollo_id', $desarrollo_id)->where('section', 'desarrollos-amenidades')->get(),
                 'desarrollos' => Desarrollos::all(),
+                'origen' => 'desarrollodetail',
+                'propiedades' => $propiedades,
                  ]);
 
 
