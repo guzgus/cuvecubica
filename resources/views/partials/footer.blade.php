@@ -21,10 +21,8 @@
           </div>
           <ul class="list angle-double-right list-border">
             <li> <a href="/">Inicio </a></li>
-            <li> <a href="#">Servicios </a></li>
-            <li> <a href="#">Propiedades</a></li>
-            <li> <a href="#">Sobre nosotros </a></li>
-            <li> <a href="#">Contacto </a></li>
+            <li> <a href="/propiedades">Propiedades</a></li>
+            <li> <a href="/about">Sobre nosotros </a></li>
           </ul>
         </div>
       </div>
