@@ -41,7 +41,6 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <a href="/propiedades" class="btn_fill">Ver propiedades</a>
-          <a href="https://themeforest.net/item/idea-homes-real-estate-template/18809246" class="white_border">Servicios</a>
         </div>
         
       </li>
@@ -82,7 +81,6 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <a href="/propiedades" class="btn_fill">Ver propiedades</a>
-          <a href="https://themeforest.net/item/idea-homes-real-estate-template/18809246" class="white_border">Servicios</a>
         </div>
       </li>
       <li data-transition="fade">
@@ -122,7 +120,6 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <a href="/propiedades" class="btn_fill">Ver propiedades</a>
-          <a href="https://themeforest.net/item/idea-homes-real-estate-template/18809246" class="white_border">Servicios</a>
         </div>
       </li> 
     </ul>
