@@ -24,7 +24,7 @@
                   <div class="single-query">
                     <div class="intro">
                       <select name="localidad"   required  >
-                        <option selected="" value="any">Localidad</option>
+                        <option selected="" value="">Localidad</option>
                         @foreach($localidades as $localidad)
                         <option value="{{$localidad_id=$localidad->localidad}}">@include('includes.localidades_title')</option>
                         @endforeach
@@ -36,7 +36,7 @@
                   <div class="single-query">
                     <div class="intro">
                       <select name="categoria">
-                        <option class="active">Tipo de propiedad</option>
+                        <option value="" class="active">Tipo de propiedad</option>
                         @foreach($categorias as $categoria)
                         <option value="{{$categoria->categoria}}">{{$categoria->categoria}}</option>
                         @endforeach
@@ -48,7 +48,7 @@
                   <div class="single-query">
                     <div class="intro">
                       <select name="status">
-                        <option class="active">Estatus de propiedad</option>
+                        <option value="" class="active">Estatus de propiedad</option>
                         @foreach($status_propiedades as $status)
                         <option value="{{$status->status}}">{{$status->status}}</option>
                         @endforeach

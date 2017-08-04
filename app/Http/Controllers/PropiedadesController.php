@@ -33,6 +33,7 @@ class PropiedadesController extends Controller
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
 
         return view('propiedades.list')->with([  
+                'origen' => 'propiedades',
                 'propiedades' => $propiedades,
                 'desarrollos' => Desarrollos::all(),
                 'recamaras' => propiedades::select('recamaras')->groupBy('recamaras')->get(),
@@ -49,34 +50,32 @@ class PropiedadesController extends Controller
     public function searchPropiedades()
     {
 
-        // $precio_max= DB::table('propiedades')->max('precio');
-        // $precio_min= DB::table('propiedades')->min('precio');
+        $precio_max= DB::table('propiedades')->max('precio');
+        $precio_min= DB::table('propiedades')->min('precio');
+        $rango_precio = explode(",",Input::get('precio'));
+        $precio_minimo = $rango_precio[0]; 
+        $precio_maximo = $rango_precio[1];
 
-        // if(Input::get('precio')!=0 && Input::get('precio')!=$precio_max && Input::get('precio')!=$precio_min ){
-        //     $rango_precio = explode(",",Input::get('precio'));
-        //     $precio_minimo = $rango_precio[0]; 
-        //     $precio_maximo = $rango_precio[1];
+        $propiedades = Propiedades::select('*')
+                                    ->where('localidad', 'like', Input::get('localidad'))
+                                    ->get();
 
-        //     $propiedades = Propiedades::select('*')
-        //                                 ->where('localidad', 'like', Input::get('localidad'))
-        //                                 ->Orwhere('categoria', 'like', Input::get('categoria'))
-        //                                 ->Orwhere('status', 'like', Input::get('status'))
-        //                                 ->Orwhere('recamaras', 'like', Input::get('recamaras'))
-        //                                 ->Orwhere('banios', 'like', Input::get('banios'))
-        //                                 ->orWhereBetween('precio', [$precio_minimo, $precio_maximo])
-        //                                 ->paginate(10);
+        $propiedades = collect($propiedades);
+        
+        if(Input::get('categoria')!=""){$propiedades = $propiedades->where('categoria', 'like', Input::get('categoria'));}
 
-        // }else{
+        if(Input::get('status')!=""){$propiedades = $propiedades->where('status', 'like', Input::get('status'));}
 
-            $propiedades = Propiedades::select('*')
-                                        ->where('localidad', 'like', Input::get('localidad'))
-                                        ->Orwhere('categoria', 'like', Input::get('categoria'))
-                                        ->Orwhere('status', 'like', Input::get('status'))
-                                        ->Orwhere('recamaras', 'like', Input::get('recamaras'))
-                                        ->Orwhere('banios', 'like', Input::get('banios'))
-                                        ->paginate(10);
+        if(Input::get('recamaras')!=""){$propiedades = $propiedades->where('recamaras', 'like', Input::get('recamaras'));}
 
-        // }
+        if(Input::get('banios')!=""){$propiedades = $propiedades->where('banios', 'like', Input::get('banios'));}
+        
+        if(Input::get('estacionamientos')!=""){$propiedades = $propiedades->where('estacionamientos', 'like', Input::get('estacionamientos'));}
+
+        if(Input::get('precio')!=$precio_max || Input::get('precio')!=$precio_min){
+            $propiedades = $propiedades->Where('precio', '>=', $precio_minimo)->Where('precio', '<=', $precio_maximo);}
+        
+        $propiedades->all();
 
 
 
@@ -84,6 +83,7 @@ class PropiedadesController extends Controller
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
 
         return view('propiedades.list')->with([  
+                'origen' => 'busqueda',
                 'propiedades' => $propiedades,
                 'desarrollos' => Desarrollos::all(),
                 'recamaras' => propiedades::select('recamaras')->groupBy('recamaras')->get(),
@@ -96,6 +96,61 @@ class PropiedadesController extends Controller
                 'status_propiedades' => propiedades::select('status')->groupBy('status')->get(),
                  ]);
     }
+
+
+
+    public function searchQuickly($campo, $parametro)
+    {
+
+        if($parametro=="playa"){
+
+        $propiedades = Propiedades::select('*')
+                                    ->where('localidad', 'like', '2')
+                                    ->Orwhere('localidad', 'like', '3')
+                                    ->Orwhere('localidad', 'like', '26')
+                                    ->Orwhere('localidad', 'like', '25')
+                                    ->Orwhere('localidad', 'like', '18')
+                                    ->Orwhere('localidad', 'like', '14')
+                                    ->Orwhere('localidad', 'like', '16')
+                                    ->Orwhere('localidad', 'like', '6')
+                                    ->Orwhere('localidad', 'like', '12')
+                                    ->Orwhere('localidad', 'like', '20')
+                                    ->Orwhere('localidad', 'like', '7')
+                                    ->Orwhere('localidad', 'like', '23')
+                                    ->Orwhere('localidad', 'like', '31')
+                                    ->Orwhere('localidad', 'like', '4')
+                                    ->Orwhere('localidad', 'like', '27')
+                                    ->Orwhere('localidad', 'like', '30')
+                                    ->Orwhere('localidad', 'like', '28')
+                                    ->get();
+        }else{
+
+        $propiedades = Propiedades::select('*')
+                                    ->where($campo, 'like', '%'.$parametro.'%')
+                                    ->get();
+        }
+
+
+        $propiedadesSlides = new Propiedades();
+        $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
+
+        return view('propiedades.list')->with([  
+                'origen' => 'searchQuickly',
+                'propiedades' => $propiedades,
+                'desarrollos' => Desarrollos::all(),
+                'recamaras' => propiedades::select('recamaras')->groupBy('recamaras')->get(),
+                'estacionamientos' => propiedades::select('estacionamientos')->groupBy('estacionamientos')->get(),
+                'banios' => propiedades::select('banios')->groupBy('banios')->get(),
+                'localidades' => propiedades::select('localidad')->groupBy('localidad')->get(),
+                'categorias' => propiedades::select('categoria')->groupBy('categoria')->get(),
+                'precio_max' => DB::table('propiedades')->max('precio'),
+                'precio_min' => DB::table('propiedades')->min('precio'),
+                'status_propiedades' => propiedades::select('status')->groupBy('status')->get(),
+                 ]);
+    }
+
+
+
 
 
     public function detail()

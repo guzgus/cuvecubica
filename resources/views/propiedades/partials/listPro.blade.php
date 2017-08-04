@@ -16,8 +16,9 @@
           <div class="single-query form-group">
             <div class="intro">
               <label class="text-white">Localidad</label>
-                <select name="localidad"   required  >
-                  <option selected="" value="any">Localidad</option>
+                <select name="localidad"   required="required"  >
+                  @if($origen=="busqueda" && $_GET['localidad']!="" )<option selected="selected" value="{{$localidad_id=$_GET['localidad']}}"> @include('includes.localidades_title') </option> @endif
+                  <option  value="any">Indica una localidad</option>
                   @foreach($localidades as $localidad)
                   <option value="{{$localidad_id=$localidad->localidad}}">@include('includes.localidades_title')</option>
                   @endforeach
@@ -30,7 +31,8 @@
             <div class="intro">
               <label class="text-white">Tipo de propiedad</label>
                 <select name="categoria">
-                  <option class="active">Tipo de propiedad</option>
+                  @if($origen=="busqueda" && $_GET['categoria']!="" )<option selected="selected" value="{{$_GET['categoria']}}">{{$_GET['categoria']}}</option>@endif
+                  <option value="" class="active">Cualquier tipo de propiedad</option>
                   @foreach($categorias as $categoria)
                   <option value="{{$categoria->categoria}}">{{$categoria->categoria}}</option>
                   @endforeach
@@ -43,7 +45,8 @@
             <div class="intro">
               <label class="text-white">Estatus de propiedad</label>
                 <select name="status">
-                  <option class="active">Estatus de propiedad</option>
+                  @if($origen=="busqueda" && $_GET['status']!="" )<option selected="selected" value="{{$_GET['status']}}">{{$_GET['status']}}</option>@endif
+                  <option value="" class="active">Cualquier estatus de propiedad</option>
                   @foreach($status_propiedades as $status)
                   <option value="{{$status->status}}">{{$status->status}}</option>
                   @endforeach
@@ -56,7 +59,8 @@
             <div class="intro">
               <label class="text-white">Habitaciones</label>
                 <select name="recamaras">
-                  <option class="active">Habitaciones</option>
+                  @if($origen=="busqueda" && $_GET['recamaras']!="" )<option selected="selected" value="{{$_GET['recamaras']}}">{{$_GET['recamaras']}}</option>@endif
+                  <option value="" class="active"># de Habitaciones</option>
                   @foreach($recamaras as $recamara)
                   <option value="{{$recamara->recamaras}}">{{$recamara->recamaras}}</option>
                   @endforeach
@@ -69,7 +73,8 @@
             <div class="intro">
               <label class="text-white">Baños</label>
                 <select name="banios">
-                  <option class="active">Baños</option>
+                  @if($origen=="busqueda" && $_GET['banios']!="" )<option selected="selected" value="{{$_GET['banios']}}">{{$_GET['banios']}}</option>@endif
+                  <option value="" class="active"># de Baños</option>
                   @foreach($banios as $banio)
                   <option value="{{$banio->banios}}">{{$banio->banios}}</option>
                   @endforeach
@@ -82,7 +87,8 @@
             <div class="intro">
               <label class="text-white">Estacionamientos</label>
                 <select name="estacionamientos">
-                  <option class="active">Estacionamientos</option>
+                  @if($origen=="busqueda" && $_GET['estacionamientos']!="" )<option selected="selected" value="{{$_GET['estacionamientos']}}">{{$_GET['estacionamientos']}}</option>@endif
+                  <option value="" class="active"># de Estacionamientos</option>
                   @foreach($estacionamientos as $estacionamiento)
                   <option value="{{$estacionamiento->estacionamientos}}">{{$estacionamiento->estacionamientos}}</option>
                   @endforeach
@@ -91,14 +97,26 @@
           </div>
 
         </div>
-        {{--  <div class="col-md-3">
+         <div class="col-md-3">
           <div class="single-query form-group">
             <div class="intro">
               <label class="text-white">Rango de precio <i class="fa fa-usd"></i></label>
-                  <input id="ex2" type="text" class="span2" value="" data-slider-min="{{$precio_min}}" data-slider-max="{{$precio_max}}" data-slider-step="5" data-slider-value="[{{$precio_min}},{{$precio_max}}]" name="precio"/>    
+              @if($origen=="busqueda")
+                @php 
+                  $rango_precio = explode(",",$_GET['precio']);
+                  $precio_minimo = $rango_precio[0]; 
+                  $precio_maximo = $rango_precio[1];
+                @endphp
+              @else
+                @php
+                  $precio_minimo = $precio_min; 
+                  $precio_maximo = $precio_max;
+                @endphp
+              @endif
+                  <input id="ex2" type="text" class="span2" value="" data-slider-min="{{$precio_min}}" data-slider-max="{{$precio_max}}" data-slider-step="5" data-slider-value="[{{$precio_minimo}},{{$precio_maximo}}]" name="precio"/>    
             </div>
           </div>
-        </div>  --}}
+        </div> 
         <div class="col-md-6 col-sm-6 col-xs-6">
           <div class="query-submit-button top10">
             <input class="btn_fill" value="Buscar" type="submit">
@@ -151,7 +169,9 @@
             </div>
             @endforeach
           </div>
-          {{ $propiedades->appends(Request::input())->links() }}
+          @if($origen=="propiedades")
+           {{ $propiedades->appends(Request::input())->links() }} 
+          @endif
       </div>
     </div>
   </div>
