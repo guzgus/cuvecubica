@@ -8,14 +8,14 @@
           <div class="line_1"></div>
           <div class="line_2"></div>
           <div class="line_3"></div>
-          <p class="top20 bottom40 text-justify text-white">CUVECUBICA NETWORK es una compañía orientada al servicio a clientes en el negocio de bienes y raíces de a más alta calidad dedicado a satisfacer las necesidades y expectativas de nuestros clientes, asesores y empleados.</p>
+          <p class="top20 bottom40 text-justify text-white">CUVECUBICA NETWORK es una compañía orientada al servicio a clientes en el negocio de bienes raíces de la más alta calidad dedicada a satisfacer las necesidades y expectativas de nuestros clientes, asesores y empleados.</p>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <h2 class="text-uppercase"><span class="color_red">Visión</span></h2>
           <div class="line_1"></div>
           <div class="line_2"></div>
           <div class="line_3"></div>
-          <p class="top20 bottom40 text-justify text-white">Seremos la compañía más exitosa y respetada en la industria de bienes y raíces en nuestro mercado. Creemos y promoveremos la integridad, compromiso, trabajo constante y la satisfacción absoluta de nuestros clientes.</p>
+          <p class="top20 bottom40 text-justify text-white">Ser una de las compañía más exitosa y respetada en la industria de bienes raíces del mercado. Creemos y promovemos la integridad, la ética, el compromiso y el trabajo constante para lograr la satisfacción absoluta de nuestros clientes.</p>
         </div>
         {{-- <div class="col-md-6 col-sm-6 col-xs-12">
           <div id="about_single" class="owl-carousel">
