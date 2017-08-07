@@ -15,7 +15,7 @@ class Desarrollos extends Model
         'cimientos',
         'estructura',
         'fme',
-        'finalizacion',
+        'finalizacion'
     ];
 
 
