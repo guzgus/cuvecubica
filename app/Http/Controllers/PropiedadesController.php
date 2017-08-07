@@ -257,7 +257,9 @@ class PropiedadesController extends Controller
     public function storeDesarrollo(Request $request)
     {
 
-            $request->title;
+            echo $request->title;
+
+            exit;
 
             $link_video = str_replace("watch?v=", "embed/", $request->link_video);
 
