@@ -13,6 +13,7 @@ class Desarrollos extends Model
         'longitud',
         'cimientos',
         'estructura',
+        'fase_previa',
         'fme',
         'finalizacion',
     ];
