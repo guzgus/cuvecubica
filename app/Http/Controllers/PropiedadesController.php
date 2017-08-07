@@ -265,11 +265,11 @@ class PropiedadesController extends Controller
            if($request->logo){ $request->logo->store('public/logos'); }
 
             $desarrollo = new Desarrollos;
-                    // if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
+            if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
             $desarrollo->fill($request->all());
-            // $desarrollo->title=$request->title;
-            // $desarrollo->latitud=$request->latitud;
-            // $desarrollo->link_video=$link_video;
+            $desarrollo->title=$request->title;
+            $desarrollo->latitud=$request->latitud;
+            $desarrollo->link_video=$link_video;
             $desarrollo->save();        
             $desarrollo_id = $desarrollo->id;
             
