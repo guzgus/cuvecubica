@@ -257,17 +257,17 @@ class PropiedadesController extends Controller
     public function storeDesarrollo(Request $request)
     {
 
-            $link_video = str_replace("watch?v=", "embed/", $request->link_video);
 
            if($request->logo){ $request->logo->store('public/logos'); }
 
-            $desarrollo = new Desarrollos;
-            if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
+            $desarrollo = new Desarrollos();
+            // if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
             $desarrollo->fill($request->all());
-            $desarrollo->title=$request->title;
-            $desarrollo->latitud=$request->latitud;
-            $desarrollo->link_video=$link_video;
+            // $desarrollo->title=$request->title;
+            // $desarrollo->latitud=$request->latitud;
+            $desarrollo->link_video = str_replace("watch?v=", "embed/", $request->link_video);
             $desarrollo->save();        
+           
             $desarrollo_id = $desarrollo->id;
             
             return Redirect::to('desarrollo/'.$desarrollo_id.'')->with('status', 'ok_create_desarrollo');  
