@@ -257,9 +257,6 @@ class PropiedadesController extends Controller
     public function storeDesarrollo(Request $request)
     {
 
-            print_r( $request->all());
-
-
             $link_video = str_replace("watch?v=", "embed/", $request->link_video);
 
            if($request->logo){ $request->logo->store('public/logos'); }
