@@ -12,7 +12,7 @@
           <div class="line_1"></div>
           <div class="line_2"></div>
           <div class="line_3"></div>
-          <p>Encuantra la mejor opción para ti...</p>
+          <p>Encuentra la mejor opción para ti...</p>
           <div class="property-query-area top40">
               <form class="findus" action="/searchPropiedades" method="get">
                     {{ csrf_field() }}
