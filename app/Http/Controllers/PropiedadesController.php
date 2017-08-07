@@ -257,8 +257,6 @@ class PropiedadesController extends Controller
     public function storeDesarrollo(Request $request)
     {
 
-            echo $request->title;
-            exit;
 
             $link_video = str_replace("watch?v=", "embed/", $request->link_video);
 
@@ -266,6 +264,7 @@ class PropiedadesController extends Controller
 
             $desarrollo = new Desarrollos;
             $desarrollo->fill($request->all());
+            $desarrollo->title=$request->title;
             if($request->logo){ $desarrollo->logo=$request->logo->hashName(); }
             $desarrollo->link_video=$link_video;
             $desarrollo->save();        
