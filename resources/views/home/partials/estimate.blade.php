@@ -16,9 +16,11 @@
           <div class="property-query-area top40">
               <form class="findus" action="/searchPropiedades" method="get">
                     {{ csrf_field() }}
-                <input type="hidden" value="0" name="recamaras">
-                <input type="hidden" value="0" name="banios">
-                <input type="hidden" value="0" name="precio">
+                <input type="hidden" value="home" name="origen">
+                <input type="hidden" value="" name="estacionamientos">
+                <input type="hidden" value="" name="recamaras">
+                <input type="hidden" value="" name="banios">
+                <input type="hidden" value="[0,0]" name="precio">
                 <div class="row">
                 <div class="col-md-12">
                   <div class="single-query">

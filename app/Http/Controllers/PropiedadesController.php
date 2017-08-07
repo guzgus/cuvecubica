@@ -50,11 +50,22 @@ class PropiedadesController extends Controller
     public function searchPropiedades()
     {
 
-        $precio_max= DB::table('propiedades')->max('precio');
-        $precio_min= DB::table('propiedades')->min('precio');
-        $rango_precio = explode(",",Input::get('precio'));
+        if(Input::get('origen')=='home'){
+            $origen="home";
+        }else{
+            $origen="busqueda";
+        }
+
+        $precio_form=Input::get('precio');
+        $rango_precio = explode(",",$precio_form);
         $precio_minimo = $rango_precio[0]; 
         $precio_maximo = $rango_precio[1];
+        
+        $precio_max= DB::table('propiedades')->max('precio');
+        $precio_min= DB::table('propiedades')->min('precio');
+
+
+       
 
         $propiedades = Propiedades::select('*')
                                     ->where('localidad', 'like', Input::get('localidad'))
@@ -72,7 +83,7 @@ class PropiedadesController extends Controller
         
         if(Input::get('estacionamientos')!=""){$propiedades = $propiedades->where('estacionamientos', 'like', Input::get('estacionamientos'));}
 
-        if(Input::get('precio')!=$precio_max || Input::get('precio')!=$precio_min){
+        if(($precio_maximo!=$precio_max || $precio_minimo!=$precio_min)&&($precio_maximo!=0 && $precio_minimo!=0)){
             $propiedades = $propiedades->Where('precio', '>=', $precio_minimo)->Where('precio', '<=', $precio_maximo);}
         
         $propiedades->all();
@@ -83,7 +94,7 @@ class PropiedadesController extends Controller
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
 
         return view('propiedades.list')->with([  
-                'origen' => 'busqueda',
+                'origen' => $origen,
                 'propiedades' => $propiedades,
                 'desarrollos' => Desarrollos::all(),
                 'recamaras' => propiedades::select('recamaras')->groupBy('recamaras')->get(),
