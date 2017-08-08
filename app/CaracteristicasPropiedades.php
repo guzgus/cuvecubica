@@ -56,5 +56,10 @@ class CaracteristicasPropiedades extends Model
         'roof_garden',
         'business_center',
         'cuarto_choferes',
+        'salon_fiestas',
+        'recepcion',
+        'boiler',
+        'laundry',
+        'cuarto_lavado',
     ];
 }

@@ -125,6 +125,25 @@
                             <input type="number" max="1000" min="0" class="keyword-input" placeholder="#" required name="antiguedad" value="{{$propiedad->antiguedad}}">
                           </div>
                       </div>
+                      <h3 class="text-white ">Especificaciones para departamentos:</h3> <br>
+                      <div class="col-md-4">  
+                          <h5 class="text-white text-left">No. de departamentos por piso:</h5>
+                          <div class="single-query">
+                            <input type="number" max="50" min="0" class="keyword-input" placeholder="#" name="num_dep_piso" value="{{$propiedad->num_dep_piso}}">
+                          </div>
+                      </div>
+                      <div class="col-md-4">  
+                          <h5 class="text-white text-left">No. de pisos:</h5>
+                          <div class="single-query">
+                            <input type="number" max="50" min="0" class="keyword-input" placeholder="#" name="num_piso" value="{{$propiedad->num_piso}}">
+                          </div>
+                      </div>
+                      <div class="col-md-4">  
+                          <h5 class="text-white text-left">No. de bodegas:</h5>
+                          <div class="single-query">
+                            <input type="number" max="100" min="0" class="keyword-input" placeholder="#" name="num_bodegas" value="{{$propiedad->num_bodegas}}">
+                          </div>
+                      </div>
                       <h3 class="text-white ">Comodidades, Características adicionales y Ambientes:</h3> <br>
                      @foreach($caracteristicas as $caracteristica)
                         <input type="hidden" required name="caracteristicas_id" value="{{$caracteristica->id}}">
@@ -164,6 +183,10 @@
                           <label class="text-white text-left">Balcón:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->balcon=="on")echo "checked"; ?> name="balcon">
+                          </div>
+                          <label class="text-white text-left">Boiler:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->boiler=="on")echo "checked"; ?> name="boiler">
                           </div>
                           <label class="text-white text-left">Business Center:</label>
                           <div class="single-query">
@@ -211,6 +234,10 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->cuarto_servicio=="on")echo "checked"; ?> name="cuarto_servicio">
                           </div>
+                          <label class="text-white text-left">Cuarto de lavado:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->cuarto_lavado=="on")echo "checked"; ?> name="cuarto_lavado">
+                          </div>
                           <label class="text-white text-left">CCTV:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->cctv=="on")echo "checked"; ?> name="cctv">
@@ -247,6 +274,10 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->jardin=="on")echo "checked"; ?> name="jardin">
                           </div>
+                          <label class="text-white text-left">Laundry:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->laundry=="on")echo "checked"; ?> name="laundry">
+                          </div>
                           <label class="text-white text-left">Living:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->living=="on")echo "checked"; ?> name="living">
@@ -277,6 +308,10 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->porton_electrico=="on")echo "checked"; ?> name="porton_electrico">
                           </div>
+                          <label class="text-white text-left">Recepción:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->recepcion=="on")echo "checked"; ?> name="recepcion">
+                          </div>
                           <label class="text-white text-left">Roof garden:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->roof_garden=="on")echo "checked"; ?> name="roof_garden">
@@ -284,6 +319,10 @@
                           <label class="text-white text-left">Sala comedor:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->sala_comedor=="on")echo "checked"; ?> name="sala_comedor">
+                          </div>
+                          <label class="text-white text-left">Salón de fiestas:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->salon_fiestas=="on")echo "checked"; ?> name="salon_fiestas">
                           </div>
                           <label class="text-white text-left">Salón de usos múltiples:</label>
                           <div class="single-query">

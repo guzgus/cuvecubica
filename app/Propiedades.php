@@ -24,6 +24,9 @@ class Propiedades extends Model
         'antiguedad',
         'desarrollo_id',
         'localidad',
+        'num_dep_piso',
+        'num_piso',
+        'num_bodegas',
         // 'link_video',
     ];
 

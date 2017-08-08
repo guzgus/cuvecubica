@@ -80,6 +80,11 @@
                     @if($propiedad->categoria=="Casas")
                       <span><i class="fa fa-map-o"></i>{{$propiedad->superficie_construccion}} m2 de terreno </span>
                     @endif
+                    @if($propiedad->categoria=="Departamentos")
+                      <span><i class="fa fa-cubes"></i>{{$propiedad->num_dep_piso}} departamentos por piso </span>
+                      <span><i class="fa fa-building"></i>{{$propiedad->num_piso}} Pisos </span>
+                      <span><i class="fa fa-cube"></i>{{$propiedad->num_bodegas}} Bodega </span>
+                    @endif
                     <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
                     <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
                     <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
@@ -141,6 +146,11 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Balcón
                         </li>
                         @endif
+                        @if($caracteristica->boiler=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Boiler
+                        </li>
+                        @endif
                         @if($caracteristica->business_center=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Business Center
@@ -196,6 +206,11 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Cuarto de servicio
                         </li>
                         @endif
+                        @if($caracteristica->cuarto_lavado=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Cuarto de lavado
+                        </li>
+                        @endif
                         @if($caracteristica->cctv=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> CCTV
@@ -241,6 +256,11 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Jardín
                         </li>
                         @endif
+                        @if($caracteristica->laundry=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Laundry
+                        </li>
+                        @endif
                         @if($caracteristica->living=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Living
@@ -276,6 +296,11 @@
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Portón Eléctrico
                         </li>
                         @endif
+                        @if($caracteristica->recepcion=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Recepción
+                        </li>
+                        @endif
                         @if($caracteristica->roof_garden=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Roof garden
@@ -284,6 +309,11 @@
                         @if($caracteristica->sala_comedor=="on")
                         <li class="col-md-4 col-xs-4">
                           <i class="fa fa-check-square-o" aria-hidden="true"></i> Sala comedor
+                        </li>
+                        @endif
+                        @if($caracteristica->salon_fiestas=="on")
+                        <li class="col-md-4 col-xs-4">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Salón de fiestas
                         </li>
                         @endif
                         @if($caracteristica->salon_usos_multiples=="on")
