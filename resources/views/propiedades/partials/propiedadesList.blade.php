@@ -20,7 +20,7 @@
                 </div>
                 <div class="proerty_content">
                   <div class="proerty_text">
-                    <h3><a href="/propiedad/1">{{$propiedad->title}}</a></h3>
+                    <h3><a href="/propiedad/{{$propiedad->id}}">{{$propiedad->title}}</a></h3>
                     <span class="bottom10">{{$propiedad->domicilio}}</span>
                     <p><strong>${{ number_format($propiedad->precio,2)}} {{$propiedad->moneda}}</strong></p>
                   </div>
