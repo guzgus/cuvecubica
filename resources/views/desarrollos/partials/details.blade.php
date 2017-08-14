@@ -139,20 +139,48 @@
                 <div class="col-md-10">
                   <img src="/images/planos/Plano_General_Torre300.png" alt="" usemap="#Map" />
                   <map name="Map" id="Map">
-                      <area alt="" title="" href="#a" shape="rect" coords="114,118,369,493" data-toggle="modal" data-target=".bs-example-modal-lg" />
-                      <area alt="" title="" href="#e" shape="rect" coords="107,507,497,879" />
-                      <area alt="" title="" href="#d" shape="rect" coords="501,507,867,894" />
-                      <area alt="" title="" href="#b" shape="rect" coords="373,118,617,369" />
-                      <area alt="" title="" href="#c" shape="rect" coords="625,122,877,497" />
+                      <area alt="" title="" href="#a" shape="rect" coords="114,118,369,493" data-toggle="modal" data-target=".bs-a-modal-lg" />
+                      <area alt="" title="" href="#e" shape="rect" coords="107,507,497,879" data-toggle="modal" data-target=".bs-e-modal-lg" />
+                      <area alt="" title="" href="#d" shape="rect" coords="501,507,867,894" data-toggle="modal" data-target=".bs-d-modal-lg" />
+                      <area alt="" title="" href="#b" shape="rect" coords="373,118,617,369" data-toggle="modal" data-target=".bs-b-modal-lg" />
+                      <area alt="" title="" href="#c" shape="rect" coords="625,122,877,497" data-toggle="modal" data-target=".bs-c-modal-lg" />
                   </map>                
                 </div>
                 <div class="col-md-2"></div>
               </div>
                 <!-- Large modal -->
-                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal fade bs-a-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <img src="/images/planos/T300-TipoA.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-b-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-TipoB.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-TipoC.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-TipoD.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-TipoE.png" class="img-center" />
                     </div>
                   </div>
                 </div>
