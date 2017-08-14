@@ -6321,3 +6321,18 @@ footer .text-right{
  margin: 1em 25%;
  max-width: 300px;
 }
+
+img[usemap] {
+		border: none;
+		height: auto;
+		max-width: 100%;
+		width: auto;
+  }
+  
+.img-center{
+    display:block;
+    margin:auto;
+    max-width: 100%;
+    width: auto;
+
+}

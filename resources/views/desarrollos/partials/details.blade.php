@@ -133,34 +133,59 @@
               <div class="col-xs-12">
                 <h3 class="text-uppercase bottom20"><span class="color_red">Plantas</span></h3>
               </div>
-              @forelse($desarrolloSlidesPlanos as $slidesPlanos)
-              <div class="col-md-4 col-sm-4 col-xs-12 top10">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="/storage/slides/{{$slidesPlanos->file}}">
-                      <img src="/storage/slides/{{$slidesPlanos->file}}" class="slide-planos-desarrollos" alt=""/>
-                    </a>
+            @if($desarrollo->id==17)
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                  <img src="/images/planos/Plano_General_Torre300.png" alt="" usemap="#Map" />
+                  <map name="Map" id="Map">
+                      <area alt="" title="" href="#a" shape="rect" coords="114,118,369,493" data-toggle="modal" data-target=".bs-example-modal-lg" />
+                      <area alt="" title="" href="#e" shape="rect" coords="107,507,497,879" />
+                      <area alt="" title="" href="#d" shape="rect" coords="501,507,867,894" />
+                      <area alt="" title="" href="#b" shape="rect" coords="373,118,617,369" />
+                      <area alt="" title="" href="#c" shape="rect" coords="625,122,877,497" />
+                  </map>                
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+                <!-- Large modal -->
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-TipoA.png" class="img-center" />
+                    </div>
                   </div>
-                      @php
-                        $slide_id=$slidesPlanos->id;
-                        $file_delete=$slidesPlanos->file;
-                        $tipo_inmueble = "desarrollo";
+                </div>
+            @else
+                @forelse($desarrolloSlidesPlanos as $slidesPlanos)
+                    <div class="col-md-4 col-sm-4 col-xs-12 top10">
+                        <div class="easyzoom easyzoom--overlay">
+                          <a href="/storage/slides/{{$slidesPlanos->file}}">
+                            <img src="/storage/slides/{{$slidesPlanos->file}}" class="slide-planos-desarrollos" alt=""/>
+                          </a>
+                        </div>
+                            @php
+                              $slide_id=$slidesPlanos->id;
+                              $file_delete=$slidesPlanos->file;
+                              $tipo_inmueble = "desarrollo";
+                              $desarrollo_id = $desarrollo->id;
+                              $inmueble_id = $desarrollo->id;
+                              $propiedad_id = "0";
+                            @endphp
+                            @include('includes.formDeleteSlide')         
+                    </div>
+                    @empty
+                    <p class="text-white">Sin Imágenes</p>
+                @endforelse 
+                    @php 
+                        $section_update="desarrollos-planos";
                         $desarrollo_id = $desarrollo->id;
                         $inmueble_id = $desarrollo->id;
+                        $tipo_inmueble = "desarrollo";
                         $propiedad_id = "0";
-                      @endphp
-                      @include('includes.formDeleteSlide')         
-              </div>
-              @empty
-              <p class="text-white">Sin Imágenes</p>
-              @endforelse 
-              @php 
-                  $section_update="desarrollos-planos";
-                  $desarrollo_id = $desarrollo->id;
-                   $inmueble_id = $desarrollo->id;
-                  $tipo_inmueble = "desarrollo";
-                  $propiedad_id = "0";
-              @endphp
-              @include('includes.formAltaSlide')
+                    @endphp
+                    @include('includes.formAltaSlide')
+              @endif
             </div>
 
             <div class="row margin_bottom">
