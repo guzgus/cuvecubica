@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
               <div id="agent-2-slider" class="owl-carousel">
                 @forelse($propiedadesAmenidades as $slidesAmenidades)
                 <div class="item">
@@ -49,10 +49,8 @@
                   $tipo_inmueble = "propiedad";
               @endphp
               @include('includes.formAltaSlide')
-        </div>
         @if($propiedad->link_video!="")
-        <div class="row"> 
-          <div class="col-md-12"> 
+          <div class="col-md-6"> 
             <h3 class="text-uppercase  bottom30 top10 text-white">Video <span class="color_red">Informativo</span></h3>
 
             <div class="embed-responsive embed-responsive-16by9">
