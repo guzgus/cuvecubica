@@ -137,8 +137,8 @@
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                  <img src="/images/planos/Plano_General_Torre300.png" alt="" usemap="#Map" />
-                  <map name="Map" id="Map">
+                  <img src="/images/planos/Plano_General_Torre300.png" alt="" usemap="#Plano_General_Torre300" />
+                  <map name="Plano_General_Torre300" id="Plano_General_Torre300">
                       <area alt="" title="" href="#a" shape="rect" coords="114,118,369,493" data-toggle="modal" data-target=".bs-a-modal-lg" />
                       <area alt="" title="" href="#e" shape="rect" coords="107,507,497,879" data-toggle="modal" data-target=".bs-e-modal-lg" />
                       <area alt="" title="" href="#d" shape="rect" coords="501,507,867,894" data-toggle="modal" data-target=".bs-d-modal-lg" />
@@ -147,7 +147,6 @@
                   </map>                
                 </div>
                 <div class="col-md-2"></div>
-              </div>
                 <!-- Large modal -->
                 <div class="modal fade bs-a-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
@@ -184,6 +183,43 @@
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-11">
+                  <img src="/images/planos/Plano_PH_Torre300.png" alt="" usemap="#Plano_PH_Torre300" />
+                  <map name="Plano_PH_Torre300" id="Plano_PH_Torre300">
+                      <area alt="" title="" href="#" shape="poly" coords="181,306,243,311,245,451,185,446,62,379,41,255,61,135,181,54" data-toggle="modal" data-target=".bs-pha-modal-lg" />
+                      <area alt="" title="" href="#" shape="rect" coords="185,53,309,229" data-toggle="modal" data-target=".bs-phb-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="309,307,246,311,251,454,301,447,425,371,441,257,429,131,313,47" />
+                      <area alt="" title="" href="#" shape="poly" coords="691,303,753,309,754,458,693,450,657,254,553,251,571,130,689,53" data-toggle="modal" data-target=".bs-pha-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="701,58,697,185,798,183,805,227,825,230,821,50" data-toggle="modal" data-target=".bs-phb-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="829,51,827,307,766,311,766,454,817,454,855,255,962,255,942,123" />
+                  </map>
+                </div>
+                <!-- Large modal -->
+                <div class="modal fade bs-pha-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-PHA.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-phb-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-PHB.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/T300-TipoC.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             @else
                 @forelse($desarrolloSlidesPlanos as $slidesPlanos)
                     <div class="col-md-4 col-sm-4 col-xs-12 top10">
