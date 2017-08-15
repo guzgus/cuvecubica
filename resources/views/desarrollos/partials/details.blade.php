@@ -212,7 +212,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="modal fade bs-c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal fade bs-phc-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <img src="/images/planos/T300-TipoC.png" class="img-center" />
