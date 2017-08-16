@@ -7,8 +7,8 @@
           <div class="get-tuch text-left">
             <i class="icon-telephone114"></i>
             <ul>
-              <li><h4>(55) 5292 1767</h4></li>
-              <li><a href="#." ><p class="p_14">(55) 5292 1768</p></a></li>
+              <li><h4>(55) 2167-3371</h4></li>
+              <li><a href="#." ><p class="p_14">(55) 2167-3376</p></a></li>
             </ul>
           </div>
           <div class="get-tuch text-left">

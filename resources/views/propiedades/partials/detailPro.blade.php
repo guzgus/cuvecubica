@@ -421,7 +421,7 @@
                       <div class="agent-p-contact">
                         <div class="our-agent-box">
                             <div class="agetn-contact-2">
-                              <p>(55) 5292 1767 y (55) 5292 1768 <i class="icon-telephone114"></i></p>
+                              <p>(55) 2167-3371 y (55) 2167-3376 <i class="icon-telephone114"></i></p>
                               <p>contacto@cuvecubica.mx <i class=" icon-icons142"></i></p>
                               <a href="http://www.cuvecubica.mx">
                               <p>www.cuvecubica.mx <i class="icon-browser2"></i></p>

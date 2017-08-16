@@ -8,7 +8,7 @@
           <i class="icon-telephone114"></i>
           <ul>
             <li><h4>Teléfonos</h4></li>
-            <li><p>(55) 5292 1767 y (55) 5292 1768</p></li>
+            <li><p>(55) 2167-3371 y (55) 2167-3376</p></li>
           </ul>
         </div>
       </div>
