@@ -220,6 +220,37 @@
                   </div>
                 </div>
               </div>
+
+            <img src="/images/planos/Plano_adjunto_Torre300.png" alt="" usemap="#Plano_adjunto_Torre300" />
+            <map name="Plano_adjunto_Torre300" id="Plano_adjunto_Torre300">
+                <area alt="" title="" href="#" shape="poly" coords="369,614,494,616,497,900,289,872,147,750,125,503,381,502" data-toggle="modal" data-target=".bs-adjunto_e-modal-lg" />
+                <area alt="" title="" href="#" shape="poly" coords="626,614,501,615,509,894,733,863,873,707,899,502,617,500" data-toggle="modal" data-target=".bs-adjunto_d-modal-lg"/>
+                <area alt="" title="" href="#" shape="poly" coords="617,276,837,274,873,495,614,494" data-toggle="modal" data-target=".bs-adjunto_c-modal-lg" />                
+            </map>
+
+                <!-- Large modal -->
+                <div class="modal fade bs-adjunto_e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/Plano_adjunto_Torre300_E.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-adjunto_d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/Plano_adjunto_Torre300_D.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-adjunto_c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/Plano_adjunto_Torre300_C.png" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             @else
                 @forelse($desarrolloSlidesPlanos as $slidesPlanos)
                     <div class="col-md-4 col-sm-4 col-xs-12 top10">
