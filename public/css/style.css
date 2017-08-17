@@ -34,7 +34,7 @@ Description: A default stylesheet for Idea Homes : Real Estate Template, Develop
 body{
  font-family: 'Roboto', sans-serif;
  position: relative;
- background: #fff;
+ /* background: #fff; */
  font-size:18px;
  overflow-x:hidden;
 }
@@ -6262,6 +6262,12 @@ footer .text-right{
   text-align: left;
 }
 
+.side-amenidades-propiedades-mini{
+  max-width: 100% !important;
+  max-height: 90px !important;
+}
+
+
 }
 @media (max-width: 480px){
 .project-owl-slideee{
@@ -6312,9 +6318,8 @@ footer .text-right{
 }
 
 .side-amenidades-propiedades-mini{
-    max-width: 100% !important;
+  max-width: 100% !important;
   max-height: 200px !important;
-
 }
 
 .logo-desarrollos {

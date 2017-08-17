@@ -220,36 +220,39 @@
                   </div>
                 </div>
               </div>
+              <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                  <img src="/images/planos/Plano_adjunto_Torre300.png" alt="" usemap="#Plano_adjunto_Torre300" />
+                  <map name="Plano_adjunto_Torre300" id="Plano_adjunto_Torre300">
+                      <area alt="" title="" href="#" shape="poly" coords="369,614,494,616,497,900,289,872,147,750,125,503,381,502" data-toggle="modal" data-target=".bs-adjunto_e-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="626,614,501,615,509,894,733,863,873,707,899,502,617,500" data-toggle="modal" data-target=".bs-adjunto_d-modal-lg"/>
+                      <area alt="" title="" href="#" shape="poly" coords="617,276,837,274,873,495,614,494" data-toggle="modal" data-target=".bs-adjunto_c-modal-lg" />
+                  </map>
 
-            <img src="/images/planos/Plano_adjunto_Torre300.png" alt="" usemap="#Plano_adjunto_Torre300" />
-            <map name="Plano_adjunto_Torre300" id="Plano_adjunto_Torre300">
-                <area alt="" title="" href="#" shape="poly" coords="369,614,494,616,497,900,289,872,147,750,125,503,381,502" data-toggle="modal" data-target=".bs-adjunto_e-modal-lg" />
-                <area alt="" title="" href="#" shape="poly" coords="626,614,501,615,509,894,733,863,873,707,899,502,617,500" data-toggle="modal" data-target=".bs-adjunto_d-modal-lg"/>
-                <area alt="" title="" href="#" shape="poly" coords="617,276,837,274,873,495,614,494" data-toggle="modal" data-target=".bs-adjunto_c-modal-lg" />                
-            </map>
-
-                <!-- Large modal -->
-                <div class="modal fade bs-adjunto_e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="/images/planos/Plano_adjunto_Torre300_E.png" class="img-center" />
-                    </div>
-                  </div>
-                </div>
-                <div class="modal fade bs-adjunto_d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="/images/planos/Plano_adjunto_Torre300_D.png" class="img-center" />
-                    </div>
-                  </div>
-                </div>
-                <div class="modal fade bs-adjunto_c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="/images/planos/Plano_adjunto_Torre300_C.png" class="img-center" />
-                    </div>
-                  </div>
-                </div>
+                      <!-- Large modal -->
+                      <div class="modal fade bs-adjunto_e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                              <img src="/images/planos/Plano_adjunto_Torre300_E.png" class="img-center" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade bs-adjunto_d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                              <img src="/images/planos/Plano_adjunto_Torre300_D.png" class="img-center" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade bs-adjunto_c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                              <img src="/images/planos/Plano_adjunto_Torre300_C.png" class="img-center" />
+                          </div>
+                        </div>
+                      </div>
+              </div>
               </div>
             @else
                 @forelse($desarrolloSlidesPlanos as $slidesPlanos)
@@ -327,35 +330,10 @@
     </script>
 
 <!--===== AVANCES Y ETAPAS DE OBRA =====-->
-<section id="we_are">
+<section id="news-section-1" class="property-details">
   <div class="container">
     <div class="row">
-      {{-- <div class="col-md-6 col-sm-6 col-xs-12">
-        <h3 class="text-uppercase text-white">Avances de <span class="color_red">Obra</span></h3>
-        <div class="line_1"></div>
-        <div class="line_2"></div>
-        <div class="line_3"></div>
 
-        
-        <div class="row">
-          <div class="col-md-12">
-            <div id="agent-2-slider" class="owl-carousel">
-        @forelse($desarrolloSlidesAvances as $slidesAvances)
-              <div class="item">
-                <div class="property_item heading_space">
-                  <div class="image">
-                    <a href="#."><img src="/images/sliders/desarrollos/{{$slidesAvances->file}}" alt="listin" class="slide-avances-desarrollos"></a>
-                    <div class="feature"><span class="tag-2">Paradox</span></div>                    
-                  </div>
-                </div>
-              </div>
-        @empty
-            <p>Sin desarrollos</p>
-        @endforelse     
-            </div>
-          </div>
-        </div>
-      </div> --}}
       <div class="col-md-12 col-sm-12 col-xs-12 skills margin_bottom text-white">
         <h3 class="text-uppercase text-white">Etapas de <span class="color_red">construcción</span> <small class="text-white">   (Avances de Obra)</small></h3>
         <div class="line_1"></div>
