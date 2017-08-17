@@ -100,7 +100,7 @@
                       <div class="col-md-6">  
                           <h5 class="text-white text-left">Baños:</h5>
                           <div class="single-query">
-                            <input type="number" max="50" min="0" class="keyword-input" placeholder="#" required name="banios" value="{{$propiedad->banios}}">
+                            <input type="number" max="50" min="0" class="keyword-input" placeholder="#" required name="banios" value="{{$propiedad->banios}}" step="any">
                           </div>
                           <h5 class="text-white text-left">Recámaras:</h5>
                           <div class="single-query">
