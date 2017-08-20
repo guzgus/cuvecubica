@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Desarrollos;
 use App\Propiedades;
+use App\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 
 class HomeController extends Controller
@@ -66,6 +68,30 @@ class HomeController extends Controller
     public function homelaravel()
     {
         return view('home');
+    }
+
+
+
+
+    public function usersList()
+    {
+        return view('users.listUsers')->with([ 
+                 'users' => User::all(),
+                 'desarrollos' => Desarrollos::all(),
+                 ]);
+    }
+
+    public function userStatus($user_id, $status)
+    {
+
+        $users = User::find($user_id);
+        $users->status=$status;
+        $users->save();        
+        $users_id = $users->id;
+
+
+        return Redirect::to('/usersList')->with('status', 'ok_edit_user');  
+
     }
 
 }

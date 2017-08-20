@@ -41,6 +41,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/log', 'HomeController@log')->name('log');
 Route::get('/homelaravel', 'HomeController@homelaravel')->name('homelaravel');
-
+Route::get('/usersList', 'HomeController@usersList')->name('usersList');
+Route::get('/userStatus/{user_id}/{status}', 'HomeController@userStatus')->name('userStatus');
 
 Route::post('/solicitarinfo', 'PropiedadesController@solicitarinfo')->name('solicitarinfo');

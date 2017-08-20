@@ -3270,7 +3270,7 @@ nav.navbar.bootsnav.sticked .social-icons {
 /* ---- Property Listings  Css  ---- */
 /* ================================= */
 
-#listPro{
+#listPro, #agent-2{
   background:url(../images/sliders/propiedades/listPro.jpg) no-repeat;
   background-attachment: fixed;
   background-size:cover;

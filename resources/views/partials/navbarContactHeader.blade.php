@@ -78,7 +78,7 @@
                   <li class="dropdown">
                     <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Usuarios</a>
                     <ul class="dropdown-menu">
-                      <li><a href="gallery_1.html">Gestión</a></li>
+                      <li><a href="/usersList">Gestión</a></li>
                     </ul>
                   </li>
                 </ul>
