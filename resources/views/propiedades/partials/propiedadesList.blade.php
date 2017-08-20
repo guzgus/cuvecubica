@@ -12,7 +12,9 @@
                       @endif
                   <div class="price"><span class="tag"> {{$propiedad->status}}</span></div>
                   <div class="property_meta">
-                    <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
+                    @if($propiedad->categoria=="Departamentos")
+                      <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
+                    @endif
                     <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
                     <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
                     <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento</span>
