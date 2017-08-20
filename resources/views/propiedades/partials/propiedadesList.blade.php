@@ -7,7 +7,9 @@
                   <div class="overlay">
                     <div class="centered"><a class="link_arrow white_border" href="/propiedad/{{$propiedad->id}}" target="_blank">Ver detalle</a></div>
                   </div>
-                  {{--  <div class="feature"><span class="tag">Featured</span></div>  --}}
+                      @if($propiedad->status_pro=="Rentada" || $propiedad->status_pro=="Vendida")
+                        <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
+                      @endif
                   <div class="price"><span class="tag"> {{$propiedad->status}}</span></div>
                   <div class="property_meta">
                     <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>

@@ -425,7 +425,7 @@ class PropiedadesController extends Controller
 
     }
 
-        public function editPropiedad(Request $request)
+    public function editPropiedad(Request $request)
     {
 
             $link_video = str_replace("watch?v=", "embed/", $request->link_video);
@@ -443,6 +443,19 @@ class PropiedadesController extends Controller
             $CaracteristicasPropiedades_id = $CaracteristicasPropiedades->id;
             
             return Redirect::to('propiedad/'.$propiedad_id.'')->with('status', 'ok_edit_propiedad');  
+            
+    }
+
+    public function statusPro($propiedad_id, $status_pro)
+    {
+            
+            $propiedad = Propiedades::find($propiedad_id);
+            $propiedad->status_pro=$status_pro;
+            $propiedad->save();        
+            $propiedad_id = $propiedad->id;
+
+            
+            return Redirect::to('propiedad/'.$propiedad_id.'')->with('status', 'ok_edit_statuspro');  
             
     }
 

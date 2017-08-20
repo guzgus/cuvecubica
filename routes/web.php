@@ -31,6 +31,7 @@ Route::post('/createPropiedad', 'PropiedadesController@storePropiedad')->name('c
 Route::post('/editPropiedad', 'PropiedadesController@editPropiedad')->name('editPropiedad');
 Route::get('searchPropiedades', ['as' => 'searchPropiedades', 'uses' => 'PropiedadesController@searchPropiedades']);
 Route::get('/searchQuickly/{campo}/{parametro}', 'PropiedadesController@searchQuickly')->name('searchQuickly');
+Route::get('/statusPro/{propiedad_id}/{status_pro}', 'PropiedadesController@statusPro')->name('statusPro');
 
 
 Auth::routes();

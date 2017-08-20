@@ -6,7 +6,15 @@
         <h2 class="text-uppercase title_listPro">{{$propiedad->title}}</h2>
         <p class="bottom20 title_listPro">{{$propiedad->domicilio}}</p>
           @if (!Auth::guest())
-              <a href="/editarPropiedad/{{$propiedad->id}}" type="button" class="btn btn-warning btn-xs pull-left">Editar datos generales</a>
+            @php
+                  if($propiedad->status=="Venta" || $propiedad->status=="Traspaso" || $propiedad->status=="Preventa"){$statusPro="Vendida";}else{$statusPro="Rentada";}
+            @endphp
+              <a href="/editarPropiedad/{{$propiedad->id}}" type="button" class="btn btn-warning btn-xs">Editar datos generales</a>
+              @if($propiedad->status_pro=="" || $propiedad->status_pro=="null")
+              <a href="/statusPro/{{$propiedad->id}}/{{$statusPro}}" type="button" class="btn btn-info btn-xs">Cambiar Estatus de Propiedad a <strong>'{{$statusPro}}'</strong></a>
+              @else
+              <a href="/statusPro/{{$propiedad->id}}/null" type="button" class="btn btn-info btn-xs">Habilitar propiedad</strong></a>
+              @endif
           @endif          
           @include('includes.status')
       </div>
@@ -22,6 +30,9 @@
                     <div class="image">
                       <a href="#."><img class="side-amenidades-propiedades" src="/storage/slides/{{$slidesAmenidades->file}}" alt="listin" class="img-responsive"></a>
                       <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
+                      @if($propiedad->status_pro=="Rentada" || $propiedad->status_pro=="Vendida")
+                        <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
+                      @endif
                       <div class="property_meta">
                         <h4>${{ number_format($propiedad->precio,2)}} {{$propiedad->moneda}}</h4> <br>  
                         <h4>{{$propiedad->categoria}}</h4>
