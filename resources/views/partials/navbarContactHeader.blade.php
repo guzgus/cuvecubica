@@ -75,12 +75,14 @@
                       <li><a href="/registrarPropiedad">Registrar</a></li>
                     </ul>
                   </li>
+              @if(Auth::user()->role_id=="1")
                   <li class="dropdown">
                     <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Usuarios</a>
                     <ul class="dropdown-menu">
                       <li><a href="/usersList">Gestión</a></li>
                     </ul>
                   </li>
+              @endif
                 </ul>
               </li>
               
