@@ -87,16 +87,14 @@
                  <p class="p-font-15">{!!$propiedad->description!!}</p>
                   <div class="property_meta bottom40">
                     @if($propiedad->categoria=="Casas")
-                      <span><i class="fa fa-map-o"></i>{{$propiedad->superficie_construccion}} m2 de terreno </span>
+                      <span><i class="fa fa-map-o"></i>{{$propiedad->superficie_terreno}} m2 de terreno </span>
                     @endif
                     @if($propiedad->categoria=="Departamentos")
                       <span><i class="fa fa-cubes"></i>{{$propiedad->num_dep_piso}} departamentos por piso </span>
                       <span><i class="fa fa-building"></i>{{$propiedad->num_piso}} Pisos </span>
                       <span><i class="fa fa-cube"></i>{{$propiedad->num_bodegas}} Bodega </span>
                     @endif
-                    @if($propiedad->categoria=="Departamentos")
-                      <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_terreno}} m2 de construcción</span>
-                    @endif
+                    <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_construccion}} m2 de construcción</span>
                     <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
                     <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
                     <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento</span>
