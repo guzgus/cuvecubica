@@ -15,7 +15,7 @@
           <div class="line_1"></div>
           <div class="line_2"></div>
           <div class="line_3"></div>
-          <p class="top20 bottom40 text-justify text-white">Ser una de las compañía más exitosa y respetada en la industria de bienes raíces del mercado. Creemos y promovemos la integridad, la ética, el compromiso y el trabajo constante para lograr la satisfacción absoluta de nuestros clientes.</p>
+          <p class="top20 bottom40 text-justify text-white">Ser una de las compañías más exitosas y respetadas en la industria de bienes raíces del mercado. Creemos y promovemos la integridad, la ética, el compromiso y el trabajo constante para lograr la satisfacción absoluta de nuestros clientes.</p>
         </div>
         {{-- <div class="col-md-6 col-sm-6 col-xs-12">
           <div id="about_single" class="owl-carousel">

@@ -1669,6 +1669,10 @@ figure.effect-layla .main-title {
   right: 0;
   z-index:999;
 }
+
+.text-on-slide {
+  background-color: rgba(0, 0, 0, 0.55);
+}
 .border_nav_top {
   border-top: 1px solid #fff;
 }
@@ -3461,11 +3465,11 @@ nav.navbar.bootsnav.sticked .social-icons {
   padding-left: 24px;
 }
 .feature .tag {
-  background: #1f1f1f;
+  background: #32b36d;
   color: #fff;
-  font-size: 12px;
+  font-size: .8em;
   left: 15px;
-  padding: 5px 15px;
+  padding: 8px 25px;
   position: absolute;
   top: 15px;
 }

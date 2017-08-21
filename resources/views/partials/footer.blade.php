@@ -3,7 +3,7 @@
       <div class="col-sm-6 col-md-3">
         <div class="widget dark">
           <img class="mt-5 mb-20" alt="" src="/images/short_icon.png">
-          <p>Av. Santa Fe 546, Col. Cruz Manca, Del. Cuajimalpa, CDMX.</p>
+          <p>Guillermo González Camarena 1100 Oficina 2-D, Santa Fe, Zedec Sta Fé 01219 Ciudad de México, CDMX.</p>
           <ul class="list-inline mt-5">
             <li class="m-0 pl-10 pr-10 text-gray"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> (55) 2167-3371 y (55) 2167-3376</li>
             <li class="m-0 pl-10 pr-10 text-gray"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> contacto@cuvecubica.mx </li>

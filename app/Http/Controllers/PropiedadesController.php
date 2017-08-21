@@ -227,7 +227,7 @@ class PropiedadesController extends Controller
         $phone = $request->input('phone');
         $email = $request->input('email');
 
-        $emails = ['gguzman@forcemsystems.com', 'contacto@cuvecubica.mx'];
+        $emails = ['gguzman@forcemsystems.com', 'contacto@cuvecubica.mx', 'enriquecuevasp@gmail.com'];
 
         Mail::to($emails)->queue(new solicitarinfo($titleDesarrollo, $name, $msj_send, $phone, $email));
 

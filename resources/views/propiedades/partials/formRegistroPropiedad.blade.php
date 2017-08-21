@@ -174,7 +174,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="boiler">
                           </div>
-                          <label class="text-white text-left">Business Center:</label>
+                          <label class="text-white text-left">Centro de negocios:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="business_center">
                           </div>
@@ -236,7 +236,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="estacionamiento_visitas">
                           </div>
-                          <label class="text-white text-left">Family room:</label>
+                          <label class="text-white text-left">Cuarto familiar:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="family_room">
                           </div>
@@ -244,9 +244,13 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="gas_natural">
                           </div>
-                          <label class="text-white text-left">GYM:</label>
+                          <label class="text-white text-left">Gimnasio:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="gym">
+                          </div>
+                          <label class="text-white text-left">Guardería:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox"  name="guarderia">
                           </div>
                           <label class="text-white text-left">Helipuerto:</label>
                           <div class="single-query">
@@ -260,11 +264,11 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="jardin">
                           </div>
-                          <label class="text-white text-left">Laundry:</label>
+                          <label class="text-white text-left">Lavandería:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="laundry">
                           </div>
-                          <label class="text-white text-left">Living:</label>
+                          <label class="text-white text-left">Sala:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="living">
                           </div>
@@ -286,7 +290,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="patio">
                           </div>
-                          <label class="text-white text-left">Playroom:</label>
+                          <label class="text-white text-left">Sala de juegos:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="playroom">
                           </div>
@@ -298,13 +302,17 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="recepcion">
                           </div>
-                          <label class="text-white text-left">Roof garden:</label>
+                          <label class="text-white text-left">Jardín de techo:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="roof_garden">
                           </div>
                           <label class="text-white text-left">Sala comedor:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="sala_comedor">
+                          </div>
+                          <label class="text-white text-left">Salón de belleza:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox"  name="salon_belleza">
                           </div>
                           <label class="text-white text-left">Salón de fiestas:</label>
                           <div class="single-query">
@@ -318,7 +326,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="seguridad">
                           </div>
-                          <label class="text-white text-left">Spa:</label>
+                          <label class="text-white text-left">SPA:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox"  name="spa">
                           </div>

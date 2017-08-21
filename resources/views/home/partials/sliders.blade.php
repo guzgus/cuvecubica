@@ -11,12 +11,15 @@
           data-y="['240','200','140','140']" data-voffset="['0','0','0','0']"
           data-responsive_offset="on"
           data-visibility="['on','on','on','on']"
+        
           data-transform_idle="o:1;"
           data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:3500;e:Power3.easeInOut;" 
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+          <div class="text-on-slide"> 
+            <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+          </div>      
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -28,7 +31,9 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <p class="p-white text-center">Gestionamos todo lo necesario para puedas adquirir de forma segura tu próxima propiedad</p>
+          <div class="text-on-slide"> 
+          <p class="p-white text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
+          </div>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -55,7 +60,9 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+          <div class="text-on-slide"> 
+            <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+          </div>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -67,7 +74,9 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <p class="p-white text-center">Gestionamos todo lo necesario para puedas adquirir de forma segura tu próxima propiedad</p>
+          <div class="text-on-slide"> 
+            <p class="p-white text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
+          </div>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -94,7 +103,9 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+          <div class="text-on-slide"> 
+            <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+          </div>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -106,7 +117,9 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <p class="p-white text-center">Gestionamos todo lo necesario para puedas adquirir de forma segura tu próxima propiedad</p>
+          <div class="text-on-slide"> 
+            <p class="p-white text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
+          </div>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 

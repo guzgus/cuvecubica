@@ -12,10 +12,10 @@
                       @endif
                   <div class="price"><span class="tag"> {{$propiedad->status}}</span></div>
                   <div class="property_meta">
-                    <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_construccion}} m2 de construcción</span>
-                    <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitaciones</span>
-                    <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baños</span>
-                    <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento</span>
+                    <span><i class="fa fa-object-group"></i>{{$propiedad->superficie_construccion}} m² de construcción</span>
+                    <span><i class="fa fa-bed"></i>{{$propiedad->recamaras}} Habitacion(es)</span>
+                    <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baño(s)</span>
+                    <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento(s)</span>
                   </div>
                 </div>
                 <div class="proerty_content">

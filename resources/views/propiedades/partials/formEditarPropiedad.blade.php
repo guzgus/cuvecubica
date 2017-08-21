@@ -188,7 +188,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->boiler=="on")echo "checked"; ?> name="boiler">
                           </div>
-                          <label class="text-white text-left">Business Center:</label>
+                          <label class="text-white text-left">Centro de negocios:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->business_center=="on")echo "checked"; ?> name="business_center">
                           </div>
@@ -250,7 +250,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->estacionamiento_visitas=="on")echo "checked"; ?> name="estacionamiento_visitas">
                           </div>
-                          <label class="text-white text-left">Family room:</label>
+                          <label class="text-white text-left">Cuarto familiar:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->family_room=="on")echo "checked"; ?> name="family_room">
                           </div>
@@ -258,9 +258,13 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->gas_natural=="on")echo "checked"; ?> name="gas_natural">
                           </div>
-                          <label class="text-white text-left">GYM:</label>
+                          <label class="text-white text-left">Gimnasio:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->gym=="on")echo "checked"; ?> name="gym">
+                          </div>
+                          <label class="text-white text-left">Guardería:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->guarderia=="on")echo "checked"; ?> name="guarderia">
                           </div>
                           <label class="text-white text-left">Helipuerto:</label>
                           <div class="single-query">
@@ -274,11 +278,11 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->jardin=="on")echo "checked"; ?> name="jardin">
                           </div>
-                          <label class="text-white text-left">Laundry:</label>
+                          <label class="text-white text-left">Lavandería:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->laundry=="on")echo "checked"; ?> name="laundry">
                           </div>
-                          <label class="text-white text-left">Living:</label>
+                          <label class="text-white text-left">Sala:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->living=="on")echo "checked"; ?> name="living">
                           </div>
@@ -300,7 +304,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->patio=="on")echo "checked"; ?> name="patio">
                           </div>
-                          <label class="text-white text-left">Playroom:</label>
+                          <label class="text-white text-left">Sala de juegos:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->playroom=="on")echo "checked"; ?> name="playroom">
                           </div>
@@ -312,13 +316,17 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->recepcion=="on")echo "checked"; ?> name="recepcion">
                           </div>
-                          <label class="text-white text-left">Roof garden:</label>
+                          <label class="text-white text-left">Jardín de techo:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->roof_garden=="on")echo "checked"; ?> name="roof_garden">
                           </div>
                           <label class="text-white text-left">Sala comedor:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->sala_comedor=="on")echo "checked"; ?> name="sala_comedor">
+                          </div>
+                          <label class="text-white text-left">Salón de belleza:</label>
+                          <div class="single-query">
+                            <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->salon_belleza=="on")echo "checked"; ?> name="salon_belleza">
                           </div>
                           <label class="text-white text-left">Salón de fiestas:</label>
                           <div class="single-query">
@@ -332,7 +340,7 @@
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->seguridad=="on")echo "checked"; ?> name="seguridad">
                           </div>
-                          <label class="text-white text-left">Spa:</label>
+                          <label class="text-white text-left">SPA:</label>
                           <div class="single-query">
                             <input type="checkbox" class="keyword-checkbox" <?php if($caracteristica->spa=="on")echo "checked"; ?> name="spa">
                           </div>
