@@ -4631,7 +4631,7 @@ a.close-overlay.hidden {
   height: auto;
 }
 #agent-2-slider .property_meta{
-  padding:15px;
+  /* padding:15px; */
   font-weight:bold;
 }
 #agent-2-slider .property_meta,
@@ -6317,7 +6317,7 @@ footer .text-right{
 
 .side-amenidades-propiedades{
     max-width: 100% !important;
-  max-height: 400px !important;
+    height: 550px !important;
 
 }
 
