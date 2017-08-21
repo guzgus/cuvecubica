@@ -7,7 +7,7 @@
         <p class="bottom20 title_listPro">{{$propiedad->domicilio}}</p>
           @if (!Auth::guest())
             @php
-                  if($propiedad->status=="Venta" || $propiedad->status=="Traspaso" || $propiedad->status=="Preventa"){$statusPro="Vendida";}else{$statusPro="Rentada";}
+                  if($propiedad->status=="Venta" || $propiedad->status=="Traspaso" || $propiedad->status=="Preventa"){$statusPro="Vendida";}else{$statusPro="Rentado";}
             @endphp
               <a href="/editarPropiedad/{{$propiedad->id}}" type="button" class="btn btn-warning btn-xs">Editar datos generales</a>
               @if($propiedad->status_pro=="" || $propiedad->status_pro=="null")
@@ -30,7 +30,7 @@
                     <div class="image">
                       <a href="#."><img class="side-amenidades-propiedades" src="/storage/slides/{{$slidesAmenidades->file}}" alt="listin" class="img-responsive"></a>
                       <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
-                      @if($propiedad->status_pro=="Rentada" || $propiedad->status_pro=="Vendida")
+                      @if($propiedad->status_pro=="Rentado" || $propiedad->status_pro=="Vendida")
                         <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
                       @endif
                       <div class="property_meta">
