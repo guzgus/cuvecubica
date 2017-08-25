@@ -3474,11 +3474,14 @@ nav.navbar.bootsnav.sticked .social-icons {
 .feature .tag {
   background: #32b36d;
   color: #fff;
-  font-size: .8em;
-  left: 15px;
-  padding: 8px 25px;
+  font-size: .9em;
+  left: -20% !important;
+  padding: 15px 50px;
   position: absolute;
-  top: 15px;
+  top: 10px;
+  width: 56%;
+  transform: rotate(-45deg);
+  text-align: center;
 }
 .feature .tag-2 {
   color: #fff;
