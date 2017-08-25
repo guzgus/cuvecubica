@@ -7,7 +7,7 @@
                   <div class="overlay">
                     <div class="centered"><a class="link_arrow white_border" href="/propiedad/{{$propiedad->id}}" target="_blank">Ver detalle</a></div>
                   </div>
-                      @if($propiedad->status_pro=="Rentada" || $propiedad->status_pro=="Vendida")
+                      @if($propiedad->status_pro=="Rentado" || $propiedad->status_pro=="Vendida")
                         <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
                       @endif
                   <div class="price"><span class="tag"> {{$propiedad->status}}</span></div>

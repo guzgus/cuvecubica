@@ -195,7 +195,8 @@ jQuery(function ($) {
 
   // AGENT SLIDER - 2
   $("#property-2-slider, #nav_slider").owlCarousel({
-    autoPlay: 3000,
+    slideSpeed: 300,    
+    autoPlay: 10000,
     items: 3,
     pagination: false,
     navigation: true,

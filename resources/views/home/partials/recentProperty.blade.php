@@ -26,7 +26,7 @@
                     <span><i class="fa fa-bath"></i>{{$propiedad->banios}} Baño(s)</span>
                     <span><i class="fa fa-car"></i>{{$propiedad->estacionamientos}} Estacionamiento(s)</span>
                 </div>
-                @if($propiedad->status_pro=="Rentada" || $propiedad->status_pro=="Vendida")
+                @if($propiedad->status_pro=="Rentado" || $propiedad->status_pro=="Vendida")
                   <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
                 @endif
                 <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
