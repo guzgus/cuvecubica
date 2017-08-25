@@ -18,7 +18,7 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <div class="text-on-slide"> 
-            <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+            <h2 class="border_heading p-yellow"> Nosotros realizamos tus sueños </h2>
           </div>      
         </div>
         <div class="tp-caption tp-resizeme"               
@@ -32,7 +32,7 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <div class="text-on-slide"> 
-          <p class="p-white text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
+          <p class="p-yellow text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
           </div>
         </div>
         <div class="tp-caption tp-resizeme"               
@@ -61,7 +61,7 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <div class="text-on-slide"> 
-            <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+            <h2 class="border_heading p-yellow"> Nosotros realizamos tus sueños </h2>
           </div>
         </div>
         <div class="tp-caption tp-resizeme"               
@@ -75,7 +75,7 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <div class="text-on-slide"> 
-            <p class="p-white text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
+            <p class="p-yellow text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
           </div>
         </div>
         <div class="tp-caption tp-resizeme"               
@@ -104,7 +104,7 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <div class="text-on-slide"> 
-            <h2 class="border_heading p-white"> Nosotros realizamos tus sueños </h2>
+            <h2 class="border_heading p-yellow"> Nosotros realizamos tus sueños </h2>
           </div>
         </div>
         <div class="tp-caption tp-resizeme"               
@@ -118,7 +118,7 @@
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
           <div class="text-on-slide"> 
-            <p class="p-white text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
+            <p class="p-yellow text-center">Gestionamos todo lo necesario para que puedas adquirir de forma segura tu próxima propiedad</p>
           </div>
         </div>
         <div class="tp-caption tp-resizeme"               

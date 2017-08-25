@@ -19,7 +19,7 @@
             <li>
               <h4>Av. Santa Fe 546,</h4>
             </li>
-            <li><p>Col. Cruz Manca, Del. Cuajimalpa, CDMX</p></li>
+            <li><p>Guillermo González Camarena 1100 Oficina 2-D, Santa Fe, Zedec Sta Fé 01219 Ciudad de México, CDMX</p></li>
           </ul>
         </div>
       </div>

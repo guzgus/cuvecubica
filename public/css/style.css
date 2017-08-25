@@ -103,6 +103,9 @@ h5{
 .p-white {
   color: #fff;
 }
+.p-yellow {
+  color:#e7af12;
+}
 .color_black {
  color:#000;
 }
@@ -1671,11 +1674,15 @@ figure.effect-layla .main-title {
 }
 
 .text-on-slide {
-  background-color: rgba(0, 0, 0, 0.55);
+  /* background-color: rgba(0, 0, 0, 0.55); */
+  color:#e7af12 !important;
+  text-shadow: 1px 1px 2px #101010; !important;
 }
+
 .border_nav_top {
   border-top: 1px solid #fff;
 }
+
 #header-top_2 .get-tuch {
   display: inline-block;
   margin-left: 40px;
