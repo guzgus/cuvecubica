@@ -28,7 +28,7 @@ class PropiedadesController extends Controller
     public function index()
     {
 
-            $propiedades = Propiedades::paginate(10);
+            $propiedades = Propiedades::orderBy('id', 'desc')->paginate(10);
             $propiedadesSlides = new Propiedades();
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
 
@@ -69,6 +69,7 @@ class PropiedadesController extends Controller
 
         $propiedades = Propiedades::select('*')
                                     ->where('localidad', 'like', Input::get('localidad'))
+                                    ->orderBy('id', 'desc')
                                     ->get();
 
         $propiedades = collect($propiedades);
@@ -359,7 +360,7 @@ class PropiedadesController extends Controller
     {
 
         return view('propiedades.detail')->with([ 
-                'propiedadesAmenidades' => Sliders::where('propiedad_id', $propiedad_id)->where('section', 'propiedad-amenidades')->get(),
+                'propiedadesAmenidades' => Sliders::where('propiedad_id', $propiedad_id)->where('section', 'propiedad-amenidades')->orderBy('id', 'desc')->get(),
                 'propiedadesPlanos' => Sliders::where('propiedad_id', $propiedad_id)->where('section', 'propiedad-planos')->get(),
                 'propiedadDetails' => Propiedades::where('id', $propiedad_id)->get(),
                 'caracteristicas' => CaracteristicasPropiedades::where('propiedad_id', $propiedad_id)->get(),
