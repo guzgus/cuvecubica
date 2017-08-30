@@ -462,7 +462,10 @@
                             $inmueble_id = $propiedad->id;
                             $propiedad_id = $propiedad->id;
                           @endphp
-                          @include('includes.formDeleteSlide')        
+                          @include('includes.formDeleteSlide') 
+                          @if (!Auth::guest() && $slidesAmenidades->portada!="ok")
+                            <a href="/portadaSlide/{{$propiedad->id}}/{{$slidesAmenidades->id}}/ok" type="button" class="btn btn-info btn-xs" title="Definir como portada"><i class="fa fa-picture-o" aria-hidden="true"></i></strong></a>
+                          @endif
                       </div>
                     </div>
                   </div>

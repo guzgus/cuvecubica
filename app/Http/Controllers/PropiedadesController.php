@@ -416,6 +416,29 @@ class PropiedadesController extends Controller
             
     }
 
+    public function portadaSlide($propiedad_id, $slide_id, $portada)
+    {
+            
+        $sliders_propiedad = Sliders::where('propiedad_id',$propiedad_id)->get();
+
+        foreach($sliders_propiedad as $slide_pro){
+
+            $slide_id_empty_portadas=$slide_pro->id;
+            $slides = Sliders::find($slide_id_empty_portadas);
+            $slides->portada="";
+            $slides->save();        
+            }
+
+        $slide = Sliders::find($slide_id);
+        $slide->portada=$portada;
+        $slide->save();        
+
+    
+            
+            return Redirect::to('propiedad/'.$propiedad_id.'')->with('status', 'ok_portada');  
+            
+    }
+
 }
 
 
