@@ -446,7 +446,7 @@
                 <div class="item">
                   <div class="property_item">
                     <div class="image">
-                      <img class="side-amenidades-propiedades" src="/storage/slides/{{$slidesAmenidades->file}}" >
+                      <a data-toggle="modal" title="Ver detalle de imagen" data-target=".bs-{{$slidesAmenidades->id}}-modal-lg" href="#"><img class="side-amenidades-propiedades" src="/storage/slides/{{$slidesAmenidades->file}}" ></a>
                       <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
                       @if($propiedad->status_pro=="Rentado" || $propiedad->status_pro=="Vendida")
                         <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
@@ -467,8 +467,17 @@
                     </div>
                   </div>
                 </div>
-                @endforeach            
-              </div>            
+                @endforeach      
+              </div> 
+                @forelse($propiedadesAmenidades as $slidesAmenidades)
+                      <div class="modal fade bs-{{$slidesAmenidades->id}}-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                              <img src="/storage/slides/{{$slidesAmenidades->file}}" class="img-center" />
+                          </div>
+                        </div>
+                      </div>
+                @endforeach      
               @php 
                   $section_update="propiedad-amenidades";
                   $desarrollo_id = 0;

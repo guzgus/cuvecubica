@@ -5621,7 +5621,7 @@ a.close-overlay.hidden {
 
 .property-tab {
     border: 1px solid #dbdbdb;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 .property-tab .nav-tabs > li > a {
     border-radius: 0;
