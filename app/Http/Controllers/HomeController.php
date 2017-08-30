@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $propiedades = Propiedades::Orderby('id', 'desc')->all();
+            $propiedades = Propiedades::Orderby('id', 'desc')->get();
             $propiedadesSlides = new Propiedades();
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
 
