@@ -29,15 +29,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $propiedades = Propiedades::all();
+            $propiedades = Propiedades::Orderby('id', 'desc')->all();
             $propiedadesSlides = new Propiedades();
             $propiedades = $propiedadesSlides->ObtieneSlide($propiedades);
 
             
-
-
-
-
         return view('home.index')->with([ 
                 'propiedades' => $propiedades,
                 'localidades' => propiedades::select('localidad')->groupBy('localidad')->get(),
