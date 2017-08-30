@@ -38,7 +38,7 @@ class Propiedades extends Model
         foreach ($propiedades as $propiedad) {
                 $propiedad_id = $propiedad->id;
 
-                $SlidesPropiedad=Sliders::where('propiedad_id', $propiedad_id)->Orderby('id', 'desc')->take(1)->get();
+                $SlidesPropiedad=Sliders::where('propiedad_id', $propiedad_id)->where('portada', 'ok')->get();
                     $slide_default = 'no-image-available.png';
                 foreach ($SlidesPropiedad as $slide_unico) {
                     $slide_default = $slide_unico->file;

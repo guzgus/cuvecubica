@@ -32,6 +32,7 @@ Route::post('/editPropiedad', 'PropiedadesController@editPropiedad')->name('edit
 Route::get('searchPropiedades', ['as' => 'searchPropiedades', 'uses' => 'PropiedadesController@searchPropiedades']);
 Route::get('/searchQuickly/{campo}/{parametro}', 'PropiedadesController@searchQuickly')->name('searchQuickly');
 Route::get('/statusPro/{propiedad_id}/{status_pro}', 'PropiedadesController@statusPro')->name('statusPro');
+Route::get('/portadaSlide/{propiedad_id}/{slide_id}/{portada}', 'PropiedadesController@portadaSlide')->name('portadaSlide');
 
 
 Auth::routes();

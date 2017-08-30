@@ -15,4 +15,7 @@
             @if(session('status')=="ok_create_propiedad")       
               <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Registro correcto!</strong> Ahora puedes cargar las imágenes correspondientes a esta propiedad como planos y amenidades. </div>
             @endif
+            @if(session('status')=="ok_portada")       
+              <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Registro correcto!</strong> Se ha definido la portada correctamente. </div>
+            @endif
         @endif
