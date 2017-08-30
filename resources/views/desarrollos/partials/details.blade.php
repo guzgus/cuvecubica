@@ -139,11 +139,11 @@
                 <div class="col-md-10">
                   <img src="/images/planos/Plano_General_Torre300.png" alt="" usemap="#Plano_General_Torre300" />
                   <map name="Plano_General_Torre300" id="Plano_General_Torre300">
-                      <area alt="" title="" href="#a" shape="rect" coords="114,118,369,493" data-toggle="modal" data-target=".bs-a-modal-lg" />
-                      <area alt="" title="" href="#e" shape="rect" coords="107,507,497,879" data-toggle="modal" data-target=".bs-e-modal-lg" />
-                      <area alt="" title="" href="#d" shape="rect" coords="501,507,867,894" data-toggle="modal" data-target=".bs-d-modal-lg" />
-                      <area alt="" title="" href="#b" shape="rect" coords="373,118,617,369" data-toggle="modal" data-target=".bs-b-modal-lg" />
-                      <area alt="" title="" href="#c" shape="rect" coords="625,122,877,497" data-toggle="modal" data-target=".bs-c-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#a" shape="rect" coords="114,118,369,493" data-toggle="modal" data-target=".bs-a-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#e" shape="rect" coords="107,507,497,879" data-toggle="modal" data-target=".bs-e-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#d" shape="rect" coords="501,507,867,894" data-toggle="modal" data-target=".bs-d-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#b" shape="rect" coords="373,118,617,369" data-toggle="modal" data-target=".bs-b-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#c" shape="rect" coords="625,122,877,497" data-toggle="modal" data-target=".bs-c-modal-lg" />
                   </map>                
                 </div>
                 <div class="col-md-2"></div>
@@ -189,8 +189,7 @@
                 <div class="col-md-11">
                   <img src="/images/planos/Plano_PH_Torre300.png" alt="" usemap="#Plano_PH_Torre300" />
                   <map name="Plano_PH_Torre300" id="Plano_PH_Torre300">
-                      <area alt="" title="" href="#" shape="poly" coords="181,306,243,311,245,451,185,446,62,379,41,255,61,135,181,54" data-toggle="modal" data-target=".bs-pha-modal-lg" />
-                      <area alt="" title="" href="#" shape="rect" coords="185,53,309,229" data-toggle="modal" data-target=".bs-phb-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="185,53,309,229" data-toggle="modal" data-target=".bs-phb-modal-lg" />
                       <area alt="" title="" href="#" shape="poly" coords="309,307,246,311,251,454,301,447,425,371,441,257,429,131,313,47" />
                       <area alt="" title="" href="#" shape="poly" coords="691,303,753,309,754,458,693,450,657,254,553,251,571,130,689,53" data-toggle="modal" data-target=".bs-pha-modal-lg" />
                       <area alt="" title="" href="#" shape="poly" coords="701,58,697,185,798,183,805,227,825,230,821,50" data-toggle="modal" data-target=".bs-phb-modal-lg" />
@@ -225,9 +224,9 @@
               <div class="col-md-11">
                   <img src="/images/planos/Plano_adjunto_Torre300.png" alt="" usemap="#Plano_adjunto_Torre300" />
                   <map name="Plano_adjunto_Torre300" id="Plano_adjunto_Torre300">
-                      <area alt="" title="" href="#" shape="poly" coords="369,614,494,616,497,900,289,872,147,750,125,503,381,502" data-toggle="modal" data-target=".bs-adjunto_e-modal-lg" />
-                      <area alt="" title="" href="#" shape="poly" coords="626,614,501,615,509,894,733,863,873,707,899,502,617,500" data-toggle="modal" data-target=".bs-adjunto_d-modal-lg"/>
-                      <area alt="" title="" href="#" shape="poly" coords="617,276,837,274,873,495,614,494" data-toggle="modal" data-target=".bs-adjunto_c-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="poly" coords="369,614,494,616,497,900,289,872,147,750,125,503,381,502" data-toggle="modal" data-target=".bs-adjunto_e-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="poly" coords="626,614,501,615,509,894,733,863,873,707,899,502,617,500" data-toggle="modal" data-target=".bs-adjunto_d-modal-lg"/>
+                      <area alt="" title="Ver detalle de plano" href="#" shape="poly" coords="617,276,837,274,873,495,614,494" data-toggle="modal" data-target=".bs-adjunto_c-modal-lg" />
                   </map>
 
                       <!-- Large modal -->
