@@ -22,56 +22,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-12">
-              <div id="agent-2-slider" class="owl-carousel">
-                @forelse($propiedadesAmenidades as $slidesAmenidades)
-                <div class="item">
-                  <div class="property_item heading_space">
-                    <div class="image">
-                      <a href="#."><img class="side-amenidades-propiedades" src="/storage/slides/{{$slidesAmenidades->file}}" alt="listin" class="img-responsive"></a>
-                      <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
-                      @if($propiedad->status_pro=="Rentado" || $propiedad->status_pro=="Vendida")
-                        <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
-                      @endif
-                      <div class="property_meta">
-                        <h4>${{ number_format($propiedad->precio,2)}} {{$propiedad->moneda}}</h4> <br>  
-                        <h4>{{$propiedad->categoria}}</h4>
-                        @php
-                            $slide_id=$slidesAmenidades->id;
-                            $file_delete=$slidesAmenidades->file;
-                            $tipo_inmueble = "propiedad";
-                            $desarrollo_id = 0;
-                            $inmueble_id = $propiedad->id;
-                            $propiedad_id = $propiedad->id;
-                          @endphp
-                          @include('includes.formDeleteSlide')        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                @endforeach            
-              </div>            
-          </div>
-              @php 
-                  $section_update="propiedad-amenidades";
-                  $desarrollo_id = 0;
-                  $inmueble_id = $propiedad->id;
-                  $propiedad_id = $propiedad->id;
-                  $tipo_inmueble = "propiedad";
-              @endphp
-              @include('includes.formAltaSlide')
-        @if($propiedad->link_video!="")
-          <div class="col-md-12"> 
-            <h3 class="text-uppercase  bottom30 top10 text-white">Video <span class="color_red">Informativo</span></h3>
-
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item"  src="{{$propiedad->link_video}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        @endif
-        <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <div class="property-tab">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
@@ -489,6 +440,55 @@
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+              <div id="agent-2-slider">
+                @forelse($propiedadesAmenidades as $slidesAmenidades)
+                <div class="item">
+                  <div class="property_item">
+                    <div class="image">
+                      <img class="side-amenidades-propiedades" src="/storage/slides/{{$slidesAmenidades->file}}" >
+                      <div class="price"><span class="tag">{{$propiedad->status}}</span></div>
+                      @if($propiedad->status_pro=="Rentado" || $propiedad->status_pro=="Vendida")
+                        <div class="feature"><span class="tag">{{$propiedad->status_pro}}</span></div>
+                      @endif
+                      <div class="property_meta">
+                        <h4>${{ number_format($propiedad->precio,2)}} {{$propiedad->moneda}}</h4><br>  
+                        <h4>{{$propiedad->categoria}}</h4>
+                        @php
+                            $slide_id=$slidesAmenidades->id;
+                            $file_delete=$slidesAmenidades->file;
+                            $tipo_inmueble = "propiedad";
+                            $desarrollo_id = 0;
+                            $inmueble_id = $propiedad->id;
+                            $propiedad_id = $propiedad->id;
+                          @endphp
+                          @include('includes.formDeleteSlide')        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                @endforeach            
+              </div>            
+              @php 
+                  $section_update="propiedad-amenidades";
+                  $desarrollo_id = 0;
+                  $inmueble_id = $propiedad->id;
+                  $propiedad_id = $propiedad->id;
+                  $tipo_inmueble = "propiedad";
+              @endphp
+              @include('includes.formAltaSlide')
+          </div>
+        @if($propiedad->link_video!="")
+          <div class="col-md-12"> 
+            <h3 class="text-uppercase  bottom30 top10 text-white">Video <span class="color_red">Informativo</span></h3>
+
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item"  src="{{$propiedad->link_video}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        @endif
+        <div class="row">
         </div>
               <div class="row">
                     <div class="col-md-12"> 

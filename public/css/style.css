@@ -312,7 +312,9 @@ i{ font-size:20px;
 
 /*image wraps*/
 .image img {
-  width:100%;
+  /* max-height: 800px !important; */
+  width:100% !important;
+  height:70% !important;
 }
 .image > a {
   display:block;
