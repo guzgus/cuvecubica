@@ -233,21 +233,21 @@
                       <div class="modal fade bs-adjunto_e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"?{{rand()}}>
                         <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
-                              <img src="/images/planos/Plano_adjunto_Torre300_E.png" class="img-center" />
+                              <img src="/images/planos/Plano_adjunto_Torre300_E.png?{{rand()}}" class="img-center" />
                           </div>
                         </div>
                       </div>
                       <div class="modal fade bs-adjunto_d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                         <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
-                              <img src="/images/planos/Plano_adjunto_Torre300_D.png" class="img-center" />
+                              <img src="/images/planos/Plano_adjunto_Torre300_D.png?{{rand()}}" class="img-center" />
                           </div>
                         </div>
                       </div>
                       <div class="modal fade bs-adjunto_c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                         <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
-                              <img src="/images/planos/Plano_adjunto_Torre300_C.png" class="img-center" />
+                              <img src="/images/planos/Plano_adjunto_Torre300_C.png?{{rand()}}" class="img-center" />
                           </div>
                         </div>
                       </div>
