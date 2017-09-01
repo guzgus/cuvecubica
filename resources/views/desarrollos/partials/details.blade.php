@@ -151,35 +151,35 @@
                 <div class="modal fade bs-a-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-TipoA.png" class="img-center" />
+                        <img src="/images/planos/T300-TipoA.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
                 <div class="modal fade bs-b-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-TipoB.png" class="img-center" />
+                        <img src="/images/planos/T300-TipoB.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
                 <div class="modal fade bs-c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-TipoC.png" class="img-center" />
+                        <img src="/images/planos/T300-TipoC.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
                 <div class="modal fade bs-d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-TipoD.png" class="img-center" />
+                        <img src="/images/planos/T300-TipoD.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
                 <div class="modal fade bs-e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-TipoE.png" class="img-center" />
+                        <img src="/images/planos/T300-TipoE.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
@@ -187,7 +187,7 @@
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-11">
-                  <img src="/images/planos/Plano_PH_Torre300.png" alt="" usemap="#Plano_PH_Torre300" />
+                  <img src="/images/planos/Plano_PH_Torre300.png?{{rand()}}" alt="" usemap="#Plano_PH_Torre300" />
                   <map name="Plano_PH_Torre300" id="Plano_PH_Torre300">
                       <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="185,53,309,229" data-toggle="modal" data-target=".bs-phb-modal-lg" />
                       <area alt="" title="" href="#" shape="poly" coords="309,307,246,311,251,454,301,447,425,371,441,257,429,131,313,47" />
@@ -200,21 +200,21 @@
                 <div class="modal fade bs-pha-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-PHA.png" class="img-center" />
+                        <img src="/images/planos/T300-PHA.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
                 <div class="modal fade bs-phb-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-PHB.png" class="img-center" />
+                        <img src="/images/planos/T300-PHB.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
                 <div class="modal fade bs-phc-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <img src="/images/planos/T300-TipoC.png" class="img-center" />
+                        <img src="/images/planos/T300-TipoC.png?{{rand()}}" class="img-center" />
                     </div>
                   </div>
                 </div>
@@ -230,7 +230,7 @@
                   </map>
 
                       <!-- Large modal -->
-                      <div class="modal fade bs-adjunto_e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                      <div class="modal fade bs-adjunto_e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"?{{rand()}}>
                         <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
                               <img src="/images/planos/Plano_adjunto_Torre300_E.png" class="img-center" />
