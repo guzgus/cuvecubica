@@ -1887,11 +1887,9 @@ nav.navbar.bootsnav ul.nav > li > a{
   font-size:15px;
   color:#555555;
 }
-
-/* #header-top_2 nav.navbar.bootsnav ul.nav > li > a{
-    color: #fff; 
-} */
-
+#header-top_2 nav.navbar.bootsnav ul.nav > li > a{
+    color: #fff;
+}
 nav.navbar.bootsnav.sticked ul.nav > li > a,
 #header-top_2  nav.navbar.bootsnav.sticked ul.nav > li > a{
   margin:10px 0;
@@ -6220,6 +6218,11 @@ nav.navbar.bootsnav ul.nav > li > a{
   margin:0;
   border-bottom:none;
 }
+
+#header-top_2 nav.navbar.bootsnav ul.nav > li > a{
+  color: #555555;
+}
+
 /*nav.navbar.bootsnav .navbar-header{ padding:0;}*/  
 #header-top_2 .header_set{ margin: 27px 0;}
 #header-top_2 .wrap-sticky .navbar-brand{
