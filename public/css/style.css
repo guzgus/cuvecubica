@@ -1887,9 +1887,11 @@ nav.navbar.bootsnav ul.nav > li > a{
   font-size:15px;
   color:#555555;
 }
-#header-top_2 nav.navbar.bootsnav ul.nav > li > a{
-    color: #fff;
-}
+
+/* #header-top_2 nav.navbar.bootsnav ul.nav > li > a{
+    color: #fff; 
+} */
+
 nav.navbar.bootsnav.sticked ul.nav > li > a,
 #header-top_2  nav.navbar.bootsnav.sticked ul.nav > li > a{
   margin:10px 0;
