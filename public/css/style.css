@@ -6218,6 +6218,11 @@ nav.navbar.bootsnav ul.nav > li > a{
   margin:0;
   border-bottom:none;
 }
+
+#header-top_2 nav.navbar.bootsnav ul.nav > li > a{
+  color: #555555;
+}
+
 /*nav.navbar.bootsnav .navbar-header{ padding:0;}*/  
 #header-top_2 .header_set{ margin: 27px 0;}
 #header-top_2 .wrap-sticky .navbar-brand{
