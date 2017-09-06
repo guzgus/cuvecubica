@@ -332,8 +332,7 @@
 <section id="news-section-1" class="property-details">
   <div class="container">
     <div class="row">
-
-      <div class="col-md-12 col-sm-12 col-xs-12 skills margin_bottom text-white">
+      <div class="col-md-6 col-sm-6 col-xs-6 skills margin_bottom text-white">
         <h3 class="text-uppercase text-white">Etapas de <span class="color_red">construcción</span> <small class="text-white">   (Avances de Obra)</small></h3>
         <div class="line_1"></div>
         <div class="line_2"></div>
@@ -382,6 +381,40 @@
           </li>
         </ul>
       </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div id="about_single_2" class="owl-carousel">
+          @forelse($desarrolloSlidesAvances as $slidesAvances)
+            <div class="item">
+              <div class="content-right-md">
+                    <figure class="effect-layla">
+                      <img class="slide-general-desarrollos" src="/storage/slides/{{$slidesAvances->file}}" alt="img"/>
+                      <figcaption>   
+                      @php
+                        $slide_id=$slidesAvances->id;
+                        $file_delete=$slidesAvances->file;
+                        $tipo_inmueble = "desarrollo";
+                        $desarrollo_id = $desarrollo->id;
+                        $inmueble_id = $desarrollo->id;
+                        $propiedad_id = "0";
+                      @endphp
+                      @include('includes.formDeleteSlide')         
+                    </figcaption>
+                </figure>
+              </div>
+            </div>
+          @empty
+              <p class="text-white">Sin Imágenes</p>
+          @endforelse 
+          </div>
+              @php 
+                  $section_update="desarrollos-avances";
+                  $tipo_inmueble = "desarrollo";
+                  $desarrollo_id = $desarrollo->id;
+                  $inmueble_id = $desarrollo->id;
+                  $propiedad_id = "0";
+              @endphp
+              @include('includes.formAltaSlide')
+        </div>
     </div>
   </div>
 </section>
