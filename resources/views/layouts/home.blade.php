@@ -87,7 +87,7 @@
 <script src="/js/themepunch/revolution.extension.parallax.min.js"></script>
 <script src="/js/themepunch/revolution.extension.slideanims.min.js"></script>
 <script src="/js/themepunch/revolution.extension.video.min.js"></script>
-<script src="/js/functions.js"></script>
+<script src="/js/functions.js?{{rand()}}"></script>
 <script src="/js/form.js"></script>
 <script src="/js/easyzoom.js"></script>
 	<script>
