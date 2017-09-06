@@ -2235,11 +2235,25 @@ nav.navbar.bootsnav.sticked .social-icons {
     display: inline-block;
 }
 #about_single .owl-pagination {
-   position:absolute;
-   bottom:30px;
-   left:0;
-   right:0;
+  position:absolute;
+  bottom:30px;
+  left:0;
+  right:0;
 }
+#about_single_2 .owl-pagination {
+  position:absolute;
+  bottom:30px;
+  left:0;
+  right:0;
+}
+
+#about_single_2.owl-theme .owl-controls,
+#property-d-1.owl-theme .owl-controls,
+#agent-3-slider.owl-theme .owl-controls{
+  padding:0;
+  text-align:center;
+}
+
 #about_single.owl-theme .owl-controls,
 #property-d-1.owl-theme .owl-controls,
 #agent-3-slider.owl-theme .owl-controls{

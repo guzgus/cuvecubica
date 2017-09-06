@@ -180,6 +180,13 @@ jQuery(function ($) {
     autoPlay: true,
     singleItem: true,
     navigation: false,
+  });  
+  
+  //ABOUT US
+  $("#about_single_2").owlCarousel({
+    autoPlay: true,
+    singleItem: true,
+    navigation: false,
   });
   // AGENT SLIDER - 2
   $("#agent-2-slider, #agent-3-slider, #agent-4-slider").owlCarousel({
