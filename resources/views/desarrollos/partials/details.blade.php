@@ -490,7 +490,14 @@
         <div class="col-md-4 text-white">
         	<div class="agent-p-contact p-t-30 ">
             <div class="agetn-contact-2">
-              <p class="text-white"><i class="icon-telephone114"></i> (55) 5292-1767</p>
+              <p class="text-white"><i class="icon-telephone114"></i> 
+              @if($desarrollo->id == 18) 755 553 0029 / 755 553 0130
+              @elseif($desarrollo->id == 19) 229-3170              
+              @endif
+
+              @if($desarrollo->id != 18 && $desarrollo->id != 19  )    (55) 5292-1767         @endif
+              
+              </p>
                 <p><i class=" icon-icons142"></i> contacto@cuvecubica.mx</p>
               <a href="http://www.cuvecubica.mx">
                 <p><i class="icon-browser2"></i>www.cuvecubica.mx</p>
