@@ -253,6 +253,57 @@
                       </div>
               </div>
               </div>
+            @elseif($desarrollo->id==16)
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                <img src="/images/planos/santafe/PlanoGeneralSantaFe.jpg" class="img-center" alt="" usemap="#PlanoGeneralStaFe" />
+                <map name="PlanoGeneralStaFe" id="PlanoGeneralStaFe">
+                    <area alt="" title="Ver detalle de plano" href="#" shape="poly" coords="26,430,123,428,124,275,172,274,170,175,82,176,26,227" data-toggle="modal" data-target=".bs-1-modal-lg" />
+                    <area alt="" title="Ver detalle de plano" href="#" shape="poly" coords="125,432,230,432,229,216,173,216,173,272,126,275" data-toggle="modal" data-target=".bs-2-modal-lg" />
+                    <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="233,216,332,429" data-toggle="modal" data-target=".bs-3-modal-lg" />
+                    <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="475,188,787,340" data-toggle="modal" data-target=".bs-4-modal-lg" />
+                    <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="471,27,787,183" data-toggle="modal" data-target=".bs-5-modal-lg" />
+                </map>                
+                </div>
+                <div class="col-md-2"></div>
+                <!-- Large modal -->
+                <div class="modal fade bs-1-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/santafe/planta-1-a.jpg?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-2-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/santafe/planta-2-a.jpg?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-3-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/santafe/planta-3-a.jpg?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-4-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/santafe/planta-4-b.jpg?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-5-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/santafe/planta-5-b.jpg?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             @else
                 @forelse($desarrolloSlidesPlanos as $slidesPlanos)
                     <div class="col-md-4 col-sm-4 col-xs-12 top10">
