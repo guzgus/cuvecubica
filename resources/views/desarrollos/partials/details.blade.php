@@ -508,7 +508,7 @@
             <div class="item">
               <div class="content-right-md">
                     <figure class="effect-layla">
-                                        <div class="feature"><span class="tag-2 text-big">{{$desarrollo->title}}</span></div>                    
+                                        <div class="feature"><span class="tag-2 text-big">{{$slidesAvances->date_avance}}</span></div>                    
 
                       <img class="slide-general-desarrollos" src="/storage/slides/{{$slidesAvances->file}}" alt="img"/>
                       <figcaption>   
