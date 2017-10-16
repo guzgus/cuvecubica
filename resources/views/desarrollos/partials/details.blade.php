@@ -75,7 +75,7 @@
                 <div class="property_item heading_space">
                   <div class="image">
                     <a href="#."><img src="/storage/slides/{{$slidesAmenidades->file}}" alt="listin" class="slide-avances-desarrollos"></a>
-                    <div class="feature"><span class="tag-2 text-big">Paradox</span></div>                    
+                    <div class="feature"><span class="tag-2 text-big">{{$desarrollo->title}}</span></div>                    
                   </div>
                 </div>
                       @php
@@ -304,6 +304,76 @@
                   </div>
                 </div>
               </div>
+            @elseif($desarrollo->id==18)
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                  <img src="/images/planos/peninsulaixtapa/PlanoGeneralPeninsulaIxtapa.png" alt="" usemap="#PlanoGeneralPeninsulaIxtapa" />
+                  <map name="PlanoGeneralPeninsulaIxtapa" id="PlanoGeneralPeninsulaIxtapa">
+                      <area alt="" title="" href="#" shape="poly" coords="851,158,807,513,1181,588,1210,365" data-toggle="modal" data-target=".bs-a-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="802,529,983,558,958,731,776,709"  data-toggle="modal" data-target=".bs-b-modal-lg"/>
+                      <area alt="" title="" href="#" shape="poly" coords="773,716,959,743,967,717,1156,749,1123,963,749,914"  data-toggle="modal" data-target=".bs-c-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="748,916,723,1106,905,1131,906,1148,1095,1172,1122,977"  data-toggle="modal" data-target=".bs-d-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="721,1105,903,1133,853,1342,681,1280"  data-toggle="modal" data-target=".bs-e-modal-lg"/>
+                      <area alt="" title="" href="#" shape="poly" coords="679,1287,849,1356,873,1297,1059,1345,931,1644,602,1450"  data-toggle="modal" data-target=".bs-f-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="599,1456,923,1662,763,1870,496,1591"  data-toggle="modal" data-target=".bs-g-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="357,1719,494,1599,624,1733,464,1863"  data-toggle="modal" data-target=".bs-h-modal-lg" />
+                      <area alt="" title="" href="#" shape="poly" coords="195,1813,350,1724,455,1874,504,1839,626,1986,352,2153"  data-toggle="modal" data-target=".bs-i-modal-lg" />
+                  </map>
+                </div>
+                <div class="col-md-2"></div>
+                <!-- Large modal -->
+                <div class="modal fade bs-a-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/peninsulaixtapa/A_Ixtapa.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-b-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/peninsulaixtapa/B_Ixtapa.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/peninsulaixtapa/C_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/C_nv_1_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/C_nv_2_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/C_PB_Ixtapa.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/peninsulaixtapa/D_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/D_nv_2_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/D_PB_Ixtapa.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/peninsulaixtapa/E_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/E_nv_1-2_Ixtapa.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-f-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/peninsulaixtapa/F_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/F_nv_1-2_Ixtapa.png?{{rand()}}" class="img-center" />
+                        <img src="/images/planos/peninsulaixtapa/F_PB_Ixtapa.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             @else
                 @forelse($desarrolloSlidesPlanos as $slidesPlanos)
                     <div class="col-md-4 col-sm-4 col-xs-12 top10">
@@ -438,6 +508,8 @@
             <div class="item">
               <div class="content-right-md">
                     <figure class="effect-layla">
+                                        <div class="feature"><span class="tag-2 text-big">{{$desarrollo->title}}</span></div>                    
+
                       <img class="slide-general-desarrollos" src="/storage/slides/{{$slidesAvances->file}}" alt="img"/>
                       <figcaption>   
                       @php
