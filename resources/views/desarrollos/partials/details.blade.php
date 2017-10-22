@@ -374,6 +374,159 @@
                   </div>
                 </div>
               </div>
+            @elseif($desarrollo->id==19)
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="/images/planos/highpark/HPQ_NIVEL_1a10.png?{{rand()}}" alt="" usemap="#1a10" />
+                  <map name="1a10" id="1a10">
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="20,246,186,352" data-toggle="modal" data-target=".bs-a-modal-lg"  />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="21,148,185,245" data-toggle="modal" data-target=".bs-b-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="poly" coords="19,28,19,145,188,145,188,125,130,122,125,26" data-toggle="modal" data-target=".bs-c-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="129,27,233,125" data-toggle="modal" data-target=".bs-d-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="234,15,335,124" data-toggle="modal" data-target=".bs-e-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="poly" coords="336,15,446,17,446,147,276,147,277,126,334,122" data-toggle="modal" data-target=".bs-f-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="279,147,444,242" data-toggle="modal" data-target=".bs-g-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="279,243,445,353" data-toggle="modal" data-target=".bs-h-modal-lg" />
+                  </map>                
+                </div>
+                <div class="col-md-6">
+                  <img src="/images/planos/highpark/HPQ_NIVEL_11a19.png?{{rand()}}" alt="" usemap="#11a19" />
+                  <map name="11a19" id="11a19">
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="22,29,227,351" data-toggle="modal" data-target=".bs-a11-modal-lg" />
+                      <area alt="" title="Ver detalle de plano" href="#" shape="rect" coords="445,356,232,30" data-toggle="modal" data-target=".bs-b11-modal-lg" />
+                  </map>                
+                </div>
+                <!-- Large modal -->
+                <div class="modal fade bs-a-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/A1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-b-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/B1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-a20-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/A20.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-a21-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/A21.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-a22-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/A22.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-a23-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/A23.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-a24-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/A24.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-ph25-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/PH25.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-b11-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/B11.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-c-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/C1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-d-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/D1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-e-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/E1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-f-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/F1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-g-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/G1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade bs-h-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/H1.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a href="" data-toggle="modal" data-target=".bs-a20-modal-lg" ><img src="/images/planos/highpark/HPQ_NIVEL_20.png?{{rand()}}" alt="" /></a>
+                </div>
+                <div class="col-md-6">
+                  <a href="" data-toggle="modal" data-target=".bs-a21-modal-lg" ><img src="/images/planos/highpark/HPQ_NIVEL_21.png?{{rand()}}" alt="" /></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a href="" data-toggle="modal" data-target=".bs-a22-modal-lg" ><img src="/images/planos/highpark/HPQ_NIVEL_22.png?{{rand()}}" alt="" /></a>
+                </div>
+                <div class="col-md-6">
+                  <a href="" data-toggle="modal" data-target=".bs-a23-modal-lg" ><img src="/images/planos/highpark/HPQ_NIVEL_23.png?{{rand()}}" alt="" /></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a href="" data-toggle="modal" data-target=".bs-a24-modal-lg" ><img src="/images/planos/highpark/HPQ_NIVEL_24.png?{{rand()}}" alt="" /></a>
+                </div>
+                <div class="col-md-6">
+                  <a href="" data-toggle="modal" data-target=".bs-ph25-modal-lg" ><img src="/images/planos/highpark/HPQ_NIVEL_25.png?{{rand()}}" alt="" /></a>
+                </div>
+              </div>
             @else
                 @forelse($desarrolloSlidesPlanos as $slidesPlanos)
                     <div class="col-md-4 col-sm-4 col-xs-12 top10">
