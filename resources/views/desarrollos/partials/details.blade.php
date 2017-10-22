@@ -425,6 +425,13 @@
                     </div>
                   </div>
                 </div>
+                <div class="modal fade bs-a11-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/highpark/A11.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
                 <div class="modal fade bs-a22-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
