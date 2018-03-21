@@ -622,6 +622,51 @@
                     </div>
                   </div>
                 </div>
+
+                <img src="/images/planos/allure/phs.png?{{rand()}}" alt="" usemap="#MapPh" />
+                <map name="MapPh" id="MapPh">
+                    <area alt="" title="" href="#" shape="poly" coords="6,290,38,47,182,67,151,322" data-toggle="modal" data-target=".bs-ph1-modal-lg" />
+                    <area alt="" title="" href="#" shape="poly" coords="158,325,194,71,363,100,299,340" data-toggle="modal" data-target=".bs-ph2-modal-lg" />
+                    <area alt="" title="" href="#" shape="poly" coords="369,94,328,340,507,378,539,122" data-toggle="modal" data-target=".bs-ph3-modal-lg" />
+                    <area alt="" title="" href="#" shape="poly" coords="517,376,547,122,679,142,658,390" data-toggle="modal" data-target=".bs-ph4-modal-lg" />
+                    <area alt="" title="" href="#" shape="poly" coords="783,137,837,384,985,360,932,108" data-toggle="modal" data-target=".bs-ph4-modal-lg" />
+                    <area alt="" title="" href="#" shape="poly" coords="937,107,993,358,1127,336,1108,76" data-toggle="modal" data-target=".bs-ph3-modal-lg" />
+                    <area alt="" title="" href="#" shape="poly" coords="1111,73,1197,318,1337,291,1283,42" data-toggle="modal" data-target=".bs-ph2-modal-lg"/>
+                    <area alt="" title="" href="#" shape="poly" coords="1288,40,1343,290,1486,260,1423,16"  data-toggle="modal" data-target=".bs-ph1-modal-lg" />
+                </map>
+                <div class="modal fade bs-ph1-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/allure/10.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="modal fade bs-ph2-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/allure/11.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade bs-ph3-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/allure/12.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="modal fade bs-ph4-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <img src="/images/planos/allure/13.png?{{rand()}}" class="img-center" />
+                    </div>
+                  </div>
+                </div>
+                
+
             @else
 
                 @forelse($desarrolloSlidesPlanos as $slidesPlanos)
