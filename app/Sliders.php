@@ -12,5 +12,6 @@ class Sliders extends Model
         'section',
         'desarrollo_id',
         'propiedad_id',
+        'date_avance',
     ];
 }
