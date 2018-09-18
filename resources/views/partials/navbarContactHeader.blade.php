@@ -7,8 +7,8 @@
           <div class="get-tuch text-left">
             <i class="icon-telephone114"></i>
             <ul>
-              <li><h4>(55) 2167-3371</h4></li>
-              <li><a href="#." ><p class="p_14">(55) 2167-3376</p></a></li>
+              <li><h4> (55) 5292-1767 </h4></li>
+              <li><a href="#." ><p class="p_14"></p></a></li>
             </ul>
           </div>
           <div class="get-tuch text-left">
@@ -48,11 +48,17 @@
               <li class="dropdown"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Desarrollos </a>
                 <ul class="dropdown-menu">
-                  @forelse ($desarrollos as $desarrollo)
+                  {{-- @forelse ($desarrollos as $desarrollo)
                       <li><a href="/desarrollo/{{$desarrollo->id}}">{{$desarrollo->title}}</a></li>
                   @empty
                       <p>Sin desarrollos</p>
-                  @endforelse                
+                  @endforelse                 --}}
+                  
+                      <li><a href="/desarrollo/20">ALLURE Cancún</a></li>
+                      <li><a href="/desarrollo/16">Paradox Santa Fe</a></li>
+                      <li><a href="/desarrollo/17">Torre 300 Santa fe</a></li>
+                      <li><a href="/desarrollo/18">Península Ixtapa</a></li>
+                      <li><a href="/desarrollo/19">High Park Querétaro</a></li>
                 </ul>
               </li>
               {{--  <li><a href="contact_us.html">Contáctanos</a></li>  --}}
