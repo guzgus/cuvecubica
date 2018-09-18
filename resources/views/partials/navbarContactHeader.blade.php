@@ -53,6 +53,7 @@
                   @empty
                       <p>Sin desarrollos</p>
                   @endforelse                 --}}
+                  
                       <li><a href="/desarrollo/20">ALLURE Cancún</a></li>
                       <li><a href="/desarrollo/16">Paradox Santa Fe</a></li>
                       <li><a href="/desarrollo/17">Torre 300 Santa fe</a></li>
